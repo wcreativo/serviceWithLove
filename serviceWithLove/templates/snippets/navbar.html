@@ -1,0 +1,27 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<div class="bs-canvas-overlay bs-canvas-anim bg-dark position-fixed w-100 h-100"></div>
+<div id="bs-canvas-right" class="bs-canvas bs-canvas-anim bs-canvas-right position-fixed bg-light h-100"
+     data-width="400px">
+    <header class="bs-canvas-header p-3 bg-primary overflow-auto">
+        <button type="button" class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
+                                                                                     class="text-light">&times;</span>
+        </button>
+        <h4 class="d-inline-block text-light mb-0 float-right">Canvas Header</h4>
+    </header>
+    <div class="bs-canvas-content px-3 py-5">
+        {% show_menu 0 100 100 100 %}
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent" style="padding: 2% 20%">
+    <div class=" bs-offset-main bs-canvas-anim">
+        <button class="btn bg-transparent text-white" type="button" data-toggle="canvas" data-target="#bs-canvas-right"
+                aria-expanded="false" aria-controls="bs-canvas-right">&#9776;
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    </div>
+</nav>
