@@ -6,6 +6,7 @@
 .bs-canvas-overlay.show {
     opacity: 0.85;
     z-index: 1100;
+    height: 100%;
 }
 
 .bs-canvas {
