@@ -1,20 +1,23 @@
 {% load cms_tags menu_tags sekizai_tags static %}
 
-
 <section class="container">
-    <div class="w-screen bg-no-repeat px-8 py-28"
+    <div class="w-screen bg-no-repeat px-8 pt-40 pb-24"
          style="background-image: url('{% static 'img/cleaning_service_in_brooklyn.jpg' %}')">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 md:gap-6 items-center">
-            <div class="w-auto">
-                <img class="h-4/5 object-cover " src="{% static 'img/slider-home/cleaning service jersey city.jpg' %}"
-                     alt="">
+            <div class="w-auto h-full bg-cover">
+                <div id="slider-1" class="bg-cover bg-center h-full"
+                     style="background-image: url('{% static 'img/slider-home/cleaning service jersey city.jpg' %}')">
+                </div>
             </div>
-            <div class="w-auto">
-                <img class="hidden md:inline-block lg:inline-block h-4/5 object-cover" src="{% static 'img/slider-home/cleaning service jersey city.jpg' %}"
-                     alt="">
+            <div class="w-auto h-full bg-cover">
+                <div id="slider-3" class="bg-cover bg-center h-full"
+                     style="background-image: url('{% static 'img/slider-home/cleaning service jersey city_3.jpg' %}')">
+                </div>
             </div>
+
             <div class="w-auto">
-                <img class="hidden lg:inline-block h-4/5 object-cover" src="{% static 'img/slider-home/cleaning service jersey city.jpg' %}"
+                <img class="hidden lg:inline-block h-4/5 object-cover"
+                     src="{% static 'img/slider-home/cleaning service jersey city.jpg' %}"
                      alt="">
             </div>
         </div>
