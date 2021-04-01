@@ -1,0 +1,19 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<html>
+<section>
+    <div class="container mx-auto xl:py-40 xl:px-10">
+        <div class="grid gap-4 p-5 xl:px-48 xl:grid-cols-2 lg:px-16 lg:grid-cols-2 md:grid-cols-2 md:px-10">
+            <div class="z-10 xl:-mr-20 xl:ml-10 lg:-mr-20 md:-mr-20">
+                <div>
+                    <img class="h-40" src="{{ instance.logo.url }}" alt="Image">
+                </div>
+                <h2 class="text-4xl md:text-7xl lg:text-7xl p-3 my-3 font-semibold" style="color: #08733F">{{ instance.title | linebreaksbr }}</h2>
+                <p class="p-5 lg:p-10 md:p-10 text-justify bg-gray-100"> {{ instance.description | linebreaksbr }}</p>
+            </div>
+            <div class="relative">
+                <img class="h-3/4 object-cover w-full" src="{{ instance.image.url }}" alt="Image">
+            </div>
+        </div>
+    </div>
+</section>
+</html>

@@ -14,6 +14,7 @@ module.exports = {
         extend: {
             colors: {
                 'serviceTitle': '#906AAE',
+                'colorOrganizing': '#08733F',
             },
         },
     },

@@ -9,6 +9,9 @@ def get_templates():
     choices = [
         ('cleaning/card_img_left.html', _('Cleaning Image Left')),
         ('cleaning/card_img_right.html', _('Cleaning Image Right')),
+        ('organizing/card_img_left.html', _('Organizing Image Left')),
+        ('organizing/card_img_right.html', _('Organizing Image Right')),
+        ('decorating/card_img_right.html', _('Decorating Image Right')),
     ]
     choices += getattr(
         settings,

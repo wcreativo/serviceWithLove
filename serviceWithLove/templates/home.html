@@ -1,46 +1,31 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags static %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
     {% include 'snippets/slider_home.html' %}
     {% placeholder content %}
-
-    <section class="container mx-auto">
-        <div class="mx-auto items-center">
-            {% placeholder our_services %}
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 grid-rows-1 items-center lg:px-32 px-5 gap-5 md:gap-6 lg:py-5 md:py-5">
-            <div class="w-auto lg:h-auto text-center">
-                {% placeholder regular_cleaning %}
-            </div>
-            <div class="w-auto lg:h-auto text-center">
-                {% placeholder deep_cleaning %}
-            </div>
-            <div class="w-auto lg:h-auto text-center">
-                {% placeholder green_cleaning %}
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 items-center lg:px-32 px-5 gap-5 md:gap-6 lg:py-5 md:py-5 mt-5 lg:mt-0 md:mt-0">
-            <div class="w-auto text-center">
-                {% placeholder airbnb_cleaning %}
-            </div>
-            <div class="w-auto text-center">
-                {% placeholder laundry %}
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 items-center lg:px-32 px-5 gap-5 md:gap-6 lg:py-5 md:py-5 mt-5 lg:mt-0 md:mt-0">
-            <div class="w-auto text-center">
-                {% placeholder move_in_out %}
-            </div>
-            <div class="w-auto text-center">
-                {% placeholder office_cleaning %}
-            </div>
-        </div>
-
-        {% placeholder card_context %}
+    {% include 'snippets/our_services.html' %}
+    {% include 'snippets/organizing_our_services.html' %}
+    {% placeholder card_decorating %}
+    <section class="container mx-auto flex flex-wrap items-center justify-center md:px-16 px-10 mt-5 lg:mt-0">
+        {% placeholder get_started %}
     </section>
+    <section class="container mx-auto flex flex-wrap items-center justify-center md:px-16 px-10 mb-10 lg:mt-0">
+        {% include 'snippets/get_started_items.html' %}
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 items-center
+                lg:px-10 xl:px-12 px-5 gap-5 md:gap-6 lg:py-20 md:py-10 py-10 lg:px-40 mt-5 lg:mt-0 md:mt-0 bg-no-repeat bg-cover"
+         style="background-image: url('{% static 'img/architects_bg.png' %}')">
+        <div class="w-auto text-center">
+            {% placeholder why_us %}
+        </div>
+        <div class="w-auto text-center px-5 lg:px-5 xl:px-20">
+            {% placeholder why_us_description %}
+        </div>
+    </div>
+    {% include 'snippets/testimonials.html' %}
+
 {% endblock content %}

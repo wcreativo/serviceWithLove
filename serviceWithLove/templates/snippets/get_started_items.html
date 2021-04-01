@@ -1,0 +1,61 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<div class="relative bg-white dark:bg-gray-800">
+    <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-1 lg:gap-12 lg:items-center">
+        <div class="">
+            <ul class="mt-10">
+                <li>
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-16">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full border-solid border-2 border-yellow-200"
+                                 style="color: #E4C059">
+                                <i class="fas fa-home text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            {% placeholder get_started_title %}
+                        </div>
+                    </div>
+                </li>
+                <li class="mt-10">
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-16">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full border-solid border-2 border-yellow-200"
+                                 style="color: #E4C059">
+                                <i class="far fa-calendar-alt text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            {% placeholder get_started_item_2 %}
+                        </div>
+                    </div>
+                </li>
+                <li class="mt-10">
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-16">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full border-solid border-2 border-yellow-200"
+                                 style="color: #E4C059">
+                                <i class="fas fa-heart text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            {% placeholder get_started_item_3 %}
+                        </div>
+                    </div>
+                </li>
+                <li class="mt-10">
+                    <div class="flex">
+                        <div class="flex-shrink-0 w-16">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full border-solid border-2 border-yellow-200"
+                                 style="color: #E4C059">
+                                <i class="fas fa-hand-sparkles text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            {% placeholder get_started_item_4 %}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
