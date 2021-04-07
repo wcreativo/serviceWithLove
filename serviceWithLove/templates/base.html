@@ -28,18 +28,18 @@
     </style>
     {% render_block "css" %}
 </head>
-<body>
+<body class="pb-0">
 <div class="bs-canvas-overlay bs-canvas-anim bg-black fixed w-screen h-screen"></div>
 {% cms_toolbar %}
 
 {% include 'snippets/navbar.html' %}
 {% block content %}{% endblock %}
 
-<footer class="row">
-    {% static_placeholder 'Footer' or %}
-        {% include 'snippets/footer.html' %}
-    {% endstatic_placeholder %}
-</footer>
+
+{% static_placeholder 'Footer' or %}
+    {% include 'snippets/footer.html' %}
+{% endstatic_placeholder %}
+
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script src="{% static 'js/base.js' %}"></script>

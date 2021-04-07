@@ -208,6 +208,15 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('home.html', 'Home'),
+    ('regular_cleaning.html', 'Regular Cleaning'),
+    ('deep_cleaning.html', 'Deep Cleaning'),
+    ('green_cleaning.html', 'Green Cleaning'),
+    ('move_in_cleaning.html', 'MoveIn Cleaning'),
+    ('office_cleaning.html', 'Office Cleaning'),
+    ('airbnb_cleaning.html', 'AIRBNB Cleaning'),
+    ('laundry_cleaning.html', 'Laundry Cleaning'),
+    ('organizing.html', 'Organizing With Love'),
+    ('decorating.html', 'Decorating With Love'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'

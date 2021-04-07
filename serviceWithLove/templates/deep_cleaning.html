@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <header class="text-gray-100 bg-gray-900 body-font shadow w-full h-36">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
+    </header>
+    {% placeholder card_organizing %}
+    <div class="grid grid-cols-1 mx-5 xl:mx-44 lg:grid-cols-2 lg:mx-20 lg:gap-10 md:grid-cols-2 md:mx-10 md:gap-5">
+        <div>
+            {% placeholder paragraph_1 %}
+        </div>
+        <div class="mt-5">
+            {% placeholder paragraph_2 %}
+        </div>
+    </div>
+    <div class="mx-20">
+        {% placeholder regular_cleaning_title %}
+    </div>
+    {% placeholder content_regular_cleaning %}
+    <div class="xl:mx-96 py-1" style="background-color: #BC96DA">
+        {% placeholder import_information_box %}
+    </div>
+    <div class="mx-20">
+        {% include 'snippets/table_regular_cleaning.html' %}
+    </div>
+    {% placeholder conditions %}
+    <div class="grid grid-cols-1 mx-5 xl:mx-44 lg:grid-cols-2 lg:mx-20 lg:gap-10 md:grid-cols-2 md:mx-10 md:gap-5">
+        <div>
+            {% placeholder paragraph_3 %}
+        </div>
+        <div class="mt-5">
+            {% placeholder paragraph_4 %}
+        </div>
+    </div>
+    <div class="mx-20">
+        {% placeholder popup %}
+    </div>
+    {% include 'snippets/modal.html' %}
+{% endblock content %}
