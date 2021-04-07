@@ -4,64 +4,83 @@
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
-<header class="text-gray-100 body-font shadow w-full h-36"
-        style="background: rgb(80,193,138); background: radial-gradient(circle, rgba(80,193,138,1) 0%, rgba(30,136,85,1) 35%, rgba(12,119,67,1) 100%);">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
-</header>
-{% placeholder card_organizing %}
-<div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
-     style="column-count: 2; column-gap: 50px;">
-    {% placeholder paragraph_organizing %}
-</div>
-<div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
-    {% placeholder paragraph_organizing_mobile %}
-</div>
-<div class="py-10 xl:py-5 flex flex-col items-center">
-    {% placeholder phrase_organizing %}
-    <div class="lg:w-1/3 lg:mb-0 p-4">
-        <div class="h-full text-center">
-            {% placeholder phrase_image %}
-            {% placeholder phrase_client_3 %}
-            {% placeholder phrase_jobtitle_3 %}
+    <header class="text-gray-100 body-font shadow w-full h-36"
+            style="background: rgb(80,193,138); background: radial-gradient(circle, rgba(80,193,138,1) 0%, rgba(30,136,85,1) 35%, rgba(12,119,67,1) 100%);">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
+    </header>
+    {% placeholder card_organizing %}
+    <div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
+         style="column-count: 2; column-gap: 50px;">
+        {% placeholder paragraph_organizing %}
+    </div>
+    <div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
+        {% placeholder paragraph_organizing_mobile %}
+    </div>
+    <div class="py-10 xl:py-5 flex flex-col items-center">
+        {% placeholder phrase_organizing %}
+        <div class="lg:w-1/3 lg:mb-0 p-4">
+            <div class="h-full text-center">
+                {% placeholder phrase_image %}
+                {% placeholder phrase_client_3 %}
+                {% placeholder phrase_jobtitle_3 %}
+            </div>
         </div>
     </div>
-</div>
-{% placeholder home_organizing %}
-<div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
-     style="column-count: 2; column-gap: 50px;">
-    {% placeholder paragraph_home %}
-</div>
-<div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
-    {% placeholder paragraph_home_mobile %}
-</div>
-{% placeholder closet_organizing %}
-<div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
-     style="column-count: 2; column-gap: 50px;">
-    {% placeholder paragraph_closet %}
-</div>
-<div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
-    {% placeholder paragraph_closet_mobile %}
-</div>
-<div class="py-10 xl:py-5 flex flex-col items-center">
-    {% placeholder calltoaction_organizing %}
-</div>
-<div class="mx-20 py-10 xl:py-5 text-center">
-    {% placeholder button_call %}
-</div>
-{% placeholder home_office_organizing %}
-<div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
-     style="column-count: 2; column-gap: 50px;">
-    {% placeholder paragraph_home_org %}
-</div>
-<div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
-    {% placeholder paragraph_home_org_mobile %}
-</div>
-<div class="py-10 xl:py-5 flex flex-col items-center">
-    {% placeholder calltoaction_organizing_2 %}
-</div>
-<div class="mx-4">
-    {% include 'snippets/custom_solution_includes.html' %}
-</div>
-
-{% placeholder moving_organizing %}
+    {% placeholder home_organizing %}
+    <div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
+         style="column-count: 2; column-gap: 50px;">
+        {% placeholder paragraph_home %}
+    </div>
+    <div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
+        {% placeholder paragraph_home_mobile %}
+    </div>
+    {% placeholder closet_organizing %}
+    <div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
+         style="column-count: 2; column-gap: 50px;">
+        {% placeholder paragraph_closet %}
+    </div>
+    <div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
+        {% placeholder paragraph_closet_mobile %}
+    </div>
+    <div class="py-10 xl:py-5 flex flex-col items-center">
+        {% placeholder calltoaction_organizing %}
+    </div>
+    <div class="mx-20 py-10 xl:py-5 text-center">
+        {% placeholder button_call %}
+    </div>
+    {% placeholder home_office_organizing %}
+    <div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
+         style="column-count: 2; column-gap: 50px;">
+        {% placeholder paragraph_home_org %}
+    </div>
+    <div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
+        {% placeholder paragraph_home_org_mobile %}
+    </div>
+    <div class="py-10 xl:py-5 flex flex-col items-center">
+        {% placeholder calltoaction_organizing_2 %}
+    </div>
+    <div class="mx-4">
+        {% include 'snippets/custom_solution_includes.html' %}
+    </div>
+    {% placeholder call_to_action %}
+    <div class="mx-20 py-10 xl:py-5 text-center">
+        {% placeholder button_call_2 %}
+    </div>
+    {% placeholder moving_organizing %}
+    <div class="mx-5 hidden md:block lg:block xl:block md:mx-24 lg:mx-32 xl:mx-96 py-10 xl:py-5"
+         style="column-count: 2; column-gap: 50px;">
+        {% placeholder paragraph_off_org %}
+    </div>
+    <div class="mx-5 md:hidden lg:hidden xl:hidden py-10" style="column-count: 1; column-gap: 50px;">
+        {% placeholder paragraph_home_off_mobile %}
+    </div>
+    <div class="py-10 xl:py-5 flex flex-col items-center">
+        {% placeholder call_to_action_2 %}
+    </div>
+    <div class="mx-20 py-10 xl:py-5 text-center">
+        {% placeholder button_call_3 %}
+    </div>
+    <div class="py-10 xl:py-10 flex flex-col items-center">
+        {% placeholder call_to_action_3 %}
+    </div>
 {% endblock content %}
