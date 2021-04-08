@@ -26,7 +26,13 @@
             font-family: 'Titillium Web', sans-serif;
         }
     </style>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
     {% render_block "css" %}
+    {% block extra_head %}{% endblock extra_head %}    
 </head>
 <body class="pb-0">
 <div class="bs-canvas-overlay bs-canvas-anim bg-black fixed w-screen h-screen"></div>
@@ -40,11 +46,11 @@
     {% include 'snippets/footer.html' %}
 {% endstatic_placeholder %}
 
-
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script src="{% static 'js/base.js' %}"></script>
 <script src="{% static 'js/slider-home.js' %}"></script>
 
 {% render_block "js" %}
+{% block js_scripts %}
+{% endblock js_scripts %}
 </body>
 </html>

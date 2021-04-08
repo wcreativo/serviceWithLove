@@ -1,0 +1,42 @@
+[
+{
+  "model": "booking.frequency",
+  "pk": 1,
+  "fields": {
+    "created_at": "2021-04-03T18:12:08.913Z",
+    "updated_at": "2021-04-03T18:12:08.913Z",
+    "description": "One Time Cleaning",
+    "discount": 0
+  }
+},
+{
+  "model": "booking.frequency",
+  "pk": 2,
+  "fields": {
+    "created_at": "2021-04-03T18:12:57.373Z",
+    "updated_at": "2021-04-03T18:12:57.373Z",
+    "description": "Weekly for 20% Off",
+    "discount": 20
+  }
+},
+{
+  "model": "booking.frequency",
+  "pk": 3,
+  "fields": {
+    "created_at": "2021-04-03T18:13:21.908Z",
+    "updated_at": "2021-04-03T18:13:21.909Z",
+    "description": "Every 2 weeks for 15% Off",
+    "discount": 15
+  }
+},
+{
+  "model": "booking.frequency",
+  "pk": 4,
+  "fields": {
+    "created_at": "2021-04-03T18:13:53.307Z",
+    "updated_at": "2021-04-03T18:13:53.307Z",
+    "description": "Every 4 weeks for 10% Off",
+    "discount": 10
+  }
+}
+]
