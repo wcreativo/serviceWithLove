@@ -179,7 +179,11 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'serviceWithLove',
-    'fontawesome-free'
+    'fontawesome-free',
+    'common',
+    'geoinfo',
+    'booking',
+    'rest_framework'
 ]
 
 LANGUAGES = (

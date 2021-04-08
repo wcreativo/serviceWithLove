@@ -1,0 +1,381 @@
+{% extends "base.html" %} {% load cms_tags %} {% block title %}{% page_attribute "page_title" %}{% endblock title %} {% load static %}
+
+{% block extra_head %}
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'js/datetimepicker/jquery.datetimepicker.css' %} "/>
+<script src="{% static 'js/jquery.mousewheel.js'%}"></script>
+<script src="{% static 'js/php-date-formatter.min.js' %}"></script>
+<script src="{% static 'js/datetimepicker/jquery.datetimepicker.js' %}"></script>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="row" style="display: flex;">
+
+    <div class="column" style="flex: 50%; padding: 10px; height: 300px">
+        <form method="POST" id="bookingForm" data-states-url="ajax/load-states" data-cities-url="ajax/load-cities">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <div class="column" style="flex: 50%; padding: 10px; height: 300px">
+        <h3>summary</h3>
+        <p>
+            service: <span id="sumary_service"></span>
+        </p>
+        <p>
+            datetime: <span id="sumary_datetime">Choose Service Date</span>
+        </p>
+        <p>
+            duration: <span id="sumary_duration"></span>
+        </p>
+        <p>
+            frequency: <span id="sumary_frequency"></span>
+        </p>
+        <hr />
+        <p>
+            Subtotal: <span id="summary_subtotal" class="subtotal"></span>
+        </p>
+        <p>
+            </span> Discount: <span id="summary_discount" class="discount">$0</span>
+        </p>
+        <p>
+            Sales Tax: <span id="summary_tax" class="tax"></span>
+        </p>
+        <p>
+            Total: <span id="summary_total" class="total"></span>
+        </p>
+        <hr />
+
+    </div>
+
+</div>
+
+{% endblock content %} {% block js_scripts %}
+<script>
+    var startingPrice = 0;
+    var salesTax = 0;
+    var maidQty = 1;
+    var hourQty = 2.0;
+    var allowedHours = [];
+    var minDate = '';
+    var maxDate = '';
+    var startingTime = 90;
+
+    function getBasePrice() {
+        var url = 'ajax/get-base-price/2';
+        var basePrice = $.ajax({
+            url
+        });
+        
+        var url = 'ajax/get-base-price/3';
+        var baseTax = $.ajax({
+            url
+        });
+        
+        $.when(basePrice, baseTax).then(function(basePrice, baseTax) {
+            startingPrice = basePrice[0].price;
+            salesTax = baseTax[0].price;
+            startingTime=90;
+            publishValues(startingPrice, 0);
+            publishTime(startingTime);
+        });
+    }
+    
+    function setSummaryDetails(){
+        var areaText = $("#id_area option:selected").text();
+        var frequencyText = $("#id_frequency option:selected").text();
+        var dateText = $("#id_date").val();
+        var timeText = $("#id_time").val();
+        var dateTimeText = `${dateText} @ ${timeText}`;
+
+        $("#sumary_service").html(areaText);
+        $("#sumary_frequency").html(frequencyText);
+
+        dateTimeText == ' @ '? $("#sumary_datetime").html('Choose Service Date') : $("#sumary_datetime").html(dateTimeText);
+    }
+
+    function publishTime(minutes){
+        var hours = Math.floor(minutes/60);
+        var min = minutes%60;
+        var duration = '';
+        hours === 1 ? text = 'hour': text = 'hours';
+        min == 0 ? duration = `${hours}  ${text}` : duration = `${hours} ${text} and ${min} minutes`;
+
+        $('#sumary_duration').html(duration);
+    }
+
+    function getAllowedHours(){
+        for(i=8;i<=19;i++){
+            var oclock = `${i}:00`
+            var half = `${i}:30`
+            allowedHours.push(oclock);
+            if(i!=19)
+                allowedHours.push(half);
+        }
+    }
+
+    function getMinMaxDates(){
+        var currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        minDate = `${currentDate.getFullYear()}/${currentDate.getMonth()+1}/${currentDate.getDate()}`;
+        currentDate.setDate(currentDate.getDate() + 60);
+        maxDate = `${currentDate.getFullYear()}/${currentDate.getMonth()+1}/${currentDate.getDate()}`;
+    }
+    
+    function calculateExtraOptsPrice(arrayExtraOpts){
+        var total = 0;
+        var minutes = 0;
+        
+        $.each(arrayExtraOpts[0], function(index, elem){
+            total+=elem.price;
+            minutes += elem.minutes;
+        });
+        return {
+            total,
+            minutes
+        }
+    }
+    
+    function calculateValues() {
+        var extraOpts = [];
+        var discount = 0;
+        var total = 0;
+        var subtotal = 0;
+
+        var areaId = $("#id_area").val();
+        var cleaningTypeId = $("#id_cleaning_type").val();
+        var roomId = $("#id_room_type").val();
+        var bathroomId = $("#id_bathroom").val();
+        var freqId = $("#id_frequency").val();
+
+        var url = `ajax/get-freq-discount/${freqId}`;
+        var freqResponse = $.ajax({
+            url
+        });
+
+        $("input[name='extra_opts']:checked").each(function (){
+            extraOpts.push(parseInt($(this).val()));
+        });
+        
+        extraOpts = JSON.stringify(extraOpts)
+
+        var url = `ajax/get-extraopts-price/`;
+        var extraOptsResponse = $.ajax({
+            url, 
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: extraOpts
+        });
+
+        if (areaId != 1) {
+            var url = 'ajax/get-base-price/1'
+            var maidResponse = $.ajax({
+                url
+            });
+
+            maidQty = parseInt($('#id_maid_qty').val());
+            hourQty = parseFloat($('#id_hours_qty').val());
+
+            
+
+            $.when(maidResponse, freqResponse, extraOptsResponse).then(function(maidPrice, freqDiscount, extraOptsPrice) {
+                extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
+                subtotal = maidPrice[0].price * hourQty * maidQty + extraOptsTotal.total;
+                discount = subtotal * (freqDiscount[0].discount / 100);
+                publishValues(subtotal, discount);
+                publishTime((60*hourQty)+extraOptsTotal.minutes)
+            }, function() {
+                console.log('something fails');
+            });
+            
+        } else {
+            var url = `ajax/get-cleaningtype-price/${cleaningTypeId}`;
+            var cleaningTypeResponse = $.ajax({
+                url
+            });
+            
+            var url = `ajax/get-room-price/${roomId}`;
+            var roomResponse = $.ajax({
+                url
+            });
+            
+            var url = `ajax/get-bathroom-price/${bathroomId}`;
+            var bathroomResponse = $.ajax({
+                url
+            });
+            
+            $.when(cleaningTypeResponse, roomResponse, bathroomResponse, freqResponse, extraOptsResponse).then(function(cleaningTypePrice, roomPrice, bathroomPrice, freqDiscount, extraOptsPrice) {
+                extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
+                subtotal = startingPrice + cleaningTypePrice[0].price + roomPrice[0].price + bathroomPrice[0].price + extraOptsTotal.total;
+                discount = subtotal * (freqDiscount[0].discount / 100);
+                startingTime = cleaningTypePrice[0].minutes;
+                publishValues(subtotal, discount);
+                publishTime(startingTime+extraOptsTotal.minutes+roomPrice[0].minutes+bathroomPrice[0].minutes);
+            }, function() {
+                console.log('something fails');
+            });
+        }
+    }
+
+    function publishValues(subtotal, discount) {
+        tax = (subtotal - discount) * (salesTax / 100);
+        total = subtotal - discount + tax;
+        total = total.toFixed(2);
+        tax = tax.toFixed(2);
+
+        $("#id_subtotal").val(subtotal);
+        $("#id_discount").val(discount);
+        $("#id_tax").val(tax);
+        $("#id_total").val(total);
+
+        $("#summary_subtotal").html(`$${subtotal}`);
+        $("#summary_discount").html(`$${discount}`);
+        $("#summary_tax").html(`$${tax}`);
+        $("#summary_total").html(`$${total}`);
+        
+    }
+
+    function getStates(){
+        var countryId = $("#id_country").val();
+        var url = $("#bookingForm").attr("data-states-url"); 
+        $.ajax({ 
+            url, 
+            data: {
+                'country': countryId
+            },
+            success: function(data) {
+                $("#id_state").html(data);
+                getCitiesList()
+            }
+        });
+    }
+
+    function getCitiesList(){
+        var stateId = $("#id_state").val();
+        var url = $("#bookingForm").attr("data-cities-url");
+        $.ajax({
+            url,
+            data: {
+                'state': stateId
+            },
+            success: function(data) {
+                $("#id_city").html(data);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        getStates();
+        getBasePrice();
+        setSummaryDetails();
+        publishTime(startingTime);
+    });
+
+    $("#id_country").change(function() {
+        getStates();
+    });
+
+    $("#id_state").change(function() {
+        getCitiesList();
+    });
+
+    $("#id_frequency").change(function() {
+        calculateValues();
+        setSummaryDetails();
+    });
+
+    $("#id_area").change(function() {
+        var areaId = $(this).val();
+
+        $('#id_extra_opts input:checkbox').prop('checked', false)
+
+        if (areaId != 1) {
+            $("#id_maid_qty").show();
+            $('#id_hours_qty').show();
+            $('#id_cleaning_type').hide();
+            $('#id_room_type').hide();
+            $('#id_bathroom').hide();
+            $("#id_extra_opts").hide();
+
+            $('#id_cleaning_type').val(1);
+            $('#id_room_type').val(1);
+            $('#id_bathroom').val(1);
+
+            calculateValues();
+        } else {
+            $("#id_maid_qty").hide();
+            $('#id_hours_qty').hide();
+            $('#id_cleaning_type').show();
+            $('#id_room_type').show();
+            $('#id_bathroom').show();
+            $("#id_extra_opts").show();
+
+            $("#id_maid_qty").val(1);
+            $('#id_hours_qty').val('2.0');
+            getBasePrice();
+        }
+        setSummaryDetails();
+    });
+
+    $("#id_cleaning_type").change(function() {
+        calculateValues();
+    });
+
+    $("#id_room_type").change(function() {
+        calculateValues();
+    });
+
+    $("#id_bathroom").change(function() {
+        calculateValues();
+    });
+
+    $("#id_maid_qty").change(function() {
+        calculateValues();
+    });
+
+    $("#id_hours_qty").change(function() {
+        calculateValues();
+    });
+
+    $("#id_extra_opts").change(function(){
+        calculateValues();
+    });
+    
+    $("#id_date").change(function(){
+        if(!$("#id_time").val())
+            $("#id_time").datetimepicker({value:'08:00'});
+        
+        setSummaryDetails();
+    });
+
+    $("#id_time").change(function(){
+        setSummaryDetails();
+    });
+
+    $.datetimepicker.setLocale('en');
+    $("#id_date").datetimepicker({
+        lang:'en',
+        timepicker:false,
+        onGenerate: getMinMaxDates(),
+        format:'m/d/Y',
+        formatDate:'Y-m-d',
+        minDate: minDate, // tomorrow is minimum date
+        maxDate:maxDate //60 days forward is max date
+    });
+
+    $('#id_time').datetimepicker({
+        datepicker:false,
+        onGenerate: getAllowedHours(),
+        format:'H:i',
+        allowTimes: allowedHours,
+        step:30
+    });
+
+</script>
+
+{% endblock js_scripts %}
