@@ -217,6 +217,7 @@ CMS_TEMPLATES = (
     ('laundry_cleaning.html', 'Laundry Cleaning'),
     ('organizing.html', 'Organizing With Love'),
     ('decorating.html', 'Decorating With Love'),
+    ('pricing.html', 'Pricing'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
