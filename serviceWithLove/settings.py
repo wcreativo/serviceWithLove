@@ -88,7 +88,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'serviceWithLove/media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
@@ -178,7 +178,8 @@ INSTALLED_APPS = [
     'djangocms_style',
     'djangocms_googlemap',
     'djangocms_video',
-    'serviceWithLove'
+    'serviceWithLove',
+    'fontawesome-free'
 ]
 
 LANGUAGES = (
@@ -205,10 +206,18 @@ CMS_LANGUAGES = {
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
     ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('home.html', 'Home'),
+    ('regular_cleaning.html', 'Regular Cleaning'),
+    ('deep_cleaning.html', 'Deep Cleaning'),
+    ('green_cleaning.html', 'Green Cleaning'),
+    ('move_in_cleaning.html', 'MoveIn Cleaning'),
+    ('office_cleaning.html', 'Office Cleaning'),
+    ('airbnb_cleaning.html', 'AIRBNB Cleaning'),
+    ('laundry_cleaning.html', 'Laundry Cleaning'),
+    ('organizing.html', 'Organizing With Love'),
+    ('decorating.html', 'Decorating With Love'),
+    ('pricing.html', 'Pricing'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'

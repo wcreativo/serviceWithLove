@@ -1,0 +1,55 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+
+<div id="bs-canvas-right" class="bs-canvas bs-canvas-anim bs-canvas-right fixed bg-gray-50 h-full"
+     data-width="400px">|
+    <header class="bs-canvas-header p-3 overflow-hidden">
+        <button type="button" class="bs-canvas-close close" aria-label="Close"><span aria-hidden="true"
+                                                                                     class="text-light">&times;</span>
+        </button>
+        <img class="px-14" src="{% static 'img/logo_black_3.png' %}" alt="logo_service_with_love">
+    </header>
+    <div class="bs-canvas-content px-10 py-5">
+        {% show_menu 0 100 100 100 %}
+    </div>
+    <section class="grid grid-cols-1 grid-rows-1 gap-2 items-end h-3/5 md:h-4/6 lg:h-4/6 px-10 py-10">
+        <div class="mt-2 flex items-center text-sm text-gray-500 w-full h-4">
+            <!-- Heroicon name: solid/briefcase -->
+            <svg class="h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#E2BB4D">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <h4 class="ml-1 text-base">(929) 270-2795</h4>
+        </div>
+        <div class="mt-2 flex items-center text-sm text-gray-500 w-full h-4">
+            <!-- Heroicon name: solid/briefcase -->
+            <svg class="h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#E2BB4D">
+                <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clip-rule="evenodd"/>
+            </svg>
+            <h4 class="ml-1 text-base">Open 7 Days: 8:00 am - 7:00 pm</h4>
+        </div>
+        <div class="mt-2 flex items-center text-sm text-gray-500 w-full h-4">
+            <!-- Heroicon name: solid/briefcase -->
+            <svg class="h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#E2BB4D">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+            <h4 class="ml-1 text-base">customerservice@klinkservice.com</h4>
+        </div>
+    </section>
+</div>
+
+
+<nav class="absolute w-full bg-transparent px-10 md:px-24 lg:px-80 py-4">
+    <div class="grid grid-flow-col grid-rows-2 items-top bs-offset-main bs-canvas-anim">
+        <a href="/"><img class="h-20 lg:h-24" src="{% static 'img/logo_white_4.png' %}" alt=""></a>
+        <h4 class="text-white">Let us bring our magic to your Home</h4>
+        <button class="row-span-2 self-start bg-transparent text-white text-xl pt-8" type="button" data-toggle="canvas" data-target="#bs-canvas-right"
+                aria-expanded="false" aria-controls="bs-canvas-right">&#9776;
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    </div>
+</nav>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <header class="text-gray-100 body-font shadow w-full h-36"
+            style="background: rgb(244,199,73); background: radial-gradient(circle, rgba(244,199,73,1) 0%, rgba(203,166,62,1) 35%, rgba(171,137,41,1) 100%);">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
+    </header>
+    <section class="container mx-auto text-center md:px-16 px-10 mb-12 lg:mt-0 py-12">
+        {% placeholder content_pricing %}
+    </section>
+    {% include 'snippets/cards_pricing.html' %}
+    <section class="container mx-auto text-center md:px-16 px-10 mb-12 lg:mt-0 py-12">
+        {% placeholder extra_services %}
+        {% include 'snippets/extra_services.html' %}
+    </section>
+{% endblock content %}
