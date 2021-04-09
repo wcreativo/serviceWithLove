@@ -1,0 +1,3502 @@
+[
+  {
+    "model": "geoinfo.country",
+    "pk": 0,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Afghanistan",
+      "region": "Asia",
+      "alpha2": "AF",
+      "alpha3": "AFG",
+      "numeric": "004",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 1,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "\u00c5land Islands",
+      "region": "Europe",
+      "alpha2": "AX",
+      "alpha3": "ALA",
+      "numeric": "248",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 2,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Albania",
+      "region": "Europe",
+      "alpha2": "AL",
+      "alpha3": "ALB",
+      "numeric": "008",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 3,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Algeria",
+      "region": "Africa",
+      "alpha2": "DZ",
+      "alpha3": "DZA",
+      "numeric": "012",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 4,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "American Samoa",
+      "region": "Oceania",
+      "alpha2": "AS",
+      "alpha3": "ASM",
+      "numeric": "016",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 5,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Andorra",
+      "region": "Europe",
+      "alpha2": "AD",
+      "alpha3": "AND",
+      "numeric": "020",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 6,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Angola",
+      "region": "Africa",
+      "alpha2": "AO",
+      "alpha3": "AGO",
+      "numeric": "024",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 7,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Anguilla",
+      "region": "Americas",
+      "alpha2": "AI",
+      "alpha3": "AIA",
+      "numeric": "660",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 8,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Antarctica",
+      "region": "Polar",
+      "alpha2": "AQ",
+      "alpha3": "ATA",
+      "numeric": "010",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 9,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Antigua and Barbuda",
+      "region": "Americas",
+      "alpha2": "AG",
+      "alpha3": "ATG",
+      "numeric": "028",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 10,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Argentina",
+      "region": "Americas",
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "numeric": "032",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 11,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Armenia",
+      "region": "Asia",
+      "alpha2": "AM",
+      "alpha3": "ARM",
+      "numeric": "051",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 12,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Aruba",
+      "region": "Americas",
+      "alpha2": "AW",
+      "alpha3": "ABW",
+      "numeric": "533",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 13,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Australia",
+      "region": "Oceania",
+      "alpha2": "AU",
+      "alpha3": "AUS",
+      "numeric": "036",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 14,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Austria",
+      "region": "Europe",
+      "alpha2": "AT",
+      "alpha3": "AUT",
+      "numeric": "040",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 15,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Azerbaijan",
+      "region": "Asia",
+      "alpha2": "AZ",
+      "alpha3": "AZE",
+      "numeric": "031",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 16,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bahamas",
+      "region": "Americas",
+      "alpha2": "BS",
+      "alpha3": "BHS",
+      "numeric": "044",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 17,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bahrain",
+      "region": "Asia",
+      "alpha2": "BH",
+      "alpha3": "BHR",
+      "numeric": "048",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 18,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bangladesh",
+      "region": "Asia",
+      "alpha2": "BD",
+      "alpha3": "BGD",
+      "numeric": "050",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 19,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Barbados",
+      "region": "Americas",
+      "alpha2": "BB",
+      "alpha3": "BRB",
+      "numeric": "052",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 20,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Belarus",
+      "region": "Europe",
+      "alpha2": "BY",
+      "alpha3": "BLR",
+      "numeric": "112",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 21,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Belgium",
+      "region": "Europe",
+      "alpha2": "BE",
+      "alpha3": "BEL",
+      "numeric": "056",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 22,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Belize",
+      "region": "Americas",
+      "alpha2": "BZ",
+      "alpha3": "BLZ",
+      "numeric": "084",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 23,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Benin",
+      "region": "Africa",
+      "alpha2": "BJ",
+      "alpha3": "BEN",
+      "numeric": "204",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 24,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bermuda",
+      "region": "Americas",
+      "alpha2": "BM",
+      "alpha3": "BMU",
+      "numeric": "060",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 25,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bhutan",
+      "region": "Asia",
+      "alpha2": "BT",
+      "alpha3": "BTN",
+      "numeric": "064",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 26,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bolivia (Plurinational State of)",
+      "region": "Americas",
+      "alpha2": "BO",
+      "alpha3": "BOL",
+      "numeric": "068",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 27,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "region": "Americas",
+      "alpha2": "BQ",
+      "alpha3": "BES",
+      "numeric": "535",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 28,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bosnia and Herzegovina",
+      "region": "Europe",
+      "alpha2": "BA",
+      "alpha3": "BIH",
+      "numeric": "070",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 29,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Botswana",
+      "region": "Africa",
+      "alpha2": "BW",
+      "alpha3": "BWA",
+      "numeric": "072",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 30,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bouvet Island",
+      "region": "",
+      "alpha2": "BV",
+      "alpha3": "BVT",
+      "numeric": "074",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 31,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Brazil",
+      "region": "Americas",
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "numeric": "076",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 32,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "British Indian Ocean Territory",
+      "region": "Africa",
+      "alpha2": "IO",
+      "alpha3": "IOT",
+      "numeric": "086",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 33,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "United States Minor Outlying Islands",
+      "region": "Americas",
+      "alpha2": "UM",
+      "alpha3": "UMI",
+      "numeric": "581",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 34,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Virgin Islands (British)",
+      "region": "Americas",
+      "alpha2": "VG",
+      "alpha3": "VGB",
+      "numeric": "092",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 35,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Virgin Islands (U.S.)",
+      "region": "Americas",
+      "alpha2": "VI",
+      "alpha3": "VIR",
+      "numeric": "850",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 36,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Brunei Darussalam",
+      "region": "Asia",
+      "alpha2": "BN",
+      "alpha3": "BRN",
+      "numeric": "096",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 37,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Bulgaria",
+      "region": "Europe",
+      "alpha2": "BG",
+      "alpha3": "BGR",
+      "numeric": "100",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 38,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Burkina Faso",
+      "region": "Africa",
+      "alpha2": "BF",
+      "alpha3": "BFA",
+      "numeric": "854",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 39,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Burundi",
+      "region": "Africa",
+      "alpha2": "BI",
+      "alpha3": "BDI",
+      "numeric": "108",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 40,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cambodia",
+      "region": "Asia",
+      "alpha2": "KH",
+      "alpha3": "KHM",
+      "numeric": "116",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 41,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cameroon",
+      "region": "Africa",
+      "alpha2": "CM",
+      "alpha3": "CMR",
+      "numeric": "120",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 42,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Canada",
+      "region": "Americas",
+      "alpha2": "CA",
+      "alpha3": "CAN",
+      "numeric": "124",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 43,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cabo Verde",
+      "region": "Africa",
+      "alpha2": "CV",
+      "alpha3": "CPV",
+      "numeric": "132",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 44,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cayman Islands",
+      "region": "Americas",
+      "alpha2": "KY",
+      "alpha3": "CYM",
+      "numeric": "136",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 45,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Central African Republic",
+      "region": "Africa",
+      "alpha2": "CF",
+      "alpha3": "CAF",
+      "numeric": "140",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 46,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Chad",
+      "region": "Africa",
+      "alpha2": "TD",
+      "alpha3": "TCD",
+      "numeric": "148",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 47,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Chile",
+      "region": "Americas",
+      "alpha2": "CL",
+      "alpha3": "CHL",
+      "numeric": "152",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 48,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "China",
+      "region": "Asia",
+      "alpha2": "CN",
+      "alpha3": "CHN",
+      "numeric": "156",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 49,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Christmas Island",
+      "region": "Oceania",
+      "alpha2": "CX",
+      "alpha3": "CXR",
+      "numeric": "162",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 50,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cocos (Keeling) Islands",
+      "region": "Oceania",
+      "alpha2": "CC",
+      "alpha3": "CCK",
+      "numeric": "166",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 51,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Colombia",
+      "region": "Americas",
+      "alpha2": "CO",
+      "alpha3": "COL",
+      "numeric": "170",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 52,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Comoros",
+      "region": "Africa",
+      "alpha2": "KM",
+      "alpha3": "COM",
+      "numeric": "174",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 53,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Congo",
+      "region": "Africa",
+      "alpha2": "CG",
+      "alpha3": "COG",
+      "numeric": "178",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 54,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Congo (Democratic Republic of the)",
+      "region": "Africa",
+      "alpha2": "CD",
+      "alpha3": "COD",
+      "numeric": "180",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 55,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cook Islands",
+      "region": "Oceania",
+      "alpha2": "CK",
+      "alpha3": "COK",
+      "numeric": "184",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 56,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Costa Rica",
+      "region": "Americas",
+      "alpha2": "CR",
+      "alpha3": "CRI",
+      "numeric": "188",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 57,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Croatia",
+      "region": "Europe",
+      "alpha2": "HR",
+      "alpha3": "HRV",
+      "numeric": "191",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 58,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cuba",
+      "region": "Americas",
+      "alpha2": "CU",
+      "alpha3": "CUB",
+      "numeric": "192",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 59,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cura\u00e7ao",
+      "region": "Americas",
+      "alpha2": "CW",
+      "alpha3": "CUW",
+      "numeric": "531",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 60,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Cyprus",
+      "region": "Europe",
+      "alpha2": "CY",
+      "alpha3": "CYP",
+      "numeric": "196",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 61,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Czech Republic",
+      "region": "Europe",
+      "alpha2": "CZ",
+      "alpha3": "CZE",
+      "numeric": "203",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 62,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Denmark",
+      "region": "Europe",
+      "alpha2": "DK",
+      "alpha3": "DNK",
+      "numeric": "208",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 63,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Djibouti",
+      "region": "Africa",
+      "alpha2": "DJ",
+      "alpha3": "DJI",
+      "numeric": "262",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 64,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Dominica",
+      "region": "Americas",
+      "alpha2": "DM",
+      "alpha3": "DMA",
+      "numeric": "212",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 65,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Dominican Republic",
+      "region": "Americas",
+      "alpha2": "DO",
+      "alpha3": "DOM",
+      "numeric": "214",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 66,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ecuador",
+      "region": "Americas",
+      "alpha2": "EC",
+      "alpha3": "ECU",
+      "numeric": "218",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 67,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Egypt",
+      "region": "Africa",
+      "alpha2": "EG",
+      "alpha3": "EGY",
+      "numeric": "818",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 68,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "El Salvador",
+      "region": "Americas",
+      "alpha2": "SV",
+      "alpha3": "SLV",
+      "numeric": "222",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 69,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Equatorial Guinea",
+      "region": "Africa",
+      "alpha2": "GQ",
+      "alpha3": "GNQ",
+      "numeric": "226",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 70,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Eritrea",
+      "region": "Africa",
+      "alpha2": "ER",
+      "alpha3": "ERI",
+      "numeric": "232",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 71,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Estonia",
+      "region": "Europe",
+      "alpha2": "EE",
+      "alpha3": "EST",
+      "numeric": "233",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 72,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ethiopia",
+      "region": "Africa",
+      "alpha2": "ET",
+      "alpha3": "ETH",
+      "numeric": "231",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 73,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Falkland Islands (Malvinas)",
+      "region": "Americas",
+      "alpha2": "FK",
+      "alpha3": "FLK",
+      "numeric": "238",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 74,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Faroe Islands",
+      "region": "Europe",
+      "alpha2": "FO",
+      "alpha3": "FRO",
+      "numeric": "234",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 75,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Fiji",
+      "region": "Oceania",
+      "alpha2": "FJ",
+      "alpha3": "FJI",
+      "numeric": "242",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 76,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Finland",
+      "region": "Europe",
+      "alpha2": "FI",
+      "alpha3": "FIN",
+      "numeric": "246",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 77,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "France",
+      "region": "Europe",
+      "alpha2": "FR",
+      "alpha3": "FRA",
+      "numeric": "250",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 78,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "French Guiana",
+      "region": "Americas",
+      "alpha2": "GF",
+      "alpha3": "GUF",
+      "numeric": "254",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 79,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "French Polynesia",
+      "region": "Oceania",
+      "alpha2": "PF",
+      "alpha3": "PYF",
+      "numeric": "258",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 80,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "French Southern Territories",
+      "region": "Africa",
+      "alpha2": "TF",
+      "alpha3": "ATF",
+      "numeric": "260",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 81,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Gabon",
+      "region": "Africa",
+      "alpha2": "GA",
+      "alpha3": "GAB",
+      "numeric": "266",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 82,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Gambia",
+      "region": "Africa",
+      "alpha2": "GM",
+      "alpha3": "GMB",
+      "numeric": "270",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 83,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Georgia",
+      "region": "Asia",
+      "alpha2": "GE",
+      "alpha3": "GEO",
+      "numeric": "268",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 84,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Germany",
+      "region": "Europe",
+      "alpha2": "DE",
+      "alpha3": "DEU",
+      "numeric": "276",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 85,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ghana",
+      "region": "Africa",
+      "alpha2": "GH",
+      "alpha3": "GHA",
+      "numeric": "288",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 86,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Gibraltar",
+      "region": "Europe",
+      "alpha2": "GI",
+      "alpha3": "GIB",
+      "numeric": "292",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 87,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Greece",
+      "region": "Europe",
+      "alpha2": "GR",
+      "alpha3": "GRC",
+      "numeric": "300",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 88,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Greenland",
+      "region": "Americas",
+      "alpha2": "GL",
+      "alpha3": "GRL",
+      "numeric": "304",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 89,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Grenada",
+      "region": "Americas",
+      "alpha2": "GD",
+      "alpha3": "GRD",
+      "numeric": "308",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 90,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guadeloupe",
+      "region": "Americas",
+      "alpha2": "GP",
+      "alpha3": "GLP",
+      "numeric": "312",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 91,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guam",
+      "region": "Oceania",
+      "alpha2": "GU",
+      "alpha3": "GUM",
+      "numeric": "316",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 92,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guatemala",
+      "region": "Americas",
+      "alpha2": "GT",
+      "alpha3": "GTM",
+      "numeric": "320",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 93,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guernsey",
+      "region": "Europe",
+      "alpha2": "GG",
+      "alpha3": "GGY",
+      "numeric": "831",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 94,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guinea",
+      "region": "Africa",
+      "alpha2": "GN",
+      "alpha3": "GIN",
+      "numeric": "324",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 95,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guinea-Bissau",
+      "region": "Africa",
+      "alpha2": "GW",
+      "alpha3": "GNB",
+      "numeric": "624",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 96,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Guyana",
+      "region": "Americas",
+      "alpha2": "GY",
+      "alpha3": "GUY",
+      "numeric": "328",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 97,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Haiti",
+      "region": "Americas",
+      "alpha2": "HT",
+      "alpha3": "HTI",
+      "numeric": "332",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 98,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Heard Island and McDonald Islands",
+      "region": "",
+      "alpha2": "HM",
+      "alpha3": "HMD",
+      "numeric": "334",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 99,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Holy See",
+      "region": "Europe",
+      "alpha2": "VA",
+      "alpha3": "VAT",
+      "numeric": "336",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 100,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Honduras",
+      "region": "Americas",
+      "alpha2": "HN",
+      "alpha3": "HND",
+      "numeric": "340",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 101,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Hong Kong",
+      "region": "Asia",
+      "alpha2": "HK",
+      "alpha3": "HKG",
+      "numeric": "344",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 102,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Hungary",
+      "region": "Europe",
+      "alpha2": "HU",
+      "alpha3": "HUN",
+      "numeric": "348",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 103,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Iceland",
+      "region": "Europe",
+      "alpha2": "IS",
+      "alpha3": "ISL",
+      "numeric": "352",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 104,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "India",
+      "region": "Asia",
+      "alpha2": "IN",
+      "alpha3": "IND",
+      "numeric": "356",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 105,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Indonesia",
+      "region": "Asia",
+      "alpha2": "ID",
+      "alpha3": "IDN",
+      "numeric": "360",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 106,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "C\u00f4te d'Ivoire",
+      "region": "Africa",
+      "alpha2": "CI",
+      "alpha3": "CIV",
+      "numeric": "384",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 107,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Iran (Islamic Republic of)",
+      "region": "Asia",
+      "alpha2": "IR",
+      "alpha3": "IRN",
+      "numeric": "364",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 108,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Iraq",
+      "region": "Asia",
+      "alpha2": "IQ",
+      "alpha3": "IRQ",
+      "numeric": "368",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 109,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ireland",
+      "region": "Europe",
+      "alpha2": "IE",
+      "alpha3": "IRL",
+      "numeric": "372",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 110,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Isle of Man",
+      "region": "Europe",
+      "alpha2": "IM",
+      "alpha3": "IMN",
+      "numeric": "833",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 111,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Israel",
+      "region": "Asia",
+      "alpha2": "IL",
+      "alpha3": "ISR",
+      "numeric": "376",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 112,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Italy",
+      "region": "Europe",
+      "alpha2": "IT",
+      "alpha3": "ITA",
+      "numeric": "380",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 113,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Jamaica",
+      "region": "Americas",
+      "alpha2": "JM",
+      "alpha3": "JAM",
+      "numeric": "388",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 114,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Japan",
+      "region": "Asia",
+      "alpha2": "JP",
+      "alpha3": "JPN",
+      "numeric": "392",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 115,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Jersey",
+      "region": "Europe",
+      "alpha2": "JE",
+      "alpha3": "JEY",
+      "numeric": "832",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 116,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Jordan",
+      "region": "Asia",
+      "alpha2": "JO",
+      "alpha3": "JOR",
+      "numeric": "400",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 117,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kazakhstan",
+      "region": "Asia",
+      "alpha2": "KZ",
+      "alpha3": "KAZ",
+      "numeric": "398",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 118,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kenya",
+      "region": "Africa",
+      "alpha2": "KE",
+      "alpha3": "KEN",
+      "numeric": "404",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 119,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kiribati",
+      "region": "Oceania",
+      "alpha2": "KI",
+      "alpha3": "KIR",
+      "numeric": "296",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 120,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kuwait",
+      "region": "Asia",
+      "alpha2": "KW",
+      "alpha3": "KWT",
+      "numeric": "414",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 121,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kyrgyzstan",
+      "region": "Asia",
+      "alpha2": "KG",
+      "alpha3": "KGZ",
+      "numeric": "417",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 122,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Lao People's Democratic Republic",
+      "region": "Asia",
+      "alpha2": "LA",
+      "alpha3": "LAO",
+      "numeric": "418",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 123,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Latvia",
+      "region": "Europe",
+      "alpha2": "LV",
+      "alpha3": "LVA",
+      "numeric": "428",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 124,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Lebanon",
+      "region": "Asia",
+      "alpha2": "LB",
+      "alpha3": "LBN",
+      "numeric": "422",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 125,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Lesotho",
+      "region": "Africa",
+      "alpha2": "LS",
+      "alpha3": "LSO",
+      "numeric": "426",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 126,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Liberia",
+      "region": "Africa",
+      "alpha2": "LR",
+      "alpha3": "LBR",
+      "numeric": "430",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 127,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Libya",
+      "region": "Africa",
+      "alpha2": "LY",
+      "alpha3": "LBY",
+      "numeric": "434",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 128,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Liechtenstein",
+      "region": "Europe",
+      "alpha2": "LI",
+      "alpha3": "LIE",
+      "numeric": "438",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 129,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Lithuania",
+      "region": "Europe",
+      "alpha2": "LT",
+      "alpha3": "LTU",
+      "numeric": "440",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 130,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Luxembourg",
+      "region": "Europe",
+      "alpha2": "LU",
+      "alpha3": "LUX",
+      "numeric": "442",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 131,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Macao",
+      "region": "Asia",
+      "alpha2": "MO",
+      "alpha3": "MAC",
+      "numeric": "446",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 132,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Macedonia (the former Yugoslav Republic of)",
+      "region": "Europe",
+      "alpha2": "MK",
+      "alpha3": "MKD",
+      "numeric": "807",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 133,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Madagascar",
+      "region": "Africa",
+      "alpha2": "MG",
+      "alpha3": "MDG",
+      "numeric": "450",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 134,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Malawi",
+      "region": "Africa",
+      "alpha2": "MW",
+      "alpha3": "MWI",
+      "numeric": "454",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 135,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Malaysia",
+      "region": "Asia",
+      "alpha2": "MY",
+      "alpha3": "MYS",
+      "numeric": "458",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 136,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Maldives",
+      "region": "Asia",
+      "alpha2": "MV",
+      "alpha3": "MDV",
+      "numeric": "462",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 137,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mali",
+      "region": "Africa",
+      "alpha2": "ML",
+      "alpha3": "MLI",
+      "numeric": "466",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 138,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Malta",
+      "region": "Europe",
+      "alpha2": "MT",
+      "alpha3": "MLT",
+      "numeric": "470",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 139,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Marshall Islands",
+      "region": "Oceania",
+      "alpha2": "MH",
+      "alpha3": "MHL",
+      "numeric": "584",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 140,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Martinique",
+      "region": "Americas",
+      "alpha2": "MQ",
+      "alpha3": "MTQ",
+      "numeric": "474",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 141,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mauritania",
+      "region": "Africa",
+      "alpha2": "MR",
+      "alpha3": "MRT",
+      "numeric": "478",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 142,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mauritius",
+      "region": "Africa",
+      "alpha2": "MU",
+      "alpha3": "MUS",
+      "numeric": "480",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 143,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mayotte",
+      "region": "Africa",
+      "alpha2": "YT",
+      "alpha3": "MYT",
+      "numeric": "175",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 144,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mexico",
+      "region": "Americas",
+      "alpha2": "MX",
+      "alpha3": "MEX",
+      "numeric": "484",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 145,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Micronesia (Federated States of)",
+      "region": "Oceania",
+      "alpha2": "FM",
+      "alpha3": "FSM",
+      "numeric": "583",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 146,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Moldova (Republic of)",
+      "region": "Europe",
+      "alpha2": "MD",
+      "alpha3": "MDA",
+      "numeric": "498",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 147,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Monaco",
+      "region": "Europe",
+      "alpha2": "MC",
+      "alpha3": "MCO",
+      "numeric": "492",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 148,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mongolia",
+      "region": "Asia",
+      "alpha2": "MN",
+      "alpha3": "MNG",
+      "numeric": "496",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 149,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Montenegro",
+      "region": "Europe",
+      "alpha2": "ME",
+      "alpha3": "MNE",
+      "numeric": "499",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 150,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Montserrat",
+      "region": "Americas",
+      "alpha2": "MS",
+      "alpha3": "MSR",
+      "numeric": "500",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 151,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Morocco",
+      "region": "Africa",
+      "alpha2": "MA",
+      "alpha3": "MAR",
+      "numeric": "504",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 152,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mozambique",
+      "region": "Africa",
+      "alpha2": "MZ",
+      "alpha3": "MOZ",
+      "numeric": "508",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 153,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Myanmar",
+      "region": "Asia",
+      "alpha2": "MM",
+      "alpha3": "MMR",
+      "numeric": "104",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 154,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Namibia",
+      "region": "Africa",
+      "alpha2": "NA",
+      "alpha3": "NAM",
+      "numeric": "516",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 155,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nauru",
+      "region": "Oceania",
+      "alpha2": "NR",
+      "alpha3": "NRU",
+      "numeric": "520",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 156,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nepal",
+      "region": "Asia",
+      "alpha2": "NP",
+      "alpha3": "NPL",
+      "numeric": "524",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 157,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Netherlands",
+      "region": "Europe",
+      "alpha2": "NL",
+      "alpha3": "NLD",
+      "numeric": "528",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 158,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New Caledonia",
+      "region": "Oceania",
+      "alpha2": "NC",
+      "alpha3": "NCL",
+      "numeric": "540",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 159,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New Zealand",
+      "region": "Oceania",
+      "alpha2": "NZ",
+      "alpha3": "NZL",
+      "numeric": "554",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 160,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nicaragua",
+      "region": "Americas",
+      "alpha2": "NI",
+      "alpha3": "NIC",
+      "numeric": "558",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 161,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Niger",
+      "region": "Africa",
+      "alpha2": "NE",
+      "alpha3": "NER",
+      "numeric": "562",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 162,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nigeria",
+      "region": "Africa",
+      "alpha2": "NG",
+      "alpha3": "NGA",
+      "numeric": "566",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 163,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Niue",
+      "region": "Oceania",
+      "alpha2": "NU",
+      "alpha3": "NIU",
+      "numeric": "570",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 164,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Norfolk Island",
+      "region": "Oceania",
+      "alpha2": "NF",
+      "alpha3": "NFK",
+      "numeric": "574",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 165,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Korea (Democratic People's Republic of)",
+      "region": "Asia",
+      "alpha2": "KP",
+      "alpha3": "PRK",
+      "numeric": "408",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 166,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Northern Mariana Islands",
+      "region": "Oceania",
+      "alpha2": "MP",
+      "alpha3": "MNP",
+      "numeric": "580",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 167,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Norway",
+      "region": "Europe",
+      "alpha2": "NO",
+      "alpha3": "NOR",
+      "numeric": "578",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 168,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Oman",
+      "region": "Asia",
+      "alpha2": "OM",
+      "alpha3": "OMN",
+      "numeric": "512",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 169,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Pakistan",
+      "region": "Asia",
+      "alpha2": "PK",
+      "alpha3": "PAK",
+      "numeric": "586",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 170,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Palau",
+      "region": "Oceania",
+      "alpha2": "PW",
+      "alpha3": "PLW",
+      "numeric": "585",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 171,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Palestine, State of",
+      "region": "Asia",
+      "alpha2": "PS",
+      "alpha3": "PSE",
+      "numeric": "275",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 172,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Panama",
+      "region": "Americas",
+      "alpha2": "PA",
+      "alpha3": "PAN",
+      "numeric": "591",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 173,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Papua New Guinea",
+      "region": "Oceania",
+      "alpha2": "PG",
+      "alpha3": "PNG",
+      "numeric": "598",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 174,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Paraguay",
+      "region": "Americas",
+      "alpha2": "PY",
+      "alpha3": "PRY",
+      "numeric": "600",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 175,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Peru",
+      "region": "Americas",
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "numeric": "604",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 176,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Philippines",
+      "region": "Asia",
+      "alpha2": "PH",
+      "alpha3": "PHL",
+      "numeric": "608",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 177,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Pitcairn",
+      "region": "Oceania",
+      "alpha2": "PN",
+      "alpha3": "PCN",
+      "numeric": "612",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 178,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Poland",
+      "region": "Europe",
+      "alpha2": "PL",
+      "alpha3": "POL",
+      "numeric": "616",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 179,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Portugal",
+      "region": "Europe",
+      "alpha2": "PT",
+      "alpha3": "PRT",
+      "numeric": "620",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 180,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Puerto Rico",
+      "region": "Americas",
+      "alpha2": "PR",
+      "alpha3": "PRI",
+      "numeric": "630",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 181,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Qatar",
+      "region": "Asia",
+      "alpha2": "QA",
+      "alpha3": "QAT",
+      "numeric": "634",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 182,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Republic of Kosovo",
+      "region": "Europe",
+      "alpha2": "XK",
+      "alpha3": "KOS",
+      "numeric": "None",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 183,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "R\u00e9union",
+      "region": "Africa",
+      "alpha2": "RE",
+      "alpha3": "REU",
+      "numeric": "638",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 184,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Romania",
+      "region": "Europe",
+      "alpha2": "RO",
+      "alpha3": "ROU",
+      "numeric": "642",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 185,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Russian Federation",
+      "region": "Europe",
+      "alpha2": "RU",
+      "alpha3": "RUS",
+      "numeric": "643",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 186,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Rwanda",
+      "region": "Africa",
+      "alpha2": "RW",
+      "alpha3": "RWA",
+      "numeric": "646",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 187,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Barth\u00e9lemy",
+      "region": "Americas",
+      "alpha2": "BL",
+      "alpha3": "BLM",
+      "numeric": "652",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 188,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "region": "Africa",
+      "alpha2": "SH",
+      "alpha3": "SHN",
+      "numeric": "654",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 189,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Kitts and Nevis",
+      "region": "Americas",
+      "alpha2": "KN",
+      "alpha3": "KNA",
+      "numeric": "659",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 190,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Lucia",
+      "region": "Americas",
+      "alpha2": "LC",
+      "alpha3": "LCA",
+      "numeric": "662",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 191,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Martin (French part)",
+      "region": "Americas",
+      "alpha2": "MF",
+      "alpha3": "MAF",
+      "numeric": "663",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 192,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Pierre and Miquelon",
+      "region": "Americas",
+      "alpha2": "PM",
+      "alpha3": "SPM",
+      "numeric": "666",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 193,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saint Vincent and the Grenadines",
+      "region": "Americas",
+      "alpha2": "VC",
+      "alpha3": "VCT",
+      "numeric": "670",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 194,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Samoa",
+      "region": "Oceania",
+      "alpha2": "WS",
+      "alpha3": "WSM",
+      "numeric": "882",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 195,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "San Marino",
+      "region": "Europe",
+      "alpha2": "SM",
+      "alpha3": "SMR",
+      "numeric": "674",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 196,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sao Tome and Principe",
+      "region": "Africa",
+      "alpha2": "ST",
+      "alpha3": "STP",
+      "numeric": "678",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 197,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Saudi Arabia",
+      "region": "Asia",
+      "alpha2": "SA",
+      "alpha3": "SAU",
+      "numeric": "682",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 198,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Senegal",
+      "region": "Africa",
+      "alpha2": "SN",
+      "alpha3": "SEN",
+      "numeric": "686",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 199,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Serbia",
+      "region": "Europe",
+      "alpha2": "RS",
+      "alpha3": "SRB",
+      "numeric": "688",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 200,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Seychelles",
+      "region": "Africa",
+      "alpha2": "SC",
+      "alpha3": "SYC",
+      "numeric": "690",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 201,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sierra Leone",
+      "region": "Africa",
+      "alpha2": "SL",
+      "alpha3": "SLE",
+      "numeric": "694",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 202,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Singapore",
+      "region": "Asia",
+      "alpha2": "SG",
+      "alpha3": "SGP",
+      "numeric": "702",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 203,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sint Maarten (Dutch part)",
+      "region": "Americas",
+      "alpha2": "SX",
+      "alpha3": "SXM",
+      "numeric": "534",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 204,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Slovakia",
+      "region": "Europe",
+      "alpha2": "SK",
+      "alpha3": "SVK",
+      "numeric": "703",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 205,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Slovenia",
+      "region": "Europe",
+      "alpha2": "SI",
+      "alpha3": "SVN",
+      "numeric": "705",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 206,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Solomon Islands",
+      "region": "Oceania",
+      "alpha2": "SB",
+      "alpha3": "SLB",
+      "numeric": "090",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 207,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Somalia",
+      "region": "Africa",
+      "alpha2": "SO",
+      "alpha3": "SOM",
+      "numeric": "706",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 208,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "South Africa",
+      "region": "Africa",
+      "alpha2": "ZA",
+      "alpha3": "ZAF",
+      "numeric": "710",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 209,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "South Georgia and the South Sandwich Islands",
+      "region": "Americas",
+      "alpha2": "GS",
+      "alpha3": "SGS",
+      "numeric": "239",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 210,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Korea (Republic of)",
+      "region": "Asia",
+      "alpha2": "KR",
+      "alpha3": "KOR",
+      "numeric": "410",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 211,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "South Sudan",
+      "region": "Africa",
+      "alpha2": "SS",
+      "alpha3": "SSD",
+      "numeric": "728",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 212,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Spain",
+      "region": "Europe",
+      "alpha2": "ES",
+      "alpha3": "ESP",
+      "numeric": "724",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 213,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sri Lanka",
+      "region": "Asia",
+      "alpha2": "LK",
+      "alpha3": "LKA",
+      "numeric": "144",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 214,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sudan",
+      "region": "Africa",
+      "alpha2": "SD",
+      "alpha3": "SDN",
+      "numeric": "729",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 215,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Suriname",
+      "region": "Americas",
+      "alpha2": "SR",
+      "alpha3": "SUR",
+      "numeric": "740",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 216,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Svalbard and Jan Mayen",
+      "region": "Europe",
+      "alpha2": "SJ",
+      "alpha3": "SJM",
+      "numeric": "744",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 217,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Swaziland",
+      "region": "Africa",
+      "alpha2": "SZ",
+      "alpha3": "SWZ",
+      "numeric": "748",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 218,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Sweden",
+      "region": "Europe",
+      "alpha2": "SE",
+      "alpha3": "SWE",
+      "numeric": "752",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 219,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Switzerland",
+      "region": "Europe",
+      "alpha2": "CH",
+      "alpha3": "CHE",
+      "numeric": "756",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 220,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Syrian Arab Republic",
+      "region": "Asia",
+      "alpha2": "SY",
+      "alpha3": "SYR",
+      "numeric": "760",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 221,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Taiwan",
+      "region": "Asia",
+      "alpha2": "TW",
+      "alpha3": "TWN",
+      "numeric": "158",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 222,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tajikistan",
+      "region": "Asia",
+      "alpha2": "TJ",
+      "alpha3": "TJK",
+      "numeric": "762",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 223,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tanzania, United Republic of",
+      "region": "Africa",
+      "alpha2": "TZ",
+      "alpha3": "TZA",
+      "numeric": "834",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 224,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Thailand",
+      "region": "Asia",
+      "alpha2": "TH",
+      "alpha3": "THA",
+      "numeric": "764",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 225,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Timor-Leste",
+      "region": "Asia",
+      "alpha2": "TL",
+      "alpha3": "TLS",
+      "numeric": "626",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 226,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Togo",
+      "region": "Africa",
+      "alpha2": "TG",
+      "alpha3": "TGO",
+      "numeric": "768",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 227,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tokelau",
+      "region": "Oceania",
+      "alpha2": "TK",
+      "alpha3": "TKL",
+      "numeric": "772",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 228,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tonga",
+      "region": "Oceania",
+      "alpha2": "TO",
+      "alpha3": "TON",
+      "numeric": "776",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 229,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Trinidad and Tobago",
+      "region": "Americas",
+      "alpha2": "TT",
+      "alpha3": "TTO",
+      "numeric": "780",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 230,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tunisia",
+      "region": "Africa",
+      "alpha2": "TN",
+      "alpha3": "TUN",
+      "numeric": "788",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 231,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Turkey",
+      "region": "Asia",
+      "alpha2": "TR",
+      "alpha3": "TUR",
+      "numeric": "792",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 232,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Turkmenistan",
+      "region": "Asia",
+      "alpha2": "TM",
+      "alpha3": "TKM",
+      "numeric": "795",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 233,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Turks and Caicos Islands",
+      "region": "Americas",
+      "alpha2": "TC",
+      "alpha3": "TCA",
+      "numeric": "796",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 234,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tuvalu",
+      "region": "Oceania",
+      "alpha2": "TV",
+      "alpha3": "TUV",
+      "numeric": "798",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 235,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Uganda",
+      "region": "Africa",
+      "alpha2": "UG",
+      "alpha3": "UGA",
+      "numeric": "800",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 236,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ukraine",
+      "region": "Europe",
+      "alpha2": "UA",
+      "alpha3": "UKR",
+      "numeric": "804",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 237,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "United Arab Emirates",
+      "region": "Asia",
+      "alpha2": "AE",
+      "alpha3": "ARE",
+      "numeric": "784",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 238,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "United Kingdom of Great Britain and Northern Ireland",
+      "region": "Europe",
+      "alpha2": "GB",
+      "alpha3": "GBR",
+      "numeric": "826",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 239,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "United States of America",
+      "region": "Americas",
+      "alpha2": "US",
+      "alpha3": "USA",
+      "numeric": "840",
+      "is_active": true
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 240,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Uruguay",
+      "region": "Americas",
+      "alpha2": "UY",
+      "alpha3": "URY",
+      "numeric": "858",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 241,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Uzbekistan",
+      "region": "Asia",
+      "alpha2": "UZ",
+      "alpha3": "UZB",
+      "numeric": "860",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 242,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Vanuatu",
+      "region": "Oceania",
+      "alpha2": "VU",
+      "alpha3": "VUT",
+      "numeric": "548",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 243,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Venezuela (Bolivarian Republic of)",
+      "region": "Americas",
+      "alpha2": "VE",
+      "alpha3": "VEN",
+      "numeric": "862",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 244,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Viet Nam",
+      "region": "Asia",
+      "alpha2": "VN",
+      "alpha3": "VNM",
+      "numeric": "704",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 245,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Wallis and Futuna",
+      "region": "Oceania",
+      "alpha2": "WF",
+      "alpha3": "WLF",
+      "numeric": "876",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 246,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Western Sahara",
+      "region": "Africa",
+      "alpha2": "EH",
+      "alpha3": "ESH",
+      "numeric": "732",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 247,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Yemen",
+      "region": "Asia",
+      "alpha2": "YE",
+      "alpha3": "YEM",
+      "numeric": "887",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 248,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Zambia",
+      "region": "Africa",
+      "alpha2": "ZM",
+      "alpha3": "ZMB",
+      "numeric": "894",
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.country",
+    "pk": 249,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Zimbabwe",
+      "region": "Africa",
+      "alpha2": "ZW",
+      "alpha3": "ZWE",
+      "numeric": "716",
+      "is_active": false
+    }
+  }
+]

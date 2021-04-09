@@ -179,7 +179,11 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'serviceWithLove',
-    'fontawesome-free'
+    'fontawesome-free',
+    'common',
+    'geoinfo',
+    'booking',
+    'rest_framework'
 ]
 
 LANGUAGES = (
@@ -218,6 +222,7 @@ CMS_TEMPLATES = (
     ('organizing.html', 'Organizing With Love'),
     ('decorating.html', 'Decorating With Love'),
     ('pricing.html', 'Pricing'),
+    ('terms_and_conditions.html', 'Terms and Conditions'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
