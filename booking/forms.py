@@ -60,7 +60,7 @@ class AppointmentForm(forms.ModelForm):
             'city': forms.Select(attrs={'class': select_styles}),
             'address': forms.TextInput(
                 attrs={'placeholder': 'Address where the service is needed', 'class': input_styles}),
-            'email': forms.EmailInput(attrs={'placeholder': 'contact email',
+            'email': forms.EmailInput(attrs={'placeholder': 'Contact Email',
                                              'class': input_styles}),
             'suite': forms.TextInput(attrs={'placeholder': 'Apt/Suite', 'class': input_styles}),
             'zipcode': forms.TextInput(attrs={'placeholder': 'zipcode', 'class': input_styles}),
