@@ -109,6 +109,7 @@ celerybeat.pid
 .venv
 .venv/
 /.venv/
+
 env/
 venv/
 ENV/
@@ -142,3 +143,4 @@ cython_debug/
 # ides
 .vscode/
 .idea/
+
