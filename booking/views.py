@@ -16,7 +16,7 @@ class AppointmentCreate(CreateView):
     model = Appointment
     form_class = AppointmentForm
     template_name = 'booking.html'
-    success_url = reverse_lazy('booking:new')
+    success_url = reverse_lazy('booking_app:new')
 
     # def post(self, request, *args, **kwargs):
     #     print(f'---> this is the post request')
@@ -31,7 +31,6 @@ class AppointmentCreate(CreateView):
     #         errors = appointment_form.errors.get_json_data()
     #         response = JsonResponse(errors, status=500)
     #         return response
-
 
 
 class ListStates(ListView):
@@ -63,6 +62,7 @@ class ListCities(ListView):
         context['filter'] = self.request.GET.get('state')
         return context
 
+
 class GetDiscount(RetrieveAPIView):
     lookup_field = 'id'
     queryset = Frequency.objects.all()
@@ -70,20 +70,22 @@ class GetDiscount(RetrieveAPIView):
 
 
 class GetAreaPrice(RetrieveAPIView):
-    lookup_field='id'
+    lookup_field = 'id'
     queryset = ServiceArea.objects.all()
     serializer_class = AreaSerializer
 
 
 class GetCleaningTypePrice(RetrieveAPIView):
-    lookup_field='id'
+    lookup_field = 'id'
     queryset = CleaningType.objects.all()
     serializer_class = CleaningTypeSerializer
 
+
 class GetBasePrice(RetrieveAPIView):
-    lookup_field='id'
+    lookup_field = 'id'
     queryset = BasePrice.objects.all()
     serializer_class = BasePriceSerializer
+
 
 class GetRoomPrice(RetrieveAPIView):
     lookup_field = 'id'
@@ -95,6 +97,7 @@ class GetBathroomPrice(RetrieveAPIView):
     lookup_field = 'id'
     queryset = Bathroom.objects.all()
     serializer_class = BathroomSerializer
+
 
 class GetExtraOptPrice(APIView):
 
