@@ -9,6 +9,7 @@ from rest_framework.views import APIView
 from .forms import AppointmentForm
 from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
 from .serializers import FrequencySerializer, AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
+from common import mailman
 from geoinfo.models import Country, State, City
 
 
@@ -16,21 +17,16 @@ class AppointmentCreate(CreateView):
     model = Appointment
     form_class = AppointmentForm
     template_name = 'booking.html'
-    success_url = reverse_lazy('booking_app:new')
+    success_url = reverse_lazy('booking:new_booking')
 
-    # def post(self, request, *args, **kwargs):
-    #     print(f'---> this is the post request')
-    #     print(request.POST)
-    #     print(f'---> this is the post request')
-    #     appointment_form = AppointmentForm(request.POST)
-    #     if appointment_form.is_valid():
-    #         print('is vakid')
-    #         return 'some data'
-    #     else:
-    #         print('is not valid')
-    #         errors = appointment_form.errors.get_json_data()
-    #         response = JsonResponse(errors, status=500)
-    #         return response
+    def post(self, request, *args, **kwargs):
+        appointment_form = AppointmentForm(request.POST)
+        if appointment_form.is_valid():
+            result = appointment_form.save()
+            mailman.sendingmail(result)
+            return self.form_valid(appointment_form)
+        else:
+            return self.form_invalid(appointment_form)
 
 
 class ListStates(ListView):
