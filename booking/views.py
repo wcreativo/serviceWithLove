@@ -18,6 +18,13 @@ class AppointmentCreate(CreateView):
     template_name = 'booking.html'
     success_url = reverse_lazy('booking_app:new')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        option = context['form'].fields['extra_opts'].widget.choices
+        print(list(option))
+        return context
+
+
     # def post(self, request, *args, **kwargs):
     #     print(f'---> this is the post request')
     #     print(request.POST)

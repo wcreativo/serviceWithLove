@@ -119,3 +119,72 @@ button.close {
     border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
 
+.extra_opts {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.extra_opts:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.extra_opts_item {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 15px;
+}
+
+/*ul li input[type="checkbox"] {*/
+/*    !*position: absolute;*!*/
+/*    !*opacity: 0;*!*/
+/*    cursor: pointer;*/
+/*    !*left: 0;*!*/
+/*}*/
+
+#id_extra_opts li input:before {
+    background-color: #0f74a8;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+
+ul li label .icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #bfbfbf;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+ul li label .icon-box .fa {
+    font-size: 30px;
+    color: #bfbfbf;
+    transition: 0.5s;
+}
+
+ul li input[type="checkbox"]:checked ~ .icon-box {
+    background: #d7af2d;
+    border: 3px solid #f6cd6c;
+}
+
+ul li input[type="checkbox"]:checked ~ .icon-box .fa {
+    color: #fff;
+}
