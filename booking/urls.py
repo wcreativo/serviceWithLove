@@ -5,7 +5,7 @@ from .views import AppointmentCreate, ListStates, ListCities, GetDiscount, GetAr
 app_name = 'appointments'
 
 urlpatterns = [    
-    path('', AppointmentCreate.as_view(), name='new'),
+    path('', AppointmentCreate.as_view(), name='new_booking'),
     path('ajax/load-states/', ListStates.as_view(), name='ajax_load_states'),
     path('ajax/load-cities/', ListCities.as_view(), name='ajax_load_cities'),
     path('ajax/get-freq-discount/<int:id>/', GetDiscount.as_view(), name='ajax_get_discount'),

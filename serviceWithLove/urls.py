@@ -10,7 +10,6 @@ admin.autodiscover()
 
 urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
-    path("booking/", include('booking.urls', namespace="booking_app"))
 ]
 
 
