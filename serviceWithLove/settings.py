@@ -183,16 +183,21 @@ INSTALLED_APPS = [
     'common',
     'geoinfo',
     'booking',
-    'rest_framework'
+    'rest_framework',
+    'tawkto',
 ]
 
+TAWKTO_ID_SITE = '60734abcf7ce182709394a39'
+TAWKTO_API_KEY = '4e13f82853450db053b6532490f6a0c075558682'
+TAWKTO_IS_SECURE = True
+
 LANGUAGES = (
-    ## Customize this
+    # Customize this
     ('en', gettext('en')),
 )
 
 CMS_LANGUAGES = {
-    ## Customize this
+    # Customize this
     1: [
         {
             'code': 'en',
