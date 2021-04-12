@@ -1,97 +1,45 @@
-<html>
-    <body>
-        <p>
-            Hi, {{appointment.firstname}} {{appointment.lastname}}<br /> 
-            These are the details of your clean appointment settled for {{appointment.date}} at {{appointment.time}} with order # {{appointment.id}}:
-        </p>
-        <table>
-        <tr>
-            <td>City, State: </td>
-            <td>{{appointment.city}}, {{appointment.state.code}}</td>
-        </tr>
-        <tr>
-            <td>Address: </td>
-            <td>{{appointment.address}}, suite: {{appointment.suite}}, zipcode: {{appointment.zipcode}}</td>
-        </tr>
-        <tr>
-            <td>Phone:</td>
-            <td>{{appointment.phone}}</td>
-        </tr>
-        </table>
-        <br /> Service summary: <br />
-        <table>
-            <tr>
-                <td>Area:</td>
-                <td>{{appointment.area}}</td>
-            </tr>
 
-            {%if appointment.area.id == 1%}
-            <tr>
-                <td>Cleaning Type:</td>
-                <td>{{appointment.cleaning_type}}</td>
-            </tr>
-            <tr>
-                <td>Rooms Description:</td>
-                <td>{{appointment.room_type}}, {{appointment.bathroom}}</td>
-            </tr>
-            {%else%}
-            <tr>
-                <td># of maids:</td>
-                <td>{{appointment.maid_qty}}</td>
-            </tr>
-            <tr>
-                <td># of hours:</td>
-                <td>{{appointment.hours_qty}}</td>
-            </tr>
-            {%endif%}
-            <tr>
-                <td>Frequency:</td>
-                <td>{{appointment.frequency}}</td>
-            </tr>
-        </table>
+Hi, {{appointment.firstname}} {{appointment.lastname}}\n
+These are the details of your clean appointment settled for {{appointment.date}} at {{appointment.time}} with order # {{appointment.id}}:\n\n
 
-        {% if appointment.area.id == 1 %}
-        <br /> Extras summary: <br />
-        <table>
-            {% for extra in appointment.extra_opts.all %}
-            <tr><td>{{extra}}</td></tr>
-            {%empty%}
-            <tr><td>No extras selected</td></tr>
-            {% endfor %}
-        </table>
-        {% endif %}
+City, State: --------> {{appointment.city}}, {{appointment.state.code}}\n    
+Address: ------------> {{appointment.address}}, suite: {{appointment.suite}}, zipcode: {{appointment.zipcode}}\n
+Phone: --------------> {{appointment.phone}}\n\n
 
-        <br /> Totals: <br />
-        <table>
-            <tr>
-                <td>Subtotal:</td>
-                <td>{{appointment.subtotal}}</td>
-            </tr>
-            <tr>
-                <td>Discount:</td>
-                <td>{{appointment.discount}}</td>
-            </tr>
-            <tr>
-                <td>Tax:</td>
-                <td>{{appointment.tax}}</td>
-            </tr>
-            <tr>
-                <td>Total:</td>
-                <td>{{appointment.total}}</td>
-            <tr>
-        </table>
-        <br />
-        Customer Notes: {{appointment.comments}} <br />
-        What is your flexibility for the cleaning?: 
-         {% for flexibility in appointment.flexibility.all %}
-            {{flexibility}}, 
-         {%empty%}
-            No flexibility options selected
-         {% endfor %}
-        
-        <br />
-        How will we gain entry? : {{appointment.entry.label}} <br />
-        Are there any pets? : {{appointment.pets.label}} <br />
-        Have you or anyone in your home been exposed to COVID-19 in the past 14 days? : {{appointment.covid.label}} <br />
-    </body>
-</html>
+****** Service summary: ******\n
+Area:  --------------> {{appointment.area}}\n\n
+
+{%if appointment.area.id == 1%}
+Cleaning Type: ------>  {{appointment.cleaning_type}}\n
+Rooms Description: --> {{appointment.room_type}}, {{appointment.bathroom}}\n
+{%else%}
+# of maids: ---------> {{appointment.maid_qty}}\n
+# of hours: ---------> {{appointment.hours_qty}}\n
+{%endif%}
+Frequency: ----------> {{appointment.frequency}}\n
+******************************\n\n
+
+{% if appointment.area.id == 1 %}
+****** Extras summary: ******\n
+{% for extra in appointment.extra_opts.all %}
+---> {{extra}}\n
+{%empty%}
+---> No extras selected\n
+{% endfor %}
+****************************\n\n
+{% endif %}
+
+********* Totals: **********\n
+Subtotal: ----------> {{appointment.subtotal}}\n
+Discount: ----------> {{appointment.discount}}\n
+Tax: ---------------> {{appointment.tax}}\n
+Total: -------------> {{appointment.total}}\n
+****************************\n\n
+
+******* Extra info: *******\n
+Customer Notes: ----> {{appointment.comments}}\n
+What is your flexibility for the cleaning?: --> {% for flexibility in appointment.flexibility.all %}{{flexibility}}, {%empty%}No flexibility options selected{% endfor %}\n
+How will we gain entry? : -->  {{appointment.entry.label}}\n
+Are there any pets? : --> {{appointment.pets.label}}\n
+Have you or anyone in your home been exposed to COVID-19 in the past 14 days? : --> {{appointment.covid.label}}\n
+***************************\n

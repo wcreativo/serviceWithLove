@@ -1,3 +1,5 @@
+import asyncio
+
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -9,7 +11,7 @@ from rest_framework.views import APIView
 from .forms import AppointmentForm
 from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
 from .serializers import FrequencySerializer, AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
-from common import mailman
+from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
 
 
@@ -21,12 +23,15 @@ class AppointmentCreate(CreateView):
 
     def post(self, request, *args, **kwargs):
         appointment_form = AppointmentForm(request.POST)
+
         if appointment_form.is_valid():
             result = appointment_form.save()
-            mailman.sendingmail(result)
+            response = send_html_mail(result)
+            print(f'mail thread created for  {result.id} with email {result.email} {response}')
             return self.form_valid(appointment_form)
         else:
-            return self.form_invalid(appointment_form)
+            print(appointment_form.errors)
+            return self.form_invalid(appointment_form.errors)
 
 
 class ListStates(ListView):
