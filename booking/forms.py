@@ -76,7 +76,7 @@ class AppointmentForm(forms.ModelForm):
             'covid': forms.Select(attrs={'class': select_styles}),
             'comments': forms.Textarea(attrs={'class': textarea_styles}),
             'maid_qty': forms.Select(choices=MAID_CHOICES, attrs={'style': 'display: none', 'class': select_styles}),
-            'hours_qty': forms.Select(choices=HOUR_CHOICES, attrs={'style': 'display: none'}),
+            'hours_qty': forms.Select(choices=HOUR_CHOICES, attrs={'style': 'display: none', 'class': select_styles}),
             'firstname': forms.TextInput(attrs={'placeholder': 'First Name',
                                                 'class': input_styles}),
             'lastname': forms.TextInput(attrs={'placeholder': 'Last Name',
