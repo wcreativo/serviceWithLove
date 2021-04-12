@@ -1,5 +1,3 @@
-import asyncio
-
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -27,7 +25,8 @@ class AppointmentCreate(CreateView):
         if appointment_form.is_valid():
             result = appointment_form.save()
             response = send_html_mail(result)
-            print(f'mail thread created for  {result.id} with email {result.email} {response}')
+            print(
+                f'mail thread created for  {result.id} with email {result.email} {response}')
             return self.form_valid(appointment_form)
         else:
             print(appointment_form.errors)
