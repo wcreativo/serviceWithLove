@@ -1,10 +1,9 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.views import APIView
-
 
 from .forms import AppointmentForm
 from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
@@ -17,7 +16,7 @@ class AppointmentCreate(CreateView):
     model = Appointment
     form_class = AppointmentForm
     template_name = 'booking.html'
-    success_url = reverse_lazy('booking:new_booking')
+    # success_url = reverse_lazy('booking:new_booking')
 
     def post(self, request, *args, **kwargs):
         appointment_form = AppointmentForm(request.POST)
@@ -25,13 +24,23 @@ class AppointmentCreate(CreateView):
         if appointment_form.is_valid():
             result = appointment_form.save()
             response = send_html_mail(result)
+
             print(
                 f'mail thread created for  {result.id} with email {result.email} {response}')
-            return self.form_valid(appointment_form)
-        else:
-            print(appointment_form.errors)
-            return self.form_invalid(appointment_form.errors)
 
+            response_data ={
+                'serviceid': result.id,
+                'serviceemail': result.email,
+                'servicefirstname': result.firstname,
+                'servicelastname': result.lastname,
+                'servicetotal': result.total,
+            }
+
+            return JsonResponse(response_data, status=201)
+        else:
+            errors = appointment_form.errors.get_json_data()
+            return JsonResponse(errors, status=500)
+            
 
 class ListStates(ListView):
     model = State

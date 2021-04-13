@@ -88,11 +88,22 @@
             <p class="my-3">Sales Tax: <span id="summary_tax" class="tax"></span></p>
             <p class="my-3">Total: <span id="summary_total" class="total text-2xl text-gray-900 font-bold"></span></p>
             <hr/>
+
+            <div id="submitResult" style="display: none;">
+                
+                Thanks <span id="orderUser"></span> for trust in Service With Love! <br /> 
+                Your service with order # <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span>  has been settled. <br />
+                
+                We send an email to <span id="orderEmail"></span>
+                
+            </div>
         </div>
     </div>
 
 {% endblock content %} {% block js_scripts %}
     <script>
+        var form = $('#bookingForm');
+        var submitResult = $('#submitResult');
         var startingPrice = 0;
         var salesTax = 0;
         var maidQty = 1;
@@ -305,11 +316,16 @@
             });
         }
 
-        $(document).ready(function () {
+        function setStartingValues(){
             getStates();
             getBasePrice();
             setSummaryDetails();
             publishTime(startingTime);
+        }
+        
+        $(document).ready(function () {
+            setStartingValues();
+            submitResult.hide();
         });
 
         $("#id_country").change(function () {
@@ -412,6 +428,40 @@
             step: 30
         });
 
+        form.submit(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                url: "{% url 'booking:new_booking' %}",
+                type: 'POST',
+                data: $(this).serializeArray(),
+
+                success: function(resp){
+                    $('#orderUser').html(`${resp.servicefirstname} ${resp.servicelastname}`);
+                    $('#orderNumber').html(`${resp.serviceid}`);
+                    $('#orderTotal').html(`${resp.servicetotal}`);
+                    $('#orderEmail').html(`${resp.serviceemail}`);
+                    submitResult.show();
+                },
+
+                error: function(xhr, errmsg, err){
+                    var response = JSON.parse(xhr.responseText);
+                    var keys = Object.keys(response);
+                    var htmlText = 'Seemes like we have some errors:<br />'
+
+                    keys.forEach((key, index) => {
+                        htmlText += `${key}: ${response[key][0].message} <br />`;
+                    });
+                    submitResult.html(htmlText);
+                    submitResult.show();
+                } 
+            })
+        });
+
     </script>
 
 {% endblock js_scripts %}
+
+
+{"total": [{"message": "This field is required.", "code": "required"}],
+"total": [{"message": "This field is required.", "code": "required"}]}
