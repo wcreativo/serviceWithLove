@@ -1,8 +1,9 @@
+import dj_database_url
+from decouple import config
 from pathlib import Path
 import os  # isort:skip
 def gettext(s): return s
-import dj_database_url
-from decouple import config
+
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -85,7 +86,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'serviceWithLove/media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = os.path.join(DATA_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'serviceWithLove', 'static'),
