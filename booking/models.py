@@ -1,9 +1,10 @@
-from common.models import CommonData
 from .enums import GainEntry, Pets, CovidExposure
-from django_enumfield.enum import EnumField
-
+from .validators import validate_date_greater
+from common.models import CommonData
 from geoinfo.models import City, State, Country
+
 from django.db.models import CharField, BooleanField, ForeignKey, DO_NOTHING, EmailField, IntegerField, TextField, ManyToManyField, FloatField, DateField, TimeField
+from django_enumfield.enum import EnumField
 
 
 class BasePrice(CommonData):
@@ -93,7 +94,7 @@ class Appointment(CommonData):
     frequency: Frequency = ForeignKey(Frequency, on_delete=DO_NOTHING)
     extra_opts: ExtraOption = ManyToManyField(ExtraOption, blank=True)
     flexibility: Flexibility = ManyToManyField(Flexibility, blank=True)
-    date: date = DateField(verbose_name='date', blank=False, null=False)
+    date: date = DateField(verbose_name='date', blank=False, null=False, validators=[validate_date_greater])
     time: time = TimeField(verbose_name='time', blank=False, null=False)
     subtotal: float = FloatField(verbose_name='subtotal')
     discount: float = FloatField(verbose_name='discount')

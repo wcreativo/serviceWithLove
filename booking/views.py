@@ -16,7 +16,6 @@ class AppointmentCreate(CreateView):
     model = Appointment
     form_class = AppointmentForm
     template_name = 'booking.html'
-    # success_url = reverse_lazy('booking:new_booking')
 
     def post(self, request, *args, **kwargs):
         appointment_form = AppointmentForm(request.POST)
