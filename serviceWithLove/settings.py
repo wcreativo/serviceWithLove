@@ -132,7 +132,8 @@ MIDDLEWARE = [
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 INSTALLED_APPS = [
@@ -259,3 +260,5 @@ EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('MAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
 EMAIL_USE_SSL = True
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
