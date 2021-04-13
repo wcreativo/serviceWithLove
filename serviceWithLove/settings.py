@@ -1,7 +1,7 @@
 from pathlib import Path
 import os  # isort:skip
 def gettext(s): return s
-
+import dj_database_url
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -234,16 +234,22 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+# DATABASES = {
+#     'default': {
+#         'CONN_MAX_AGE': 0,
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'HOST': 'localhost',
+#         'NAME': 'project.db',
+#         'PASSWORD': '',
+#         'PORT': '',
+#         'USER': ''
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 THUMBNAIL_PROCESSORS = (
