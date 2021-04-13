@@ -1,48 +1,58 @@
-var cont = 0;
-
-function loopSlider() {
-    var xx = setInterval(function () {
-        switch (cont) {
-            case 0: {
-                $("#slider-1").fadeOut(400);
-                $("#slider-2").delay(400).fadeIn(400);
-                cont = 1;
-
-                break;
-            }
-            case 1: {
-                $("#slider-2").fadeOut(400);
-                $("#slider-1").delay(400).fadeIn(400);
-                cont = 0;
-                break;
-            }
-            case 2: {
-                $("#slider-3").fadeOut(600);
-                $("#slider-4").delay(600).fadeIn(600);
-                cont = 1;
-                break;
-            }
-            case 3: {
-                $("#slider-4").fadeOut(600);
-                $("#slider-3").delay(600).fadeIn(600);
-                cont = 0;
-                break;
-            }
-        }
-    }, 8000);
-
-}
-
-function reinitLoop(time) {
-    clearInterval(xx);
-    setTimeout(loopSlider(), time);
-}
-
-$(window).ready(function () {
-    $("#slider-2").hide();
-    $("#slider-4").hide();
-    $("#slider-6").hide();
-
-    loopSlider();
-
+$(document).on('ready', function () {
+    $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+    });
+    $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    });
+    $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+    });
+    $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+    });
+    $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    });
+    $(".regular").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+    });
+    $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+    });
+    $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+    });
+    $(".lazy").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
 });

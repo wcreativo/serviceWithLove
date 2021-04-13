@@ -1,4 +1,4 @@
-.slider{
+.slider-clients{
     background-color: beige;
     width: 400px;
     height: 500px;
@@ -8,31 +8,31 @@
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
 }
 
-.slider::before,.slider::after{
+.slider-clients::before,.slider-clients::after{
     content: '';
     width: 200px;
     height: 100px;
     background: linear-gradient(to righ, white 0%, rgba(255,255,255,0) 100%);
 }
 
-.slider::before{
+.slider-clients::before{
     top: 0;
     left: 0;
 }
 
-.slider::after{
+.slider-clients::after{
     top: 0;
     right: 0;
     transform: rotateZ(180deg);
 }
 
-.slider .slider-track{
+.slider-clients .slider-clients-track{
     display: flex;
     width: calc(250px * 14);
     animation: scroll 40s infinite linear;
 }
 
-.slider .slide img{
+.slider-clients .slide img{
     width: 100%;
 }
 
