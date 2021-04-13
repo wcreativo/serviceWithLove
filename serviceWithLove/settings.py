@@ -1,5 +1,8 @@
+from pathlib import Path
 import os  # isort:skip
-gettext = lambda s: s
+def gettext(s): return s
+
+
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for serviceWithLove project.
@@ -13,7 +16,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,19 +28,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6a+1(i=ip7$+wydqrd#*^wu8zm3n+v%6na6ez1y!7kx_h7bv0&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ.get('ENVIRONMENT') == 'dev' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 
-
-
-
 ROOT_URLCONF = 'serviceWithLove.urls'
-
 
 
 WSGI_APPLICATION = 'serviceWithLove.wsgi.application'
@@ -46,8 +44,6 @@ WSGI_APPLICATION = 'serviceWithLove.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-
 
 
 # Password validation
@@ -100,7 +96,7 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'serviceWithLove', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'serviceWithLove', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -187,8 +183,8 @@ INSTALLED_APPS = [
     'tawkto',
 ]
 
-TAWKTO_ID_SITE = '60734abcf7ce182709394a39'
-TAWKTO_API_KEY = '4e13f82853450db053b6532490f6a0c075558682'
+TAWKTO_ID_SITE = os.environ.get('TAWKTO_ID_SITE')
+TAWKTO_API_KEY = os.environ.get('TAWKTO_API_KEY')
 TAWKTO_IS_SECURE = True
 
 LANGUAGES = (
@@ -262,4 +258,4 @@ EMAIL_HOST = os.environ.get('MAIL_SERVER')
 EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('MAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
-EMAIL_USE_SSL=True
+EMAIL_USE_SSL = True
