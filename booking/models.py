@@ -100,6 +100,7 @@ class Appointment(CommonData):
     discount: float = FloatField(verbose_name='discount')
     tax: float = FloatField(verbose_name='tax')
     total: float = FloatField(verbose_name='total')
+    estimated_time: int = IntegerField(verbose_name='Total estimated time')
 
     entry: GainEntry = EnumField(verbose_name='gain entry', enum=GainEntry)
     pets: Pets = EnumField(verbose_name='pets', enum=Pets)
