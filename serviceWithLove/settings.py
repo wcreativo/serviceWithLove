@@ -32,7 +32,6 @@ DEBUG = True if os.environ.get('ENVIRONMENT') == 'dev' else False
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 
