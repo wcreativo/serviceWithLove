@@ -25,7 +25,7 @@ def get_templates():
 
 class CardService(CMSPlugin):
     title = models.TextField(max_length=50, default='Service')
-    description = models.TextField(max_length=1000, default='Description')
+    description = models.TextField(max_length=2000, default='Description')
     image = models.ImageField(upload_to='images/')
     logo = models.ImageField(upload_to='logos/')
     template = models.CharField(
