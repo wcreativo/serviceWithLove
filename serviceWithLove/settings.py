@@ -1,5 +1,8 @@
+from pathlib import Path
 import os  # isort:skip
-gettext = lambda s: s
+def gettext(s): return s
+
+
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for serviceWithLove project.
@@ -13,7 +16,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,19 +28,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6a+1(i=ip7$+wydqrd#*^wu8zm3n+v%6na6ez1y!7kx_h7bv0&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ.get('ENVIRONMENT') == 'dev' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 
-
-
-
 ROOT_URLCONF = 'serviceWithLove.urls'
-
 
 
 WSGI_APPLICATION = 'serviceWithLove.wsgi.application'
@@ -46,8 +44,6 @@ WSGI_APPLICATION = 'serviceWithLove.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-
 
 
 # Password validation
@@ -88,7 +84,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'serviceWithLove/media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
@@ -100,7 +96,7 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'serviceWithLove', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'serviceWithLove', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -178,16 +174,26 @@ INSTALLED_APPS = [
     'djangocms_style',
     'djangocms_googlemap',
     'djangocms_video',
-    'serviceWithLove'
+    'serviceWithLove',
+    'fontawesome-free',
+    'common',
+    'geoinfo',
+    'booking',
+    'rest_framework',
+    'tawkto',
 ]
 
+TAWKTO_ID_SITE = os.environ.get('TAWKTO_ID_SITE')
+TAWKTO_API_KEY = os.environ.get('TAWKTO_API_KEY')
+TAWKTO_IS_SECURE = True
+
 LANGUAGES = (
-    ## Customize this
+    # Customize this
     ('en', gettext('en')),
 )
 
 CMS_LANGUAGES = {
-    ## Customize this
+    # Customize this
     1: [
         {
             'code': 'en',
@@ -205,10 +211,21 @@ CMS_LANGUAGES = {
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
     ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('home.html', 'Home'),
+    ('regular_cleaning.html', 'Regular Cleaning'),
+    ('deep_cleaning.html', 'Deep Cleaning'),
+    ('green_cleaning.html', 'Green Cleaning'),
+    ('move_in_cleaning.html', 'MoveIn Cleaning'),
+    ('office_cleaning.html', 'Office Cleaning'),
+    ('airbnb_cleaning.html', 'AIRBNB Cleaning'),
+    ('laundry_cleaning.html', 'Laundry Cleaning'),
+    ('organizing.html', 'Organizing With Love'),
+    ('decorating.html', 'Decorating With Love'),
+    ('pricing.html', 'Pricing'),
+    ('terms_and_conditions.html', 'Terms and Conditions'),
+    ('faq.html', 'FAQ'),
+    ('portfolio.html', 'Portfolio'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -235,3 +252,10 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('MAIL_SERVER')
+EMAIL_PORT = os.environ.get('MAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('MAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
+EMAIL_USE_SSL = True

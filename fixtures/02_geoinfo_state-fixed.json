@@ -1,0 +1,614 @@
+[
+  {
+    "model": "geoinfo.state",
+    "pk": 0,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Alabama",
+      "code": "AL",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 1,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Alaska",
+      "code": "AK",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 2,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Arizona",
+      "code": "AZ",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 3,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Arkansas",
+      "code": "AR",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 4,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "California",
+      "code": "CA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 5,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Colorado",
+      "code": "CO",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 6,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Connecticut",
+      "code": "CT",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 7,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Delaware",
+      "code": "DE",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 8,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "District of Columbia",
+      "code": "DC",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 9,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Florida",
+      "code": "FL",
+      "country": 239,
+      "is_active": true
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 10,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Georgia",
+      "code": "GA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 11,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Hawaii",
+      "code": "HI",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 12,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Idaho",
+      "code": "ID",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 13,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Illinois",
+      "code": "IL",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 14,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Indiana",
+      "code": "IN",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 15,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Iowa",
+      "code": "IA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 16,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kansas",
+      "code": "KS",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 17,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Kentucky",
+      "code": "KY",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 18,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Louisiana",
+      "code": "LA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 19,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Maine",
+      "code": "ME",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 20,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Maryland",
+      "code": "MD",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 21,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Massachusetts",
+      "code": "MA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 22,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Michigan",
+      "code": "MI",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 23,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Minnesota",
+      "code": "MN",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 24,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Mississippi",
+      "code": "MS",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 25,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Missouri",
+      "code": "MO",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 26,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Montana",
+      "code": "MT",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 27,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nebraska",
+      "code": "NE",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 28,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Nevada",
+      "code": "NV",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 29,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New Hampshire",
+      "code": "NH",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 30,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New Jersey",
+      "code": "NJ",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 31,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New Mexico",
+      "code": "NM",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 32,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "New York",
+      "code": "NY",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 33,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "North Carolina",
+      "code": "NC",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 34,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "North Dakota",
+      "code": "ND",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 35,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Ohio",
+      "code": "OH",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 36,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Oklahoma",
+      "code": "OK",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 37,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Oregon",
+      "code": "OR",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 38,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Pennsylvania",
+      "code": "PA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 39,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Rhode Island",
+      "code": "RI",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 40,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "South Carolina",
+      "code": "SC",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 41,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "South Dakota",
+      "code": "SD",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 42,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Tennessee",
+      "code": "TN",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 43,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Texas",
+      "code": "TX",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 44,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Utah",
+      "code": "UT",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 45,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Vermont",
+      "code": "VT",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 46,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Virginia",
+      "code": "VA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 47,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Washington",
+      "code": "WA",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 48,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "West Virginia",
+      "code": "WV",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 49,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Wisconsin",
+      "code": "WI",
+      "country": 239,
+      "is_active": false
+    }
+  },
+  {
+    "model": "geoinfo.state",
+    "pk": 50,
+    "fields": {
+      "created_at": "2021-03-15T05:00:00Z",
+      "updated_at": "2021-03-15T05:00:00Z",
+      "name": "Wyoming",
+      "code": "WY",
+      "country": 239,
+      "is_active": false
+    }
+  }
+]

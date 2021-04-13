@@ -1,0 +1,25 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<html>
+<section>
+    <div class="container mx-auto py:5 md:py-10 lg:py-5 xl:py-20 xl:px-10">
+        <div class="grid gap-4 p-5 xl:px-48 xl:grid-cols-2 lg:px-16 lg:grid-cols-2 md:grid-cols-2 md:px-10 sm:flex-col-reverse">
+            <div class="relative mt-5">
+                <img class="relative h-3/4 object-cover w-full rounded z-10" src="{{ instance.image.url }}" alt="Image">
+                <div class="absolute top-0 left-0 w-40 -ml-3 -mt-3 xl:-ml-10 lg:-ml-10 md:-ml-10 xl:-mt-10 lg:-mt-10 md:-mt-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="172" height="168" viewBox="0 0 172 168" fill="none">
+                        <path d="M42.1763 168C18.883 168 6.53453e-06 149.159 5.51634e-06 125.918L0 5.66212e-06L129.824 0C153.117 -1.01591e-06 172 18.8408 172 42.0822V168H42.1763Z"
+                              fill="#906AAE"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="z-10 xl:-ml-20 xl:ml-10 lg:-ml-20 md:-ml-20">
+                <div class="flex justify-end">
+                    <img class="h-40" src="{{ instance.logo.url }}" alt="Image">
+                </div>
+                <h2 class="text-4xl md:text-7xl lg:text-7xl p-3 my-3 font-semibold text-serviceTitle text-right">{{ instance.title | linebreaksbr }}</h2>
+                <p class="p-5 lg:p-10 md:p-10 text-justify bg-gray-100 rounded text-gray-900"> {{ instance.description | linebreaksbr }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+</html>

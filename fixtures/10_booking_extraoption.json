@@ -1,0 +1,145 @@
+[
+{
+  "model": "booking.extraoption",
+  "pk": 1,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Same Day Service",
+    "price": 40,
+    "icon": "",
+    "minutes": 0,
+    "is_active": false
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 2,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Clean Baseboards",
+    "price": 40,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 3,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Hand Wash Dishes",
+    "price": 25,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 4,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Clean Inside the Oven",
+    "price": 30,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 5,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Clean Inside the Fridge",
+    "price": 30,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 6,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Clean Inside the Cabinets",
+    "price": 40,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 7,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Load of Laundry",
+    "price": 45,
+    "icon": "",
+    "minutes": 60,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 8,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Clean Interior Windows",
+    "price": 40,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 9,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Interior Walls",
+    "price": 100,
+    "icon": "",
+    "minutes": 90,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 10,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Pet Hair Clean Up",
+    "price": 30,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 11,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Hour(s) of Organizing",
+    "price": 75,
+    "icon": "",
+    "minutes": 60,
+    "is_active": true
+  }
+}
+]

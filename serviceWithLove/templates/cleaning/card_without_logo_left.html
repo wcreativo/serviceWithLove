@@ -1,0 +1,15 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+
+<section>
+    <div class="container mx-auto xl:px-10">
+        <div class="grid gap-4 p-5 xl:px-48 xl:grid-cols-2 lg:px-16 lg:grid-cols-2 md:grid-cols-2 md:px-10">
+            <div class="z-10 xl:ml-10">
+                <h2 class="text-lg text-center md:text-2xl lg:text-2xl font-semibold text-gray-900">{{ instance.title | linebreaksbr }}</h2>
+                <p class="p-5 lg:p-10 md:p-10 text-justify"> {{ instance.items | linebreaksbr }}</p>
+            </div>
+            <div class="relative">
+                <img class="h-full object-cover w-full rounded" src="{{ instance.image.url }}" alt="Image">
+            </div>
+        </div>
+    </div>
+</section>

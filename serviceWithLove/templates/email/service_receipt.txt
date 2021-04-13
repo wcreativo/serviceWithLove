@@ -1,0 +1,46 @@
+
+Hi, {{appointment.firstname}} {{appointment.lastname}}\n
+These are the details of your clean appointment settled for {{appointment.date}} at {{appointment.time}} with order # {{appointment.id}}:\n\n
+
+City, State: --------> {{appointment.city}}, {{appointment.state.code}}\n    
+Address: ------------> {{appointment.address}}, suite: {{appointment.suite}}, zipcode: {{appointment.zipcode}}\n
+Phone: --------------> {{appointment.phone}}\n\n
+
+****** Service summary: ******\n
+Area:  --------------> {{appointment.area}}\n\n
+
+{%if appointment.area.id == 1%}
+Cleaning Type: ------>  {{appointment.cleaning_type}}\n
+Rooms Description: --> {{appointment.room_type}}, {{appointment.bathroom}}\n
+{%else%}
+# of maids: ---------> {{appointment.maid_qty}}\n
+# of hours: ---------> {{appointment.hours_qty}}\n
+{%endif%}
+Estimated service time: --> {{estimated_time}}
+Frequency: ----------> {{appointment.frequency}}\n
+******************************\n\n
+
+{% if appointment.area.id == 1 %}
+****** Extras summary: ******\n
+{% for extra in appointment.extra_opts.all %}
+---> {{extra}}\n
+{%empty%}
+---> No extras selected\n
+{% endfor %}
+****************************\n\n
+{% endif %}
+
+********* Totals: **********\n
+Subtotal: ----------> {{appointment.subtotal}}\n
+Discount: ----------> {{appointment.discount}}\n
+Tax: ---------------> {{appointment.tax}}\n
+Total: -------------> {{appointment.total}}\n
+****************************\n\n
+
+******* Extra info: *******\n
+Customer Notes: ----> {{appointment.comments}}\n
+What is your flexibility for the cleaning?: --> {% for flexibility in appointment.flexibility.all %}{{flexibility}}, {%empty%}No flexibility options selected{% endfor %}\n
+How will we gain entry? : -->  {{appointment.entry.label}}\n
+Are there any pets? : --> {{appointment.pets.label}}\n
+Have you or anyone in your home been exposed to COVID-19 in the past 14 days? : --> {{appointment.covid.label}}\n
+***************************\n
