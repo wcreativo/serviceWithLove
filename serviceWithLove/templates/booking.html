@@ -89,7 +89,7 @@
             <p class="my-3">Total: <span id="summary_total" class="total text-2xl text-gray-900 font-bold"></span></p>
             <hr/>
 
-            <div id="submitResult" style="display: none;">
+            <div id="submitSuccessResult" style="display: none;">
                 
                 Thanks <span id="orderUser"></span> for trust in Service With Love! <br /> 
                 Your service with order # <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span>  has been settled. <br />
@@ -97,13 +97,17 @@
                 We send an email to <span id="orderEmail"></span>
                 
             </div>
+
+            <div id="submitErrorResult" style="display: none;">
+            </div>
         </div>
     </div>
 
 {% endblock content %} {% block js_scripts %}
     <script>
         var form = $('#bookingForm');
-        var submitResult = $('#submitResult');
+        var submitSuccessResult = $('#submitSuccessResult');
+        var submitFailResult = $('#submitErrorResult');
         var startingPrice = 0;
         var salesTax = 0;
         var maidQty = 1;
@@ -325,7 +329,6 @@
         
         $(document).ready(function () {
             setStartingValues();
-            submitResult.hide();
         });
 
         $("#id_country").change(function () {
@@ -441,7 +444,8 @@
                     $('#orderNumber').html(`${resp.serviceid}`);
                     $('#orderTotal').html(`${resp.servicetotal}`);
                     $('#orderEmail').html(`${resp.serviceemail}`);
-                    submitResult.show();
+                    submitSuccessResult.show();
+                    submitFailResult.hide();
                 },
 
                 error: function(xhr, errmsg, err){
@@ -452,8 +456,9 @@
                     keys.forEach((key, index) => {
                         htmlText += `${key}: ${response[key][0].message} <br />`;
                     });
-                    submitResult.html(htmlText);
-                    submitResult.show();
+                    submitSuccessResult.hide();
+                    submitFailResult.html(htmlText);
+                    submitFailResult.show();
                 } 
             })
         });
