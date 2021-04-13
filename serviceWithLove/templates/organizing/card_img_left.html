@@ -4,14 +4,14 @@
     <div class="container mx-auto py-10 md:py-10 lg:py-20 xl:py-30 xl:px-10">
         <div class="grid gap-4 p-5 xl:px-48 xl:grid-cols-2 lg:px-16 lg:grid-cols-2 md:grid-cols-2 md:px-10">
             <div class="relative">
-                <img class="h-3/4 object-cover w-full" src="{{ instance.image.url }}" alt="Image">
+                <img class="h-3/4 object-cover w-full rounded" src="{{ instance.image.url }}" alt="Image">
             </div>
             <div class="z-10 xl:-ml-20 xl:ml-10 lg:-ml-20 md:-ml-20">
                 <div class="flex justify-end">
                     <img class="h-40 mt-10 md:mt-0 lg:mt-0 xl:mt-0" src="{{ instance.logo.url }}" alt="Image">
                 </div>
                 <h2 class="text-4xl md:text-6xl lg:text-6xl p-3 my-3 font-semibold text-right" style="color: #08733F">{{ instance.title | linebreaksbr }}</h2>
-                <p class="p-5 lg:p-10 md:p-10 text-justify bg-gray-100"> {{ instance.description | linebreaksbr }}</p>
+                <p class="p-5 lg:p-10 md:p-10 text-justify bg-gray-100 rounded"> {{ instance.description | linebreaksbr }}</p>
             </div>
         </div>
     </div>

@@ -229,6 +229,7 @@ CMS_TEMPLATES = (
     ('pricing.html', 'Pricing'),
     ('terms_and_conditions.html', 'Terms and Conditions'),
     ('faq.html', 'FAQ'),
+    ('portfolio.html', 'Portfolio'),
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
