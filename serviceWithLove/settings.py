@@ -2,6 +2,7 @@ from pathlib import Path
 import os  # isort:skip
 def gettext(s): return s
 import dj_database_url
+from decouple import config
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
