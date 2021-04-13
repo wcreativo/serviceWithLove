@@ -48,7 +48,8 @@ class AppointmentForm(forms.ModelForm):
             'subtotal',
             'discount',
             'tax',
-            'total'
+            'total',
+            'estimated_time'
         ]
 
         HOUR_CHOICES = [((x + 1) / 2, f'{(x + 1) / 2} hours') for x in range(3, 24)]
@@ -91,7 +92,8 @@ class AppointmentForm(forms.ModelForm):
             'subtotal': forms.HiddenInput(),
             'discount': forms.HiddenInput(),
             'tax': forms.HiddenInput(),
-            'total': forms.HiddenInput()
+            'total': forms.HiddenInput(),
+            'estimated_time': forms.HiddenInput()
         }
 
         labels = {field: '' for field in fields}
