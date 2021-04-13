@@ -59,6 +59,7 @@
                 {{ form.discount }}
                 {{ form.tax }}
                 {{ form.total }}
+                {{ form.estimated_time }}
                 <button type="submit"
                         class="mt-4 px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500">Book Now
                 </button>
@@ -156,7 +157,7 @@
             var duration = '';
             hours === 1 ? text = 'hour' : text = 'hours';
             min == 0 ? duration = `${hours}  ${text}` : duration = `${hours} ${text} and ${min} minutes`;
-
+            $("#id_estimated_time").val(minutes);
             $('#sumary_duration').html(duration);
         }
 

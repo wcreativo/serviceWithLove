@@ -14,8 +14,15 @@ class EmailThread(threading.Thread):
         threading.Thread.__init__(self)
 
     def run (self):
+
+        hours = self.instance.estimated_time // 60
+        minutes = self.instance.estimated_time % 60
+
+        time_text = f'{hours} {"hour" if hours == 1 else "hours" } { " "+str(minutes)+" minutes" if minutes != 0 else ""}'
+
         context = {
             'appointment': self.instance,
+            'estimated_time': time_text
         }
 
         html = render_to_string('email/service_receipt.html', context=context)

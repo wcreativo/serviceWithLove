@@ -16,6 +16,7 @@ Rooms Description: --> {{appointment.room_type}}, {{appointment.bathroom}}\n
 # of maids: ---------> {{appointment.maid_qty}}\n
 # of hours: ---------> {{appointment.hours_qty}}\n
 {%endif%}
+Estimated service time: --> {{estimated_time}}
 Frequency: ----------> {{appointment.frequency}}\n
 ******************************\n\n
 
