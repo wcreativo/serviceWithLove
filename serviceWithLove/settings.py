@@ -1,5 +1,5 @@
-import dj_database_url
-from decouple import config
+#import dj_database_url
+#from decouple import config
 from pathlib import Path
 import os  # isort:skip
 def gettext(s): return s
