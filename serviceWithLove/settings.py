@@ -238,24 +238,23 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 
-if os.environ.get('ENVIRONMENT') == 'dev':
-    DATABASES = {
-        'default': {
-            'CONN_MAX_AGE': 0,
-            'ENGINE': 'django.db.backends.sqlite3',
-            'HOST': 'localhost',
-            'NAME': 'project.db',
-            'PASSWORD': '',
-            'PORT': '',
-            'USER': ''
-        }
+DATABASES = {
+    'default': {
+        'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'HOST': 'localhost',
+        'NAME': 'project.db',
+        'PASSWORD': '',
+        'PORT': '',
+        'USER': ''
     }
-else:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
-    }
+}
+
+# DATABASES = {
+#    'default': dj_database_url.config(
+#        default=config('DATABASE_URL')
+#    )
+# }
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
