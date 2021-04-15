@@ -238,11 +238,11 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'servicewithlove',
-        'USER': 'service_user',
-        'PASSWORD': '$9dKh5iK%3nseYeWFW',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASS'),
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
