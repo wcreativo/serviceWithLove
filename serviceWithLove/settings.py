@@ -1,5 +1,3 @@
-#import dj_database_url
-#from decouple import config
 from pathlib import Path
 import os  # isort:skip
 def gettext(s): return s
@@ -86,7 +84,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'serviceWithLove/media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = (
@@ -134,8 +132,7 @@ MIDDLEWARE = [
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware'
 ]
 
 INSTALLED_APPS = [
@@ -240,21 +237,14 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'servicewithlove',
+        'USER': 'service_user',
+        'PASSWORD': '$9dKh5iK%3nseYeWFW',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#    'default': dj_database_url.config(
-#        default=config('DATABASE_URL')
-#    )
-# }
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
@@ -269,5 +259,3 @@ EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('MAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
 EMAIL_USE_SSL = True
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
