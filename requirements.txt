@@ -54,5 +54,4 @@ traitlets==5.0.5
 Unidecode==1.1.2
 wcwidth==0.2.5
 webencodings==0.5.1
-whitenoise==5.2.0
 wrapt==1.12.1
