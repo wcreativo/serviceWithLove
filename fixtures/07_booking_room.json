@@ -16,7 +16,7 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "1 Beedroom",
+    "description": "1 Bedroom",
     "price": 10,
     "minutes": 30
   }
@@ -27,7 +27,7 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "2 Beedrooms",
+    "description": "2 Bedrooms",
     "price": 40,
     "minutes": 60
   }
@@ -38,9 +38,20 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "3 Beedrooms",
+    "description": "3 Bedrooms",
     "price": 90,
     "minutes": 90
+  }
+},
+{
+  "model": "booking.room",
+  "pk": 5,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Two floor house or Duplex",
+    "price": 150,
+    "minutes": 240
   }
 }
 ]

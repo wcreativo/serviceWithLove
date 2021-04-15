@@ -141,5 +141,44 @@
     "minutes": 60,
     "is_active": true
   }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 12,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Sweep the balcony and mopt the floor",
+    "price": 30,
+    "icon": "",
+    "minutes": 60,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 13,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Wash delicate clothes, shoes and dishes by hand",
+    "price": 45,
+    "icon": "",
+    "minutes": 60,
+    "is_active": true
+  }
+},
+{
+  "model": "booking.extraoption",
+  "pk": 14,
+  "fields": {
+    "created_at": "2021-03-15T05:00:00Z",
+    "updated_at": "2021-03-15T05:00:00Z",
+    "description": "Fire place cleaning",
+    "price": 30,
+    "icon": "",
+    "minutes": 30,
+    "is_active": true
+  }
 }
 ]
