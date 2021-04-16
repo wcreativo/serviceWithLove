@@ -48,7 +48,33 @@
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Frecuency</h2>
                 {{ form.frequency }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Select Extras</h2>
-                {{ form.extra_opts }}
+                <ul id="id_extra_opts" class="grid grid-cols-3 grid-rows-2 grid-flow-col gap-5">
+                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
+                        <label for="id_extra_opts_0">
+                            <input type="checkbox" name="extra_opts" value="0"
+                                   id="id_extra_opts_0" class="checkiconinput">
+                        </label>
+                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
+                    </li>
+                    <p class="choice_label text-center">{{ form.extra_opts.0.choice_label }}</p>
+                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
+                        <label for="id_extra_opts_1">
+                            <input type="checkbox" name="extra_opts" value="1"
+                                   id="id_extra_opts_1">
+                        </label>
+                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
+                    </li>
+                    <p class="choice_label text-center">{{ form.extra_opts.1.choice_label }}</p>
+                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
+                        <label for="id_extra_opts_2">
+                            <input type="checkbox" name="extra_opts" value="2"
+                                   id="id_extra_opts_2">
+                        </label>
+                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
+                    </li>
+                    <p class="choice_label text-center">{{ form.extra_opts.2.choice_label }}</p>
+                </ul>
+                {#                {{ form.extra_opts }}#}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Info</h2>
                 {{ form.flexibility }}
                 {{ form.entry }}
@@ -91,12 +117,13 @@
             <hr/>
 
             <div id="submitSuccessResult" style="display: none;">
-                
-                Thanks <span id="orderUser"></span> for trust in Service With Love! <br /> 
-                Your service with order # <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span>  has been settled. <br />
-                
+
+                Thanks <span id="orderUser"></span> for trust in Service With Love! <br/>
+                Your service with order # <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span>
+                has been settled. <br/>
+
                 We send an email to <span id="orderEmail"></span>
-                
+
             </div>
 
             <div id="submitErrorResult" style="display: none;">
@@ -321,13 +348,13 @@
             });
         }
 
-        function setStartingValues(){
+        function setStartingValues() {
             getStates();
             getBasePrice();
             setSummaryDetails();
             publishTime(startingTime);
         }
-        
+
         $(document).ready(function () {
             setStartingValues();
         });
@@ -432,7 +459,7 @@
             step: 30
         });
 
-        form.submit(function(e){
+        form.submit(function (e) {
             e.preventDefault();
 
             $.ajax({
@@ -440,7 +467,7 @@
                 type: 'POST',
                 data: $(this).serializeArray(),
 
-                success: function(resp){
+                success: function (resp) {
                     $('#orderUser').html(`${resp.servicefirstname} ${resp.servicelastname}`);
                     $('#orderNumber').html(`${resp.serviceid}`);
                     $('#orderTotal').html(`${resp.servicetotal}`);
@@ -449,7 +476,7 @@
                     submitFailResult.hide();
                 },
 
-                error: function(xhr, errmsg, err){
+                error: function (xhr, errmsg, err) {
                     var response = JSON.parse(xhr.responseText);
                     var keys = Object.keys(response);
                     var htmlText = 'Seemes like we have some errors:<br />'
@@ -460,7 +487,7 @@
                     submitSuccessResult.hide();
                     submitFailResult.html(htmlText);
                     submitFailResult.show();
-                } 
+                }
             })
         });
 

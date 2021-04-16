@@ -49,3 +49,8 @@ jQuery(document).ready(function($) {
       return false;
    });
 });
+
+function extra_items(){
+   let extra_item = document.getElementById('iconboxservice');
+   extra_item.classList.toggle('iconboxservice-togglecolor');
+}

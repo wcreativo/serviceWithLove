@@ -155,36 +155,65 @@ button.close {
 /*    !*left: 0;*!*/
 /*}*/
 
-#id_extra_opts li input:before {
-    background-color: #0f74a8;
-    width: 50px;
-    height: 50px;
+/*#id_extra_opts li input:before {*/
+/*    background-color: #0f74a8;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+
+/*ul li label .icon-box {*/
+/*    width: 60px;*/
+/*    height: 60px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border: 3px solid #bfbfbf;*/
+/*    border-radius: 10px;*/
+/*    transition: 0.5s;*/
+/*}*/
+
+/*ul li label .icon-box .fa {*/
+/*    font-size: 30px;*/
+/*    color: #bfbfbf;*/
+/*    transition: 0.5s;*/
+/*}*/
+
+/*ul li input[type="checkbox"]:checked ~ .icon-box {*/
+/*    background: #d7af2d;*/
+/*    border: 3px solid #f6cd6c;*/
+/*}*/
+
+/*ul li input[type="checkbox"]:checked ~ .icon-box .fa {*/
+/*    color: #fff;*/
+/*}*/
+
+.iconboxservice {
+    width: 100%;
+    position: relative;
+    border: solid #9d9d9d 1px;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.iconboxservice input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     cursor: pointer;
+    opacity: 0;
 }
 
-
-ul li label .icon-box {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #bfbfbf;
-    border-radius: 10px;
-    transition: 0.5s;
+.iconboxservice-togglecolor {
+    background-color: #E19E17;
 }
 
-ul li label .icon-box .fa {
-    font-size: 30px;
-    color: #bfbfbf;
-    transition: 0.5s;
+.iconboxservice.checkiconbox {
+    position: absolute;
+    top: 0;
+    left: 50%;
 }
 
-ul li input[type="checkbox"]:checked ~ .icon-box {
-    background: #d7af2d;
-    border: 3px solid #f6cd6c;
-}
-
-ul li input[type="checkbox"]:checked ~ .icon-box .fa {
-    color: #fff;
-}
