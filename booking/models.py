@@ -43,6 +43,9 @@ class Room(CommonData):
 
     def __str__(self) -> str:
         return f'{self.description}'
+    
+    class Meta:
+        ordering = ['id']
 
 
 class Bathroom(CommonData):
@@ -52,6 +55,9 @@ class Bathroom(CommonData):
 
     def __str__(self) -> str:
         return f'{self.description}'
+    
+    class Meta:
+        ordering = ['id']
 
 
 class Frequency(CommonData):
