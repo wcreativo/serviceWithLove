@@ -2,13 +2,6 @@ from rest_framework import serializers
 from .models import Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
 
 
-class FrequencySerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = Frequency
-        fields = ['description', 'discount']
-
-
 class AreaSerializer(serializers.ModelSerializer):
 
     class Meta:

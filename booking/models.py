@@ -2,6 +2,8 @@ from .enums import GainEntry, Pets, CovidExposure
 from .validators import validate_date_greater
 from common.models import CommonData
 from geoinfo.models import City, State, Country
+from datetime import date
+from datetime import time
 
 from django.db.models import CharField, BooleanField, ForeignKey, DO_NOTHING, EmailField, IntegerField, TextField, ManyToManyField, FloatField, DateField, TimeField
 from django_enumfield.enum import EnumField
@@ -106,7 +108,6 @@ class Appointment(CommonData):
     date: date = DateField(verbose_name='date', blank=False, null=False, validators=[validate_date_greater])
     time: time = TimeField(verbose_name='time', blank=False, null=False)
     subtotal: float = FloatField(verbose_name='subtotal')
-    discount: float = FloatField(verbose_name='discount')
     tax: float = FloatField(verbose_name='tax')
     total: float = FloatField(verbose_name='total')
     estimated_time: int = IntegerField(verbose_name='Total estimated time')
@@ -125,10 +126,10 @@ class Appointment(CommonData):
 
 
 class DateTimeDisabler(CommonData):
-    from_date: from_date = DateField(verbose_name='From this date', blank=False, null=False)
-    to_date: to_date = DateField(verbose_name='To this date', blank=False, null=False)
-    from_time: from_time = TimeField(verbose_name='From this time', blank=False, null=False)
-    to_time: to_time = TimeField(verbose_name='To this time', blank=False, null=False)
+    from_date: date = DateField(verbose_name='From this date', blank=False, null=False)
+    to_date: date = DateField(verbose_name='To this date', blank=False, null=False)
+    from_time: time = TimeField(verbose_name='From this time', blank=False, null=False)
+    to_time: time = TimeField(verbose_name='To this time', blank=False, null=False)
     comment: str = CharField(verbose_name='Comment', max_length=100, default='No comment')
 
     def __str__(self) -> str:

@@ -46,7 +46,6 @@ class AppointmentForm(forms.ModelForm):
             'covid',
             'comments',
             'subtotal',
-            'discount',
             'tax',
             'total',
             'estimated_time'
@@ -90,7 +89,6 @@ class AppointmentForm(forms.ModelForm):
             'time': forms.TimeInput(format='HH:MM', attrs={'placeholder': '--:--',
                                                            'class': input_styles}),
             'subtotal': forms.HiddenInput(),
-            'discount': forms.HiddenInput(),
             'tax': forms.HiddenInput(),
             'total': forms.HiddenInput(),
             'estimated_time': forms.HiddenInput()
