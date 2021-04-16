@@ -23,6 +23,9 @@ class ServiceArea(CommonData):
     def __str__(self) -> str:
         return f'{self.description}'
 
+    class Meta:
+        ordering = ['id']
+
 
 class CleaningType(CommonData):
     description: str = CharField(verbose_name='service type', max_length=30)
