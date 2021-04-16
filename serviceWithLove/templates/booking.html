@@ -19,8 +19,9 @@
     </header>
     <div class="grid gap-5 grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 justify-center py-10 xl:py-20 lg:py-20 md:py-20 mx-5 xl:mx-0 lg:mx-0 md:mx-10">
         <div class="xl:w-3/4 lg:w-3/4 justify-self-end border shadow-lg p-5 xl:p-20 lg:p-10 md:p-10">
-            <h2 class="mb-5 text-lg text-center md:text-2xl lg:text-2xl font-semibold text-gray-900">Complete your
+            <h2 class="mb-5 text-lg text-center md:text-4xl lg:text-4xl font-light text-gray-900">Complete your
                 booking.</h2>
+            <h3 class="mb-5 text-lg text-center md:text-lg lg:text-lg font-light text-gray-900">Just a few more details and we can complete your booking!</h3>
             <form method="POST" id="bookingForm" data-states-url="ajax/load-states" data-cities-url="ajax/load-cities">
                 {% csrf_token %}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Contact Info</h2>
@@ -43,43 +44,22 @@
                 {{ form.cleaning_type }}
                 {{ form.maid_qty }}
                 {{ form.hours_qty }}
+                <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Additionals</h2>
                 {{ form.room_type }}
                 {{ form.bathroom }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Frecuency</h2>
                 {{ form.frequency }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Select Extras</h2>
-                <ul id="id_extra_opts" class="grid grid-cols-3 grid-rows-2 grid-flow-col gap-5">
-                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
-                        <label for="id_extra_opts_0">
-                            <input type="checkbox" name="extra_opts" value="0"
-                                   id="id_extra_opts_0" class="checkiconinput">
-                        </label>
-                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
-                    </li>
-                    <p class="choice_label text-center">{{ form.extra_opts.0.choice_label }}</p>
-                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
-                        <label for="id_extra_opts_1">
-                            <input type="checkbox" name="extra_opts" value="1"
-                                   id="id_extra_opts_1">
-                        </label>
-                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
-                    </li>
-                    <p class="choice_label text-center">{{ form.extra_opts.1.choice_label }}</p>
-                    <li id='iconboxservice' onclick="extra_items()" class="iconboxservice flex justify-center items-center">
-                        <label for="id_extra_opts_2">
-                            <input type="checkbox" name="extra_opts" value="2"
-                                   id="id_extra_opts_2">
-                        </label>
-                        <i class="fas fa-door-closed checkiconbox object-center py-5"></i>
-                    </li>
-                    <p class="choice_label text-center">{{ form.extra_opts.2.choice_label }}</p>
-                </ul>
-                {#                {{ form.extra_opts }}#}
+                {% include 'snippets/extra_options.html' %}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Info</h2>
                 {{ form.flexibility }}
+                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">How will we gain entry? *</h2>
                 {{ form.entry }}
+                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">Are there any pets? *</h2>
                 {{ form.pets }}
+                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">Have you or anyone in your home been exposed to COVID-19 in the past 14 days? *</h2>
                 {{ form.covid }}
+                <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Customer Comments</h2>
                 {{ form.comments }}
                 {{ form.subtotal }}
                 {{ form.discount }}
