@@ -4,6 +4,8 @@
 <script src="{% static 'js/jquery.mousewheel.js' %}"></script>
 <script src="{% static 'js/php-date-formatter.min.js' %}"></script>
 <script src="{% static 'js/datetimepicker/jquery.datetimepicker.js' %}"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
 {% endblock extra_head %} {% block content %}
 <header class="text-gray-100 body-font shadow w-full h-36" style="background: rgb(244,199,73); background: radial-gradient(circle, rgba(244,199,73,1) 0%, rgba(203,166,62,1) 35%, rgba(171,137,41,1) 100%);">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
@@ -39,8 +41,21 @@
             {{ form.covid }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Customer Comments</h2>
             {{ form.comments }} {{ form.subtotal }} {{ form.tax }} {{ form.total }} {{ form.estimated_time }}
+
+            <label for="card-element">
+                Credit or debit card
+            </label>
+            <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display Element errors. -->
+            <div id="card-errors" role="alert"></div>
+
+
             <button type="submit" class="mt-4 px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500">Book Now
                 </button>
+
         </form>
     </div>
     <div class="xl:w-3/4 lg:w-3/4 border sticky top-10 shadow-lg p-5 xl:p-20 lg:p-10 md:p-10 h-full xl:h-2/5 lg:h-2/5 md:h-2/5">
@@ -80,6 +95,8 @@
 
 {% endblock content %} {% block js_scripts %}
 <script>
+    var stripe = Stripe('pk_test_51IdeVKJbMdRS1I8IsuHRhXb0q0adhLHC4e1CcaxiWeXeX6rD2LuZtsHe29TFTg9Zah1HrFOZQ0FAjbEW0UWwbTOH00MlOOgPOd');
+    var elements = stripe.elements();
     var form = $('#bookingForm');
     var submitSuccessResult = $('#submitSuccessResult');
     var submitFailResult = $('#submitErrorResult');
