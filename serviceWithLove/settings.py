@@ -182,6 +182,7 @@ INSTALLED_APPS = [
     'booking',
     'rest_framework',
     'tawkto',
+    'stripe_api'
 ]
 
 TAWKTO_ID_SITE = os.environ.get('TAWKTO_ID_SITE')

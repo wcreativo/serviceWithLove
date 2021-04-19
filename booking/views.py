@@ -10,7 +10,8 @@ from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice
 from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
-
+from stripe_api import customer
+from stripe_api.models import StripeCustomer
 
 class AppointmentCreate(CreateView):
     model = Appointment
@@ -21,19 +22,30 @@ class AppointmentCreate(CreateView):
         appointment_form = AppointmentForm(request.POST)
 
         if appointment_form.is_valid():
-            result = appointment_form.save()
-            response = send_html_mail(result)
+            if request.POST.get('stripeToken'):
+                new_customer = customer.create_customer(request.POST.get('email'))
+                new_stripe_customer = StripeCustomer(
+                    email=request.POST.get('email'), 
+                    token=request.POST.get('stripeToken'),
+                    str_customer_id=new_customer.id
+                    )
+                new_stripe_customer.save()
+                
+            # result = appointment_form.save()
+            # response = send_html_mail(result)
 
-            print(
-                f'mail thread created for  {result.id} with email {result.email} {response}')
+            # print(
+            #     f'mail thread created for  {result.id} with email {result.email} {response}')
 
-            response_data ={
-                'serviceid': result.id,
-                'serviceemail': result.email,
-                'servicefirstname': result.firstname,
-                'servicelastname': result.lastname,
-                'servicetotal': result.total,
-            }
+            # response_data ={
+            #     'serviceid': result.id,
+            #     'serviceemail': result.email,
+            #     'servicefirstname': result.firstname,
+            #     'servicelastname': result.lastname,
+            #     'servicetotal': result.total,
+            # }
+
+            response_data = { 'result': 'todo ok'}
 
             return JsonResponse(response_data, status=201)
         else:
