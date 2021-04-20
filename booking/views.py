@@ -6,51 +6,77 @@ from rest_framework.generics import RetrieveAPIView
 from rest_framework.views import APIView
 
 from .forms import AppointmentForm
-from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
+from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory
 from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
-from stripe_api import customer
-from stripe_api.models import StripeCustomer
+from stripe_api import customer, charge
 
 class AppointmentCreate(CreateView):
     model = Appointment
     form_class = AppointmentForm
     template_name = 'booking.html'
+    
 
     def post(self, request, *args, **kwargs):
         appointment_form = AppointmentForm(request.POST)
 
         if appointment_form.is_valid():
             if request.POST.get('stripeToken'):
-                new_customer = customer.create_customer(request.POST.get('email'))
-                new_stripe_customer = StripeCustomer(
-                    email=request.POST.get('email'), 
-                    token=request.POST.get('stripeToken'),
-                    str_customer_id=new_customer.id
-                    )
-                new_stripe_customer.save()
-                
-            # result = appointment_form.save()
-            # response = send_html_mail(result)
+                new_charge = charge.create_charge(request)
 
-            # print(
-            #     f'mail thread created for  {result.id} with email {result.email} {response}')
+                if 'err' in new_charge:
+                    response = {
+                        'card': [
+                            {
+                                'message': new_charge['message'],
+                                'code': new_charge['code']
+                            }
+                        ]
+                    }
+                    return JsonResponse(response, status=new_charge['status'])
 
-            # response_data ={
-            #     'serviceid': result.id,
-            #     'serviceemail': result.email,
-            #     'servicefirstname': result.firstname,
-            #     'servicelastname': result.lastname,
-            #     'servicetotal': result.total,
-            # }
+                if new_charge['captured'] != True:
+                    response = {
+                        'card': [
+                            {
+                                'message': 'charge info could not be captured',
+                                'code': ''
+                            }
+                        ]
+                    }
+                    return JsonResponse(response, status=400)
+                    
+                    
+                order_result = appointment_form.save()
+                charge_history = ChargeHistory(order=order_result, stripe_id=new_charge['id'], stripe_status=new_charge['status'] )
+                charge_history.save()
+                response = send_html_mail(order_result)
 
-            response_data = { 'result': 'todo ok'}
+                print(
+                    f'mail thread created for  {order_result.id} with email {order_result.email} {response}')
 
-            return JsonResponse(response_data, status=201)
+                response_data ={
+                    'serviceid': order_result.id,
+                    'serviceemail': order_result.email,
+                    'servicefirstname': order_result.firstname,
+                    'servicelastname': order_result.lastname,
+                    'servicetotal': order_result.total,
+                }
+                return JsonResponse(response_data, status=201)
+            else:
+                response = {
+                        'stripeToken': [
+                            {
+                                'message': 'stripeToken is not valid',
+                                'code': ''
+                            }
+                        ]
+                    }
+                return JsonResponse(response, status=400)
         else:
             errors = appointment_form.errors.get_json_data()
-            return JsonResponse(errors, status=500)
+            return JsonResponse(errors, status=400)
             
 
 class ListStates(ListView):
