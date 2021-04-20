@@ -1,12 +1,18 @@
+import json
+import os
+
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import CreateView, ListView
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.views import APIView
 
+from . import stripe
 from .forms import AppointmentForm
-from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory
+from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge
 from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
@@ -27,7 +33,7 @@ class AppointmentCreate(CreateView):
 
                 if 'err' in new_charge:
                     response = {
-                        'card': [
+                        'card_info': [
                             {
                                 'message': new_charge['message'],
                                 'code': new_charge['code']
@@ -38,7 +44,7 @@ class AppointmentCreate(CreateView):
 
                 if new_charge['captured'] != True:
                     response = {
-                        'card': [
+                        'card_info': [
                             {
                                 'message': 'charge info could not be captured',
                                 'code': ''
@@ -49,8 +55,13 @@ class AppointmentCreate(CreateView):
                     
                     
                 order_result = appointment_form.save()
-                charge_history = ChargeHistory(order=order_result, stripe_id=new_charge['id'], stripe_status=new_charge['status'] )
+                charge_registry = Charge(stripe_id=new_charge['id'], order=order_result, last_status=new_charge['status'])
+                charge_registry.save()
+                charge_history = ChargeHistory(stripe_id=charge_registry, stripe_status=new_charge['status'] )
                 charge_history.save()
+
+                charge.update_charge(order_result, new_charge['id'])
+
                 response = send_html_mail(order_result)
 
                 print(
@@ -64,6 +75,7 @@ class AppointmentCreate(CreateView):
                     'servicetotal': order_result.total,
                 }
                 return JsonResponse(response_data, status=201)
+                
             else:
                 response = {
                         'stripeToken': [
@@ -149,3 +161,44 @@ class GetExtraOptPrice(APIView):
         if request.method == 'POST':
             response = self.serializer_class(result, many=True)
             return JsonResponse(response.data, safe=False)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class StripeWebHook(APIView):
+        
+    def post(self, request, format=None, *args, **kwargs):
+        stripe_secret_signature = os.environ.get('STRIPE_SECRET_SIGNATURE')
+        payload = request.body
+        sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+        body = json.loads(request.body)
+        event = None
+
+        try:
+            event = stripe.Webhook.construct_event(
+                payload, sig_header, stripe_secret_signature
+            )
+        except ValueError as e:
+            # invalid payload
+            print(f'### err {e}')
+            return HttpResponse(status=400)
+        except stripe.error.SignatureVerificationError as e:
+            # Invalid signature
+            print(f'### err {e}')
+            return HttpResponse(status=400)
+
+        if event.type == 'charge.refund.updated':
+            try:
+                charge = Charge.objects.get(stripe_id=body['data']['object']['charge'])
+            except Charge.DoesNotExist:
+                charge = None
+                print(f"[ERROR] in webhook stripe order # {body['data']['object']['charge']} not found")
+                return JsonResponse({}, status=404)
+
+            charge_history = ChargeHistory(stripe_id=charge, stripe_status='refund')
+            charge_history.save()
+            charge.last_status='refund'
+            charge.save()
+        else:
+            print(f'Unhandled event type in webhook {event.type}')
+
+        return JsonResponse({}, status=200)

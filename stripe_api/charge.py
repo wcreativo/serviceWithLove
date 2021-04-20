@@ -16,7 +16,7 @@ def create_charge(order_data: request):
         )
 
     except stripe.error.CardError as e:
-        print(f'--> in charge: {e}')
+        print(f'[ERROR] in stripe charge.create: {e}')
         return {
             'err': True,
             'message': e._message,
@@ -25,7 +25,29 @@ def create_charge(order_data: request):
         }
 
 
-# def update_charge(order_data: Appointment, charge_id):
-#     return stripe.Charge.update(
+def update_charge(order_data: Appointment, charge_id):
+    try:
+        return stripe.Charge.modify(
+            charge_id,
+            metadata = {
+                'order_id': order_data.id,
+                'city': order_data.city.name,
+                'country': order_data.country.name,
+                'line1': order_data.address,
+                'line2': order_data.suite,
+                'state': order_data.state.name,
+                'email': order_data.email,
+                'phone': order_data.phone,
+                'name': f'{order_data.firstname} {order_data.lastname}'
+            }
 
-#     )
+        )
+    except stripe.error.CardError as e:
+        print(f'[ERROR] in charge.modify {e}')
+        return {
+            'err': True,
+            'message': e._message,
+            'status': e.http_status,
+            'code': e.code
+        }
+        
