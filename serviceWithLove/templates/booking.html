@@ -1,54 +1,67 @@
 {% extends "base.html" %} {% load cms_tags %}
-{% block title %}{% page_attribute "page_title" %}{% endblock title %} {% load static %} {% block extra_head %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+{% block title %}{% page_attribute "page_title" %}{% endblock title %} {% load static %}
+
+{% block extra_head %}
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'js/datetimepicker/jquery.datetimepicker.css' %} "/>
     <script src="{% static 'js/jquery.mousewheel.js' %}"></script>
     <script src="{% static 'js/php-date-formatter.min.js' %}"></script>
     <script src="{% static 'js/datetimepicker/jquery.datetimepicker.js' %}"></script>
-{% endblock extra_head %} {% block content %}
+{% endblock extra_head %}
+
+{% block content %}
     <header class="text-gray-100 body-font shadow w-full h-36"
             style="background: rgb(244,199,73); background: radial-gradient(circle, rgba(244,199,73,1) 0%, rgba(203,166,62,1) 35%, rgba(171,137,41,1) 100%);">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"></div>
     </header>
     <div class="grid gap-5 grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 justify-center py-10 xl:py-20 lg:py-20 md:py-20 mx-5 xl:mx-0 lg:mx-0 md:mx-10">
         <div class="xl:w-3/4 lg:w-3/4 justify-self-end border shadow-lg p-5 xl:p-20 lg:p-10 md:p-10">
-            <h2 class="mb-5 text-lg text-center md:text-4xl lg:text-4xl font-light text-gray-900">Complete your booking.
-            </h2>
-            <h3 class="mb-5 text-lg text-center md:text-lg lg:text-lg font-light text-gray-900">Just a few more details
-                and we can complete your booking!</h3>
+            <h2 class="mb-5 text-lg text-center md:text-2xl lg:text-2xl font-semibold text-gray-900">Complete your
+                booking.</h2>
             <form method="POST" id="bookingForm" data-states-url="ajax/load-states" data-cities-url="ajax/load-cities">
                 {% csrf_token %}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Contact Info</h2>
-                {{ form.firstname }} {{ form.lastname }} {{ form.email }} {{ form.phone }}
+                {{ form.firstname }}
+                {{ form.lastname }}
+                {{ form.email }}
+                {{ form.phone }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Address</h2>
-                {{ form.address }} {{ form.suite }} {{ form.country }} {{ form.state }} {{ form.city }} {{ form.zipcode }}
+                {{ form.address }}
+                {{ form.suite }}
+                {{ form.country }}
+                {{ form.state }}
+                {{ form.city }}
+                {{ form.zipcode }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Service Date</h2>
-                {{ form.date }} {{ form.time }}
+                {{ form.date }}
+                {{ form.time }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Choose your service</h2>
-                {{ form.area }} {{ form.cleaning_type }} {{ form.maid_qty }} {{ form.hours_qty }}
-                <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Additionals</h2>
-                {{ form.room_type }} {{ form.bathroom }}
+                {{ form.area }}
+                {{ form.cleaning_type }}
+                {{ form.maid_qty }}
+                {{ form.hours_qty }}
+                {{ form.room_type }}
+                {{ form.bathroom }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Frecuency</h2>
                 {{ form.frequency }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Select Extras</h2>
-                {% include 'snippets/extra_options.html' %}
+                {{ form.extra_opts }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Info</h2>
-                {% include 'snippets/flexibility.html' %}
-                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">How will we gain entry?
-                    *</h2>
+                {{ form.flexibility }}
                 {{ form.entry }}
-                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">Are there any pets?
-                    *</h2>
                 {{ form.pets }}
-                <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">Have you or anyone in
-                    your home been exposed to COVID-19 in the past 14 days? *</h2>
                 {{ form.covid }}
-                <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Customer Comments</h2>
-                {{ form.comments }} {{ form.subtotal }} {{ form.tax }} {{ form.total }} {{ form.estimated_time }}
+                {{ form.comments }}
+                {{ form.subtotal }}
+                {{ form.discount }}
+                {{ form.tax }}
+                {{ form.total }}
+                {{ form.estimated_time }}
                 <button type="submit"
-                        class="mt-4 px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500">Book
-                    Now
+                        class="mt-4 px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500">Book Now
                 </button>
             </form>
         </div>
@@ -72,16 +85,18 @@
             </div>
             <hr/>
             <p class="mt-4 flex items-center">Subtotal: <span id="summary_subtotal" class="subtotal"></span></p>
+            <p class="my-3">Discount: <span id="summary_discount" class="discount">$0</span></p>
             <p class="my-3">Sales Tax: <span id="summary_tax" class="tax"></span></p>
             <p class="my-3">Total: <span id="summary_total" class="total text-2xl text-gray-900 font-bold"></span></p>
             <hr/>
 
             <div id="submitSuccessResult" style="display: none;">
-
-                Thanks <span id="orderUser"></span> for trust in Service With Love! <br/> Your service with order #
-                <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span> has been settled. <br/> We
-                send an email to <span id="orderEmail"></span>
-
+                
+                Thanks <span id="orderUser"></span> for trust in Service With Love! <br /> 
+                Your service with order # <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span>  has been settled. <br />
+                
+                We send an email to <span id="orderEmail"></span>
+                
             </div>
 
             <div id="submitErrorResult" style="display: none;">
@@ -185,13 +200,15 @@
             var subtotal = 0;
 
             var areaId = $("#id_area").val();
-            var areaText = $("#id_area option:selected").html();
-
             var cleaningTypeId = $("#id_cleaning_type").val();
             var roomId = $("#id_room_type").val();
             var bathroomId = $("#id_bathroom").val();
             var freqId = $("#id_frequency").val();
 
+            var url = `ajax/get-freq-discount/${freqId}`;
+            var freqResponse = $.ajax({
+                url
+            });
 
             $("input[name='extra_opts']:checked").each(function () {
                 extraOpts.push(parseInt($(this).val()));
@@ -208,7 +225,7 @@
                 data: extraOpts
             });
 
-            if (areaText.match(/custom/i)) {
+            if (areaId != 1) {
                 var url = 'ajax/get-base-price/1'
                 var maidResponse = $.ajax({
                     url
@@ -218,10 +235,11 @@
                 hourQty = parseFloat($('#id_hours_qty').val());
 
 
-                $.when(maidResponse, extraOptsResponse).then(function (maidPrice, extraOptsPrice) {
+                $.when(maidResponse, freqResponse, extraOptsResponse).then(function (maidPrice, freqDiscount, extraOptsPrice) {
                     extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
                     subtotal = maidPrice[0].price * hourQty * maidQty + extraOptsTotal.total;
-                    publishValues(subtotal);
+                    discount = subtotal * (freqDiscount[0].discount / 100);
+                    publishValues(subtotal, discount);
                     publishTime((60 * hourQty) + extraOptsTotal.minutes)
                 }, function () {
                     console.log('something fails');
@@ -243,11 +261,12 @@
                     url
                 });
 
-                $.when(cleaningTypeResponse, roomResponse, bathroomResponse, extraOptsResponse).then(function (cleaningTypePrice, roomPrice, bathroomPrice, extraOptsPrice) {
+                $.when(cleaningTypeResponse, roomResponse, bathroomResponse, freqResponse, extraOptsResponse).then(function (cleaningTypePrice, roomPrice, bathroomPrice, freqDiscount, extraOptsPrice) {
                     extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
                     subtotal = startingPrice + cleaningTypePrice[0].price + roomPrice[0].price + bathroomPrice[0].price + extraOptsTotal.total;
+                    discount = subtotal * (freqDiscount[0].discount / 100);
                     startingTime = cleaningTypePrice[0].minutes;
-                    publishValues(subtotal);
+                    publishValues(subtotal, discount);
                     publishTime(startingTime + extraOptsTotal.minutes + roomPrice[0].minutes + bathroomPrice[0].minutes);
                 }, function () {
                     console.log('something fails');
@@ -255,17 +274,19 @@
             }
         }
 
-        function publishValues(subtotal) {
-            tax = subtotal * (salesTax / 100);
-            total = subtotal + tax;
+        function publishValues(subtotal, discount) {
+            tax = (subtotal - discount) * (salesTax / 100);
+            total = subtotal - discount + tax;
             total = total.toFixed(2);
             tax = tax.toFixed(2);
 
             $("#id_subtotal").val(subtotal);
+            $("#id_discount").val(discount);
             $("#id_tax").val(tax);
             $("#id_total").val(total);
 
             $("#summary_subtotal").html(`$${subtotal}`);
+            $("#summary_discount").html(`$${discount}`);
             $("#summary_tax").html(`$${tax}`);
             $("#summary_total").html(`$${total}`);
 
@@ -300,13 +321,13 @@
             });
         }
 
-        function setStartingValues() {
+        function setStartingValues(){
             getStates();
             getBasePrice();
             setSummaryDetails();
             publishTime(startingTime);
         }
-
+        
         $(document).ready(function () {
             setStartingValues();
         });
@@ -326,16 +347,16 @@
 
         $("#id_area").change(function () {
             var areaId = $(this).val();
-            var areaText = $("#id_area option:selected").html();
-            //$('#id_extra_opts input:checkbox').prop('checked', false)
 
-            if (areaText.match(/custom/i)) {
+            $('#id_extra_opts input:checkbox').prop('checked', false)
+
+            if (areaId != 1) {
                 $("#id_maid_qty").show();
                 $('#id_hours_qty').show();
                 $('#id_cleaning_type').hide();
                 $('#id_room_type').hide();
                 $('#id_bathroom').hide();
-                // $("#id_extra_opts").hide();
+                $("#id_extra_opts").hide();
 
                 $('#id_cleaning_type').val(1);
                 $('#id_room_type').val(1);
@@ -348,7 +369,7 @@
                 $('#id_cleaning_type').show();
                 $('#id_room_type').show();
                 $('#id_bathroom').show();
-                // $("#id_extra_opts").show();
+                $("#id_extra_opts").show();
 
                 $("#id_maid_qty").val(1);
                 $('#id_hours_qty').val('2.0');
@@ -383,9 +404,7 @@
 
         $("#id_date").change(function () {
             if (!$("#id_time").val())
-                $("#id_time").datetimepicker({
-                    value: '08:00'
-                });
+                $("#id_time").datetimepicker({value: '08:00'});
 
             setSummaryDetails();
         });
@@ -413,7 +432,7 @@
             step: 30
         });
 
-        form.submit(function (e) {
+        form.submit(function(e){
             e.preventDefault();
 
             $.ajax({
@@ -421,7 +440,7 @@
                 type: 'POST',
                 data: $(this).serializeArray(),
 
-                success: function (resp) {
+                success: function(resp){
                     $('#orderUser').html(`${resp.servicefirstname} ${resp.servicelastname}`);
                     $('#orderNumber').html(`${resp.serviceid}`);
                     $('#orderTotal').html(`${resp.servicetotal}`);
@@ -430,7 +449,7 @@
                     submitFailResult.hide();
                 },
 
-                error: function (xhr, errmsg, err) {
+                error: function(xhr, errmsg, err){
                     var response = JSON.parse(xhr.responseText);
                     var keys = Object.keys(response);
                     var htmlText = 'Seemes like we have some errors:<br />'
@@ -441,9 +460,14 @@
                     submitSuccessResult.hide();
                     submitFailResult.html(htmlText);
                     submitFailResult.show();
-                }
+                } 
             })
         });
+
     </script>
 
-{% endblock js_scripts %} {"total": [{"message": "This field is required.", "code": "required"}], "total": [{"message": "This field is required.", "code": "required"}]}
+{% endblock js_scripts %}
+
+
+{"total": [{"message": "This field is required.", "code": "required"}],
+"total": [{"message": "This field is required.", "code": "required"}]}

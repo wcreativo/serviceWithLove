@@ -83,8 +83,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') if DEBUG == 'production' else os.path.join(
-    BASE_DIR, 'serviceWithLove/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') if DEBUG == 'production' else os.path.join(BASE_DIR, 'serviceWithLove/media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
@@ -242,7 +241,7 @@ DATABASES = {
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASS'),
-        'HOST': os.environ.get('DATABASE_HOST'),
+        'HOST': '127.0.0.1',
         'PORT': os.environ.get('DATABASE_PORT'),
     }
 }

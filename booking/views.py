@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 from .forms import AppointmentForm
 from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
-from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
+from .serializers import FrequencySerializer, AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
 
@@ -69,6 +69,12 @@ class ListCities(ListView):
         context = super(ListCities, self).get_context_data(**kwargs)
         context['filter'] = self.request.GET.get('state')
         return context
+
+
+class GetDiscount(RetrieveAPIView):
+    lookup_field = 'id'
+    queryset = Frequency.objects.all()
+    serializer_class = FrequencySerializer
 
 
 class GetAreaPrice(RetrieveAPIView):
