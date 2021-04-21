@@ -7,7 +7,7 @@ input_styles = 'rounded-lg border-transparent flex-1 appearance-none border bord
                ' focus:ring-purple-600 focus:border-transparent my-2'
 
 select_styles = 'block w-52 text-gray-700 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm' \
-                'focus:outline-none focus:ring-primary-500 focus:border-primary-500 my-2'
+                'focus:outline-none focus:ring-primary-500 focus:border-primary-500 my-2 w-full'
 
 textarea_styles = 'flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700' \
                   'placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 ' \
@@ -46,7 +46,6 @@ class AppointmentForm(forms.ModelForm):
             'covid',
             'comments',
             'subtotal',
-            'discount',
             'tax',
             'total',
             'estimated_time'
@@ -90,7 +89,6 @@ class AppointmentForm(forms.ModelForm):
             'time': forms.TimeInput(format='HH:MM', attrs={'placeholder': '--:--',
                                                            'class': input_styles}),
             'subtotal': forms.HiddenInput(),
-            'discount': forms.HiddenInput(),
             'tax': forms.HiddenInput(),
             'total': forms.HiddenInput(),
             'estimated_time': forms.HiddenInput()
