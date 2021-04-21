@@ -6,6 +6,7 @@
     <script src="{% static 'js/jquery.mousewheel.js' %}"></script>
     <script src="{% static 'js/php-date-formatter.min.js' %}"></script>
     <script src="{% static 'js/datetimepicker/jquery.datetimepicker.js' %}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 {% endblock extra_head %} {% block content %}
     <header class="text-gray-100 body-font shadow w-full h-36"
             style="background: rgb(244,199,73); background: radial-gradient(circle, rgba(244,199,73,1) 0%, rgba(203,166,62,1) 35%, rgba(171,137,41,1) 100%);">
@@ -46,6 +47,20 @@
                 {{ form.covid }}
                 <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Customer Comments</h2>
                 {{ form.comments }} {{ form.subtotal }} {{ form.tax }} {{ form.total }} {{ form.estimated_time }}
+                
+                <div class="form-row">
+                    <label for="card-element">
+                      Credit or debit card
+                    </label>
+                    <div id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+
+                    <!-- Used to display Element errors. -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
+              
+              
                 <button type="submit"
                         class="mt-4 px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500">Book
                     Now
@@ -91,6 +106,8 @@
 
 {% endblock content %} {% block js_scripts %}
     <script>
+        var stripe = Stripe('pk_test_51IdeVKJbMdRS1I8IsuHRhXb0q0adhLHC4e1CcaxiWeXeX6rD2LuZtsHe29TFTg9Zah1HrFOZQ0FAjbEW0UWwbTOH00MlOOgPOd');
+        var elements = stripe.elements();
         var form = $('#bookingForm');
         var submitSuccessResult = $('#submitSuccessResult');
         var submitFailResult = $('#submitErrorResult');
@@ -102,6 +119,24 @@
         var minDate = '';
         var maxDate = '';
         var startingTime = 90;
+      
+          // Custom styling can be passed to options when creating an Element.
+        var cardInputStyle = {
+            base: {
+                // Add your base input styles here. For example:
+                fontSize: '16px',
+                color: '#32325d',
+            },
+        };
+
+        // Create an instance of the card Element.
+        var card = elements.create('card', {
+            hidePostalCode: true,
+            style: cardInputStyle
+        });
+      
+        // Add an instance of the card Element into the `card-element` <div>.
+        card.mount('#card-element');
 
         function getBasePrice() {
             var url = 'ajax/get-base-price/2';
@@ -129,10 +164,8 @@
             var dateText = $("#id_date").val();
             var timeText = $("#id_time").val();
             var dateTimeText = `${dateText} @ ${timeText}`;
-
             $("#sumary_service").html(areaText);
             $("#sumary_frequency").html(frequencyText);
-
             dateTimeText == ' @ ' ? $("#sumary_datetime").html('Choose Service Date') : $("#sumary_datetime").html(dateTimeText);
         }
 
@@ -299,151 +332,209 @@
                 }
             });
         }
+    }
 
-        function setStartingValues() {
-            getStates();
-            getBasePrice();
-            setSummaryDetails();
-            publishTime(startingTime);
-        }
-
-        $(document).ready(function () {
-            setStartingValues();
-        });
-
-        $("#id_country").change(function () {
-            getStates();
-        });
-
-        $("#id_state").change(function () {
-            getCitiesList();
-        });
-
-        $("#id_frequency").change(function () {
-            calculateValues();
-            setSummaryDetails();
-        });
-
-        $("#id_area").change(function () {
-            var areaId = $(this).val();
-            var areaText = $("#id_area option:selected").html();
-            //$('#id_extra_opts input:checkbox').prop('checked', false)
-
-            if (areaText.match(/custom/i)) {
-                $("#id_maid_qty").show();
-                $('#id_hours_qty').show();
-                $('#id_cleaning_type').hide();
-                $('#id_room_type').hide();
-                $('#id_bathroom').hide();
-                // $("#id_extra_opts").hide();
-
-                $('#id_cleaning_type').val(1);
-                $('#id_room_type').val(1);
-                $('#id_bathroom').val(1);
-
-                calculateValues();
-            } else {
-                $("#id_maid_qty").hide();
-                $('#id_hours_qty').hide();
-                $('#id_cleaning_type').show();
-                $('#id_room_type').show();
-                $('#id_bathroom').show();
-                // $("#id_extra_opts").show();
-
-                $("#id_maid_qty").val(1);
-                $('#id_hours_qty').val('2.0');
-                getBasePrice();
+    function getStates() {
+        var countryId = $("#id_country").val();
+        var url = $("#bookingForm").attr("data-states-url");
+        $.ajax({
+            url,
+            data: {
+                'country': countryId
+            },
+            success: function(data) {
+                $("#id_state").html(data);
+                getCitiesList()
             }
-            setSummaryDetails();
         });
+    }
 
-        $("#id_cleaning_type").change(function () {
+    function getCitiesList() {
+        var stateId = $("#id_state").val();
+        var url = $("#bookingForm").attr("data-cities-url");
+        $.ajax({
+            url,
+            data: {
+                'state': stateId
+            },
+            success: function(data) {
+                $("#id_city").html(data);
+            }
+        });
+    }
+
+
+    function setStartingValues() {
+        getStates();
+        getBasePrice();
+        setSummaryDetails();
+        publishTime(startingTime);
+    }
+
+    $(document).ready(function() {
+        setStartingValues();
+    });
+
+    $("#id_country").change(function() {
+        getStates();
+    });
+
+    $("#id_state").change(function() {
+        getCitiesList();
+    });
+
+    $("#id_frequency").change(function() {
+        calculateValues();
+        setSummaryDetails();
+    });
+
+    $("#id_area").change(function() {
+        var areaId = $(this).val();
+        var areaText = $("#id_area option:selected").html();
+        //$('#id_extra_opts input:checkbox').prop('checked', false)
+
+        if (areaText.match(/custom/i)) {
+            $("#id_maid_qty").show();
+            $('#id_hours_qty').show();
+            $('#id_cleaning_type').hide();
+            $('#id_room_type').hide();
+            $('#id_bathroom').hide();
+            // $("#id_extra_opts").hide();
+
+            $('#id_cleaning_type').val(1);
+            $('#id_room_type').val(1);
+            $('#id_bathroom').val(1);
+
             calculateValues();
-        });
+        } else {
+            $("#id_maid_qty").hide();
+            $('#id_hours_qty').hide();
+            $('#id_cleaning_type').show();
+            $('#id_room_type').show();
+            $('#id_bathroom').show();
+            // $("#id_extra_opts").show();
 
-        $("#id_room_type").change(function () {
-            calculateValues();
-        });
+            $("#id_maid_qty").val(1);
+            $('#id_hours_qty').val('2.0');
+            getBasePrice();
+        }
+        setSummaryDetails();
+    });
 
-        $("#id_bathroom").change(function () {
-            calculateValues();
-        });
+    $("#id_cleaning_type").change(function() {
+        calculateValues();
+    });
 
-        $("#id_maid_qty").change(function () {
-            calculateValues();
-        });
+    $("#id_room_type").change(function() {
+        calculateValues();
+    });
 
-        $("#id_hours_qty").change(function () {
-            calculateValues();
-        });
+    $("#id_bathroom").change(function() {
+        calculateValues();
+    });
 
-        $("#id_extra_opts").change(function () {
-            calculateValues();
-        });
+    $("#id_maid_qty").change(function() {
+        calculateValues();
+    });
 
-        $("#id_date").change(function () {
-            if (!$("#id_time").val())
-                $("#id_time").datetimepicker({
-                    value: '08:00'
+
+    $("#id_hours_qty").change(function() {
+        calculateValues();
+    });
+
+    $("#id_extra_opts").change(function() {
+        calculateValues();
+    });
+
+    $("#id_date").change(function() {
+        if (!$("#id_time").val())
+            $("#id_time").datetimepicker({
+                value: '08:00'
+            });
+
+        setSummaryDetails();
+    });
+
+    $("#id_time").change(function() {
+        setSummaryDetails();
+    });
+
+    $.datetimepicker.setLocale('en');
+    $("#id_date").datetimepicker({
+        lang: 'en',
+        timepicker: false,
+        onGenerate: getMinMaxDates(),
+        format: 'm/d/Y',
+        formatDate: 'Y-m-d',
+        minDate: minDate, // tomorrow is minimum date
+        maxDate: maxDate //60 days forward is max date
+    });
+
+    $('#id_time').datetimepicker({
+        datepicker: false,
+        onGenerate: getAllowedHours(),
+        format: 'H:i',
+        allowTimes: allowedHours,
+        step: 30
+    });
+
+
+    function stripeTokenHandler(token) {
+        // Insert the token ID into the form so it gets submitted to the server
+        var form = document.getElementById('bookingForm');
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', token.id);
+        form.appendChild(hiddenInput);
+
+        // Submit the form
+        $.ajax({
+            url: "{% url 'booking:new_booking' %}",
+            type: 'POST',
+            data: $('#bookingForm').serializeArray(),
+
+            success: function(resp) {
+                $('#orderUser').html(`${resp.servicefirstname} ${resp.servicelastname}`);
+                $('#orderNumber').html(`${resp.serviceid}`);
+                $('#orderTotal').html(`${resp.servicetotal}`);
+                $('#orderEmail').html(`${resp.serviceemail}`);
+                submitSuccessResult.show();
+                submitFailResult.hide();
+            },
+
+            error: function(xhr, errmsg, err) {
+                var response = JSON.parse(xhr.responseText);
+                var keys = Object.keys(response);
+                var htmlText = 'Seemes like we have some errors:<br />'
+
+                keys.forEach((key, index) => {
+                    htmlText += `${key}: ${response[key][0].message} <br />`;
                 });
-
-            setSummaryDetails();
+                submitSuccessResult.hide();
+                submitFailResult.html(htmlText);
+                submitFailResult.show();
+            }
         });
 
-        $("#id_time").change(function () {
-            setSummaryDetails();
+
+    }
+
+    form.submit(function(e) {
+        e.preventDefault();
+
+        stripe.createToken(card).then(function(result) {
+            if (result.error) {
+                // Inform the customer that there was an error.
+                var errorElement = document.getElementById('card-errors');
+                errorElement.textContent = result.error.message;
+            } else {
+                // Send the token to your server.
+                stripeTokenHandler(result.token);
+            }
         });
 
-        $.datetimepicker.setLocale('en');
-        $("#id_date").datetimepicker({
-            lang: 'en',
-            timepicker: false,
-            onGenerate: getMinMaxDates(),
-            format: 'm/d/Y',
-            formatDate: 'Y-m-d',
-            minDate: minDate, // tomorrow is minimum date
-            maxDate: maxDate //60 days forward is max date
-        });
+    });
+</script>
 
-        $('#id_time').datetimepicker({
-            datepicker: false,
-            onGenerate: getAllowedHours(),
-            format: 'H:i',
-            allowTimes: allowedHours,
-            step: 30
-        });
-
-        form.submit(function (e) {
-            e.preventDefault();
-
-            $.ajax({
-                url: "{% url 'booking:new_booking' %}",
-                type: 'POST',
-                data: $(this).serializeArray(),
-
-                success: function (resp) {
-                    $('#orderUser').html(`${resp.servicefirstname} ${resp.servicelastname}`);
-                    $('#orderNumber').html(`${resp.serviceid}`);
-                    $('#orderTotal').html(`${resp.servicetotal}`);
-                    $('#orderEmail').html(`${resp.serviceemail}`);
-                    submitSuccessResult.show();
-                    submitFailResult.hide();
-                },
-
-                error: function (xhr, errmsg, err) {
-                    var response = JSON.parse(xhr.responseText);
-                    var keys = Object.keys(response);
-                    var htmlText = 'Seemes like we have some errors:<br />'
-
-                    keys.forEach((key, index) => {
-                        htmlText += `${key}: ${response[key][0].message} <br />`;
-                    });
-                    submitSuccessResult.hide();
-                    submitFailResult.html(htmlText);
-                    submitFailResult.show();
-                }
-            })
-        });
-    </script>
-
-{% endblock js_scripts %} {"total": [{"message": "This field is required.", "code": "required"}], "total": [{"message": "This field is required.", "code": "required"}]}
+{% endblock js_scripts %}

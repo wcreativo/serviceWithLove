@@ -15,8 +15,8 @@
   "fields": {
     "created_at": "2021-04-03T18:12:57.373Z",
     "updated_at": "2021-04-03T18:12:57.373Z",
-    "description": "Weekly for 20% Off",
-    "discount": 20
+    "description": "Weekly",
+    "discount": 0
   }
 },
 {
@@ -25,8 +25,8 @@
   "fields": {
     "created_at": "2021-04-03T18:13:21.908Z",
     "updated_at": "2021-04-03T18:13:21.909Z",
-    "description": "Every 2 weeks for 15% Off",
-    "discount": 15
+    "description": "Every 2 weeks",
+    "discount": 0
   }
 },
 {
@@ -35,8 +35,8 @@
   "fields": {
     "created_at": "2021-04-03T18:13:53.307Z",
     "updated_at": "2021-04-03T18:13:53.307Z",
-    "description": "Every 4 weeks for 10% Off",
-    "discount": 10
+    "description": "Every 4 weeks",
+    "discount": 0
   }
 }
 ]

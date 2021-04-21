@@ -182,6 +182,7 @@ INSTALLED_APPS = [
     'booking',
     'rest_framework',
     'tawkto',
+    'stripe_api'
 ]
 
 TAWKTO_ID_SITE = os.environ.get('TAWKTO_ID_SITE')
@@ -260,3 +261,4 @@ EMAIL_PORT = os.environ.get('MAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('MAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('MAIL_PASSWORD')
 EMAIL_USE_SSL = True
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')

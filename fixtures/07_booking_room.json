@@ -5,9 +5,9 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "Studio",
-    "price": 0,
-    "minutes": 0
+    "description": "+1 Bedroom",
+    "price": 30,
+    "minutes": 30
   }
 },
 {
@@ -16,9 +16,9 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "1 Bedroom",
-    "price": 10,
-    "minutes": 30
+    "description": "+2 Bedrooms",
+    "price": 40,
+    "minutes": 60
   }
 },
 {
@@ -27,9 +27,9 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "2 Bedrooms",
-    "price": 40,
-    "minutes": 60
+    "description": "+3 Bedrooms",
+    "price": 50,
+    "minutes": 90
   }
 },
 {
@@ -38,9 +38,9 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "3 Bedrooms",
-    "price": 90,
-    "minutes": 90
+    "description": "+4Bedrooms",
+    "price": 60,
+    "minutes": 120
   }
 },
 {
@@ -49,9 +49,9 @@
   "fields": {
     "created_at": "2021-03-15T05:00:00Z",
     "updated_at": "2021-03-15T05:00:00Z",
-    "description": "Two floor house or Duplex",
-    "price": 150,
-    "minutes": 240
+    "description": "+5 Bedrooms",
+    "price": 70,
+    "minutes": 150
   }
 }
 ]

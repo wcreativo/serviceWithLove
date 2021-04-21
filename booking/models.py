@@ -137,3 +137,25 @@ class DateTimeDisabler(CommonData):
     
     class Meta:
         ordering = ['from_date']
+
+
+class Charge(CommonData):
+    stripe_id: str = CharField(verbose_name='id', primary_key=True, max_length=50)
+    order: Appointment = ForeignKey(Appointment, verbose_name='Appointment_id', on_delete=DO_NOTHING)
+    last_status: str = CharField(verbose_name='last status', max_length=50)
+    
+    def __str__(self) -> str:
+        return f'stripe id: {self.stripe_id} order: {self.order}'
+        
+    class Meta:
+        ordering = ['created_at']
+
+class ChargeHistory(CommonData):
+    stripe_id: Charge = ForeignKey(Charge, verbose_name='Stripe id', on_delete=DO_NOTHING)
+    stripe_status: str = CharField(verbose_name='Stripe status', max_length=50) 
+
+    class Meta:
+        ordering = ['created_at']
+
+    def __str__(self) -> str:
+        return f'created: {self.created_at} stripe id: {self.stripe_id} status: {self.stripe_status}'
