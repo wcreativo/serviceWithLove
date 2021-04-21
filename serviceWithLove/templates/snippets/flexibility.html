@@ -1,0 +1,30 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<ul class="grid grid-cols-3 grid-rows-2 grid-flow-col gap-5">
+    <li id='iconboxservice' class="iconboxservice flex justify-center items-center">
+        <label for="id_flexibility_0">
+            <input type="checkbox" name="flexibility" value="0"
+                   id="id_flexibility_0" class="checkiconinput">
+        </label>
+        <img src="{% static 'img/icons/morning.png' %}"
+             class="h-24 w-auto fas checkiconbox object-center py-5 text-2xl text-gray-500" alt="">
+    </li>
+    <p class="choice_label text-center">{{ form.flexibility.0.choice_label }}</p>
+    <li id='iconboxservice' class="iconboxservice flex justify-center items-center">
+        <label for="id_flexibility_0">
+            <input type="checkbox" name="flexibility" value="0"
+                   id="id_flexibility_0" class="checkiconinput">
+        </label>
+        <img src="{% static 'img/icons/sunset.png' %}"
+             class="h-24 w-auto fas checkiconbox object-center py-5 text-2xl text-gray-500" alt="">
+    </li>
+    <p class="choice_label text-center">{{ form.flexibility.1.choice_label }}</p>
+    <li id='iconboxservice' class="iconboxservice flex justify-center items-center">
+        <label for="id_flexibility_0">
+            <input type="checkbox" name="flexibility" value="0"
+                   id="id_flexibility_0" class="checkiconinput">
+        </label>
+        <img src="{% static 'img/icons/night.png' %}"
+             class="h-24 w-auto fas checkiconbox object-center py-5 text-2xl text-gray-500" alt="">
+    </li>
+    <p class="choice_label text-center">{{ form.flexibility.2.choice_label }}</p>
+</ul>
