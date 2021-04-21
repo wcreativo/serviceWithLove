@@ -100,8 +100,6 @@ class AppointmentForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['area'].empty_label = None
         self.fields['cleaning_type'].empty_label = None
-        self.fields['room_type'].empty_label = None
-        self.fields['bathroom'].empty_label = None
         self.fields['frequency'].empty_label = None
         self.fields['country'].empty_label = None
         self.fields['state'].empty_label = None

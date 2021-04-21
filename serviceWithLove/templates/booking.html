@@ -259,25 +259,38 @@
                 url
             });
 
-            var url = `ajax/get-room-price/${roomId}`;
-            var roomResponse = $.ajax({
-                url
-            });
+            var roomResponse = false;
+            if (roomId) {
+                var url = `ajax/get-room-price/${roomId}`;
+                var roomResponse = $.ajax({
+                    url
+                });
+            }
 
-            var url = `ajax/get-bathroom-price/${bathroomId}`;
-            var bathroomResponse = $.ajax({
-                url
-            });
+            var bathroomResponse = false;
+
+            if (bathroomId) {
+                var url = `ajax/get-bathroom-price/${bathroomId}`;
+                var bathroomResponse = $.ajax({
+                    url
+                });
+            }
 
             $.when(cleaningTypeResponse, roomResponse, bathroomResponse, extraOptsResponse).then(function(cleaningTypePrice, roomPrice, bathroomPrice, extraOptsPrice) {
-                extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
-                subtotal = startingPrice + cleaningTypePrice[0].price + roomPrice[0].price + bathroomPrice[0].price + extraOptsTotal.total;
-                startingTime = cleaningTypePrice[0].minutes;
-                publishValues(subtotal);
-                publishTime(startingTime + extraOptsTotal.minutes + roomPrice[0].minutes + bathroomPrice[0].minutes);
-            }, function() {
-                console.log('something fails');
-            });
+                    extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
+                    var finalRoomPrice = roomResponse ? roomPrice[0].price : 0;
+                    var finalBathRoomPrice = bathroomResponse ? bathroomPrice[0].price : 0;
+                    var finalRoomMinutes = roomResponse ? roomPrice[0].minutes : 0;
+                    var finalBathRoomMinutes = bathroomResponse ? bathroomPrice[0].minutes : 0;
+
+                    subtotal = startingPrice + cleaningTypePrice[0].price + finalRoomPrice + finalBathRoomPrice + extraOptsTotal.total;
+                    startingTime = cleaningTypePrice[0].minutes;
+                    publishValues(subtotal);
+                    publishTime(startingTime + extraOptsTotal.minutes + finalRoomMinutes + finalBathRoomMinutes);
+                },
+                function() {
+                    console.log('something fails');
+                });
         }
     }
 
