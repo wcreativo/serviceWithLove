@@ -340,36 +340,6 @@
     }
 
 
-    function getStates() {
-        var countryId = $("#id_country").val();
-        var url = $("#bookingForm").attr("data-states-url");
-        $.ajax({
-            url,
-            data: {
-                'country': countryId
-            },
-            success: function(data) {
-                $("#id_state").html(data);
-                getCitiesList()
-            }
-        });
-    }
-
-    function getCitiesList() {
-        var stateId = $("#id_state").val();
-        var url = $("#bookingForm").attr("data-cities-url");
-        $.ajax({
-            url,
-            data: {
-                'state': stateId
-            },
-            success: function(data) {
-                $("#id_city").html(data);
-            }
-        });
-    }
-
-
     function setStartingValues() {
         getStates();
         getBasePrice();
