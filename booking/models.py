@@ -126,14 +126,13 @@ class Appointment(CommonData):
 
 
 class DateTimeDisabler(CommonData):
-    from_date: date = DateField(verbose_name='From this date', blank=False, null=False)
-    to_date: date = DateField(verbose_name='To this date', blank=False, null=False)
-    from_time: time = TimeField(verbose_name='From this time', blank=False, null=False)
-    to_time: time = TimeField(verbose_name='To this time', blank=False, null=False)
+    from_date: date = DateField(verbose_name='Date', blank=False, null=False)
+    from_time: time = TimeField(verbose_name='From this time', blank=True, null=True)
+    to_time: time = TimeField(verbose_name='To this time', blank=True, null=True)
     comment: str = CharField(verbose_name='Comment', max_length=100, default='No comment')
 
     def __str__(self) -> str:
-        return f'{self.comment} <--> From:{self.from_date} {self.from_time} To: {self.to_date} {self.to_time}'
+        return f'From:{self.from_date} At: {self.from_time} To: {self.to_time} Due to: {self.comment}'
     
     class Meta:
         ordering = ['from_date']
