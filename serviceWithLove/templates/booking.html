@@ -175,6 +175,7 @@
     }
 
     function getAllowedHours() {
+        allowedHours = [];
         for (i = 8; i <= 19; i++) {
             var oclock = `${i}:00`
             var half = `${i}:30`
@@ -214,6 +215,14 @@
                     minDate: minDate, // tomorrow is minimum date
                     maxDate: maxDate, //60 days forward is max date
                     disabledDates: blockedDates,
+                });
+
+                $('#id_time').datetimepicker({
+                    datepicker: false,
+                    onGenerate: getAllowedHours(),
+                    format: 'H:i',
+                    allowTimes: allowedHours,
+                    step: 30
                 });
             }
         });
@@ -452,11 +461,39 @@
         calculateValues();
     });
 
+    function getDateFromHours(time) {
+        time = time.split(':');
+        let now = new Date();
+        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), ...time);
+    }
+
+
+
     $("#id_date").change(function() {
-        if (!$("#id_time").val())
-            $("#id_time").datetimepicker({
-                value: '08:00'
-            });
+        getAllowedHours();
+        var filteredHours = [];
+
+        for (var i = 0; i < blockedDateHours.length; i++) {
+            if (blockedDateHours[i].from_date == $(this).val()) {
+                var startTime = getDateFromHours(blockedDateHours[i].from_time);
+                var endTime = getDateFromHours(blockedDateHours[i].to_time);
+                for (var j = 0; j < allowedHours.length; j++) {
+                    var hourToTest = getDateFromHours(allowedHours[j]);
+                    if (hourToTest.toString() < startTime.toString() || hourToTest.toString() >= endTime.toString()) {
+                        // console.log(`eliminado ${allowedHours[j]}`);
+                        // allowedHours.splice(j, 1);
+                        filteredHours.push(allowedHours[j]);
+                    } else {}
+                }
+            }
+        }
+        if (filteredHours.length > 0)
+            allowedHours = filteredHours;
+
+        $("#id_time").datetimepicker({
+            value: allowedHours[0],
+            allowTimes: allowedHours,
+        });
 
         setSummaryDetails();
     });
@@ -464,18 +501,6 @@
     $("#id_time").change(function() {
         setSummaryDetails();
     });
-
-
-
-
-    $('#id_time').datetimepicker({
-        datepicker: false,
-        onGenerate: getAllowedHours(),
-        format: 'H:i',
-        allowTimes: allowedHours,
-        step: 30
-    });
-
 
     function stripeTokenHandler(token) {
         // Insert the token ID into the form so it gets submitted to the server

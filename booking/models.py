@@ -135,7 +135,7 @@ class DateTimeDisabler(CommonData):
         return f'From:{self.from_date} At: {self.from_time} To: {self.to_time} Due to: {self.comment}'
     
     class Meta:
-        ordering = ['from_date']
+        ordering = ['-from_date']
 
 
 class Charge(CommonData):
