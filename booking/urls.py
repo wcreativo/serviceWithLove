@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import AppointmentCreate, ListStates, ListCities, GetAreaPrice, GetCleaningTypePrice, GetBasePrice, GetRoomPrice, GetBathroomPrice, GetExtraOptPrice, StripeWebHook
+from .views import AppointmentCreate, ListStates, ListCities, GetAreaPrice, GetCleaningTypePrice, GetBasePrice, GetRoomPrice, GetBathroomPrice, GetExtraOptPrice, StripeWebHook, ListBlockedTime
 
 app_name = 'appointments'
 
@@ -14,5 +14,6 @@ urlpatterns = [
     path('ajax/get-room-price/<int:id>/', GetRoomPrice.as_view(), name='ajax_get_room_price'),
     path('ajax/get-bathroom-price/<int:id>/', GetBathroomPrice.as_view(), name='ajax_get_bathroom_price'),
     path('ajax/get-extraopts-price/', GetExtraOptPrice.as_view(), name='ajax_get_extraops_price'),
+    path('ajax/get-blocked-times/', ListBlockedTime.as_view(), name='ajax_get_blocked_time'),
     path('stripe_webhook/', StripeWebHook.as_view(), name='refund_webhook')
 ]

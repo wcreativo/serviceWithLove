@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption
+from .models import Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, DateTimeDisabler
 
 
 class AreaSerializer(serializers.ModelSerializer):
@@ -43,3 +43,9 @@ class ExtraOptsSerializer(serializers.ModelSerializer):
         model = ExtraOption
         fields = ['description', 'price', 'minutes']
 
+
+class DateTimeDisablerSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = DateTimeDisabler
+        fields = ['from_date', 'from_time', 'to_time']

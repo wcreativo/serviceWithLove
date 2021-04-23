@@ -1,19 +1,21 @@
 import json
 import os
 
+from datetime import date
+
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import CreateView, ListView
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.views import APIView
 
 from . import stripe
 from .forms import AppointmentForm
-from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge
-from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer
+from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge, DateTimeDisabler
+from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer, DateTimeDisablerSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
 from stripe_api import customer, charge
@@ -202,3 +204,9 @@ class StripeWebHook(APIView):
             print(f'Unhandled event type in webhook {event.type}')
 
         return JsonResponse({}, status=200)
+
+
+class ListBlockedTime(ListAPIView):
+    today = date.today()
+    queryset = DateTimeDisabler.objects.filter(from_date__gt=today)
+    serializer_class = DateTimeDisablerSerializer

@@ -112,6 +112,8 @@
     var minDate = '';
     var maxDate = '';
     var startingTime = 90;
+    var blockedDates = [];
+    var blockedDateHours = [];
 
     // Custom styling can be passed to options when creating an Element.
     var cardInputStyle = {
@@ -173,6 +175,7 @@
     }
 
     function getAllowedHours() {
+        allowedHours = [];
         for (i = 8; i <= 19; i++) {
             var oclock = `${i}:00`
             var half = `${i}:30`
@@ -188,6 +191,41 @@
         minDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
         currentDate.setDate(currentDate.getDate() + 60);
         maxDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
+        getBlockedDates();
+    }
+
+    function getBlockedDates() {
+        var url = 'ajax/get-blocked-times/';
+        $.ajax({
+            url,
+            success: function(response) {
+                $.each(response, function(index, date) {
+                    if (date.from_time && date.to_time)
+                        blockedDateHours.push(date);
+                    else
+                        blockedDates.push(date.from_date);
+                });
+
+                $.datetimepicker.setLocale('en');
+                $("#id_date").datetimepicker({
+                    lang: 'en',
+                    timepicker: false,
+                    format: 'Y-m-d',
+                    formatDate: 'Y-m-d',
+                    minDate: minDate, // tomorrow is minimum date
+                    maxDate: maxDate, //60 days forward is max date
+                    disabledDates: blockedDates,
+                });
+
+                $('#id_time').datetimepicker({
+                    datepicker: false,
+                    onGenerate: getAllowedHours(),
+                    format: 'H:i',
+                    allowTimes: allowedHours,
+                    step: 30
+                });
+            }
+        });
     }
 
     function calculateExtraOptsPrice(arrayExtraOpts) {
@@ -345,6 +383,7 @@
         getBasePrice();
         setSummaryDetails();
         publishTime(startingTime);
+        getMinMaxDates();
     }
 
     $(document).ready(function() {
@@ -422,11 +461,39 @@
         calculateValues();
     });
 
+    function getDateFromHours(time) {
+        time = time.split(':');
+        let now = new Date();
+        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), ...time);
+    }
+
+
+
     $("#id_date").change(function() {
-        if (!$("#id_time").val())
-            $("#id_time").datetimepicker({
-                value: '08:00'
-            });
+        getAllowedHours();
+        var filteredHours = [];
+
+        for (var i = 0; i < blockedDateHours.length; i++) {
+            if (blockedDateHours[i].from_date == $(this).val()) {
+                var startTime = getDateFromHours(blockedDateHours[i].from_time);
+                var endTime = getDateFromHours(blockedDateHours[i].to_time);
+                for (var j = 0; j < allowedHours.length; j++) {
+                    var hourToTest = getDateFromHours(allowedHours[j]);
+                    if (hourToTest.toString() < startTime.toString() || hourToTest.toString() >= endTime.toString()) {
+                        // console.log(`eliminado ${allowedHours[j]}`);
+                        // allowedHours.splice(j, 1);
+                        filteredHours.push(allowedHours[j]);
+                    } else {}
+                }
+            }
+        }
+        if (filteredHours.length > 0)
+            allowedHours = filteredHours;
+
+        $("#id_time").datetimepicker({
+            value: allowedHours[0],
+            allowTimes: allowedHours,
+        });
 
         setSummaryDetails();
     });
@@ -434,26 +501,6 @@
     $("#id_time").change(function() {
         setSummaryDetails();
     });
-
-    $.datetimepicker.setLocale('en');
-    $("#id_date").datetimepicker({
-        lang: 'en',
-        timepicker: false,
-        onGenerate: getMinMaxDates(),
-        format: 'm/d/Y',
-        formatDate: 'Y-m-d',
-        minDate: minDate, // tomorrow is minimum date
-        maxDate: maxDate //60 days forward is max date
-    });
-
-    $('#id_time').datetimepicker({
-        datepicker: false,
-        onGenerate: getAllowedHours(),
-        format: 'H:i',
-        allowTimes: allowedHours,
-        step: 30
-    });
-
 
     function stripeTokenHandler(token) {
         // Insert the token ID into the form so it gets submitted to the server
