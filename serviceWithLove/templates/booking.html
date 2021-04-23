@@ -204,10 +204,19 @@
                     else
                         blockedDates.push(date.from_date);
                 });
-                console.log(`dates: ${blockedDates} dateHours: ${blockedDateHours}`);
+
+                $.datetimepicker.setLocale('en');
+                $("#id_date").datetimepicker({
+                    lang: 'en',
+                    timepicker: false,
+                    format: 'Y-m-d',
+                    formatDate: 'Y-m-d',
+                    minDate: minDate, // tomorrow is minimum date
+                    maxDate: maxDate, //60 days forward is max date
+                    disabledDates: blockedDates,
+                });
             }
         });
-
     }
 
     function calculateExtraOptsPrice(arrayExtraOpts) {
@@ -365,6 +374,7 @@
         getBasePrice();
         setSummaryDetails();
         publishTime(startingTime);
+        getMinMaxDates();
     }
 
     $(document).ready(function() {
@@ -455,40 +465,8 @@
         setSummaryDetails();
     });
 
-    $.datetimepicker.setLocale('en');
-    $("#id_date").datetimepicker({
-        lang: 'en',
-        timepicker: false,
-        onGenerate: getMinMaxDates(),
-        format: 'm/d/Y',
-        formatDate: 'Y-m-d',
-        minDate: minDate, // tomorrow is minimum date
-        maxDate: maxDate, //60 days forward is max date
 
-        beforeShowDay: function(date) {
 
-            var dateToDisable = new Date(blockedDates[0]);
-            console.log(dateToDisable);
-            if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == (dateToDisable.getDate() + 1)) {
-                console.log('entra alguna vez al if')
-                return [false, ""];
-            }
-            return [true, ""]
-
-            // $.each(blockedDates, function(index, dateToBlock) {
-
-            //     var dateToDisable = new Date(dateToBlock);
-            //     console.log(dateToDisable);
-            //     if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == (dateToDisable.getDate() + 1)) {
-            //         console.log('entra alguna vez al if')
-            //         return [false, ""];
-            //     }
-
-            //     return [true, ""];
-
-            // });
-        }
-    });
 
     $('#id_time').datetimepicker({
         datepicker: false,
