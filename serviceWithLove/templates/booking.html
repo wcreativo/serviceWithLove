@@ -292,9 +292,14 @@
             });
 
         } else {
-            var url = `ajax/get-cleaningtype-price/${cleaningTypeId}`;
+            var url = `ajax/get-cleaningtype-price/`;
             var cleaningTypeResponse = $.ajax({
-                url
+                url,
+                data:{
+                    'service_id': areaId,
+                    'cleaning_type_id': cleaningTypeId
+                },
+                type: 'POST'
             });
 
             var roomResponse = false;
