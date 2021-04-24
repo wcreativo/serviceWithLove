@@ -29,7 +29,7 @@
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Frecuency</h2>
             {{ form.frequency }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Select Extras</h2>
-            {% include 'snippets/extra_options.html' %}
+            <div id="extra-opts"></div>
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Info</h2>
             {% include 'snippets/flexibility.html' %}
             <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">How will we gain entry? *
@@ -377,8 +377,20 @@
         });
     }
 
+    function getExtraOptions() {
+        var url = 'ajax/load-options';
+        $.ajax({
+            url,
+            data: {},
+            success: function(data) {
+                $("#extra-opts").html(data);
+            }
+        });
+    }
+
 
     function setStartingValues() {
+        getExtraOptions();
         getStates();
         getBasePrice();
         setSummaryDetails();
