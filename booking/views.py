@@ -221,3 +221,18 @@ class ListBlockedTime(ListAPIView):
     today = date.today()
     queryset = DateTimeDisabler.objects.filter(from_date__gt=today)
     serializer_class = DateTimeDisablerSerializer
+
+                      
+class ListExtraOptions(ListView):
+    model = ExtraOption
+    template_name = 'snippets/extra_options.html'
+
+    def get_queryset(self):
+        options = ExtraOption.objects.filter(is_active=True)
+        print(options)
+        return options
+
+    def get_context_data(self, **kwargs):
+        context = super(ListExtraOptions, self).get_context_data(**kwargs)
+        return context
+

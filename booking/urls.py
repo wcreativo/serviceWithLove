@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import AppointmentCreate, ListStates, ListCities, GetAreaPrice, GetCleaningTypePrice, GetBasePrice, GetRoomPrice, GetBathroomPrice, GetExtraOptPrice, StripeWebHook, ListBlockedTime
+from .views import AppointmentCreate, ListStates, ListCities, GetAreaPrice, GetCleaningTypePrice, GetBasePrice, GetRoomPrice, GetBathroomPrice, GetExtraOptPrice, StripeWebHook, ListBlockedTime, ListExtraOptions
 
 app_name = 'appointments'
 
@@ -8,6 +8,7 @@ urlpatterns = [
     path('', AppointmentCreate.as_view(), name='new_booking'),
     path('ajax/load-states/', ListStates.as_view(), name='ajax_load_states'),
     path('ajax/load-cities/', ListCities.as_view(), name='ajax_load_cities'),
+    path('ajax/load-options/', ListExtraOptions.as_view(), name='ajax_load_options'),
     path('ajax/get-area-price/<int:id>/', GetAreaPrice.as_view(), name='ajax_get_area_price'),
     path('ajax/get-cleaningtype-price/', GetCleaningTypePrice.as_view(), name='ajax_get_cleaningtype_price'),
     path('ajax/get-base-price/<int:id>/', GetBasePrice.as_view(), name='ajax_get_base_price'),

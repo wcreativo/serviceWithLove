@@ -29,7 +29,7 @@
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Frecuency</h2>
             {{ form.frequency }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Select Extras</h2>
-            {% include 'snippets/extra_options.html' %}
+            <div id="extra-opts"></div>
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Info</h2>
             {% include 'snippets/flexibility.html' %}
             <h2 class="my-5 text-lg md:text-lg lg:text-lg font-semibold text-gray-900">How will we gain entry? *
@@ -45,7 +45,7 @@
 
             <div class="form-row">
                 <label for="card-element">
-                      Credit or debit card
+                        Credit or debit card
                     </label>
                 <div id="card-element">
                     <!-- A Stripe Element will be inserted here. -->
@@ -61,38 +61,42 @@
                 </button>
         </form>
     </div>
-    <div class="xl:w-3/4 lg:w-3/4 border sticky top-10 shadow-lg p-5 xl:p-20 lg:p-10 md:p-10 h-full xl:h-2/5 lg:h-2/5 md:h-2/5">
-        <h3 class="text-lg text-center md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Summary</h3>
-        <div class="bg-gray-100 rounded flex p-4 items-center mt-5">
-            <i class="fas fa-house-user mr-4 text-xl" style="color: #E4C059"></i>
-            <p><span id="sumary_service"></span></p>
-        </div>
-        <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
-            <i class="fas fa-calendar-alt mr-4 text-xl" style="color: #E4C059"></i>
-            <p><span id="sumary_datetime">Choose Service Date</span></p>
-        </div>
-        <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
-            <i class="fas fa-clock mr-4 text-xl" style="color: #E4C059"></i>
-            <p><span id="sumary_duration"></span></p>
-        </div>
-        <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
-            <i class="fas fa-sync-alt mr-4 text-xl" style="color: #E4C059"></i>
-            <p><span id="sumary_frequency"></span></p>
-        </div>
-        <hr/>
-        <p class="mt-4 flex items-center">Subtotal: <span id="summary_subtotal" class="subtotal"></span></p>
-        <p class="my-3">Sales Tax: <span id="summary_tax" class="tax"></span></p>
-        <p class="my-3">Total: <span id="summary_total" class="total text-2xl text-gray-900 font-bold"></span></p>
-        <hr/>
+    <div class="xl:w-3/4 lg:w-3/4 border shadow-lg p-5 xl:p-20 lg:p-10 md:p-10 h-full">
+        <div class="sticky top-10">
+            <h3 class="text-lg text-center md:text-2xl lg:text-2xl font-semibold text-gray-900">Booking Summary</h3>
+            <div class="bg-gray-100 rounded flex p-4 items-center mt-5">
+                <i class="fas fa-house-user mr-4 text-xl" style="color: #E4C059"></i>
+                <p><span id="sumary_service"></span></p>
+            </div>
+            <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
+                <i class="fas fa-calendar-alt mr-4 text-xl" style="color: #E4C059"></i>
+                <p><span id="sumary_datetime">Choose Service Date</span></p>
+            </div>
+            <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
+                <i class="fas fa-clock mr-4 text-xl" style="color: #E4C059"></i>
+                <p><span id="sumary_duration"></span></p>
+            </div>
+            <div class="bg-gray-100 rounded flex p-4 items-center mt-2">
+                <i class="fas fa-sync-alt mr-4 text-xl" style="color: #E4C059"></i>
+                <p><span id="sumary_frequency"></span></p>
+            </div>
+            <hr/>
+            <p class="mt-4 flex items-center">Subtotal: <span id="summary_subtotal" class="subtotal"></span></p>
+            <p class="my-3">Sales Tax: <span id="summary_tax" class="tax"></span></p>
+            <p class="my-3">Total: <span id="summary_total" class="total text-2xl text-gray-900 font-bold"></span>
+            </p>
+            <hr/>
 
-        <div id="submitSuccessResult" style="display: none;">
+            <div class="mt-5" id="submitSuccessResult" style="display: none; color: #694188;">
 
-            Thanks <span id="orderUser"></span> for trust in Service With Love! <br/> Your service with order #
-            <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span> has been settled. <br/> We send an email to <span id="orderEmail"></span>
+                Thanks <span id="orderUser"></span> for trust in Service With Love! <br/> Your service with order #
+                <span id="orderNumber"></span> and a total of $ <span id="orderTotal"></span> has been settled.
+                <br/> We send an email to <span id="orderEmail"></span>
 
-        </div>
+            </div>
 
-        <div id="submitErrorResult" style="display: none;">
+            <div class="mt-5" id="submitErrorResult" style="display: none; color: #694188;">
+            </div>
         </div>
     </div>
 </div>
@@ -387,8 +391,20 @@
         });
     }
 
+    function getExtraOptions() {
+        var url = 'ajax/load-options';
+        $.ajax({
+            url,
+            data: {},
+            success: function(data) {
+                $("#extra-opts").html(data);
+            }
+        });
+    }
+
 
     function setStartingValues() {
+        getExtraOptions();
         getStates();
         getBasePrice();
         setSummaryDetails();
@@ -467,7 +483,7 @@
         calculateValues();
     });
 
-    $("#id_extra_opts").change(function() {
+    $("#extra-opts").change('#id_extra_opts', function() {
         calculateValues();
     });
 
