@@ -14,8 +14,8 @@ from rest_framework.views import APIView
 
 from . import stripe
 from .forms import AppointmentForm
-from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge, DateTimeDisabler
-from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer, DateTimeDisablerSerializer
+from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge, DateTimeDisabler, CleaningTypePrice
+from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer, DateTimeDisablerSerializer, CleaningTypePriceSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
 from stripe_api import customer, charge
@@ -210,3 +210,9 @@ class ListBlockedTime(ListAPIView):
     today = date.today()
     queryset = DateTimeDisabler.objects.filter(from_date__gt=today)
     serializer_class = DateTimeDisablerSerializer
+
+
+class GetCleaningPriceByService(RetrieveAPIView):
+    lookup_field = 'service'
+    queryset = CleaningTypePrice.objects.all()
+    serializer_class = CleaningTypePriceSerializer
