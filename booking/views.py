@@ -136,9 +136,15 @@ class GetCleaningTypePrice(APIView):
         try:
             result = CleaningTypePrice.objects.get(service=service_id, cleaning_type=cleaning_type_id)
 
-            return JsonResponse({'price':result.price}, status=200)
+            return JsonResponse({
+                'price':result.price,
+                'minutes': result.cleaning_type.minutes
+                }, status=200)
         except CleaningTypePrice.DoesNotExist:
-            return JsonResponse({'price':0}, status=200)
+            return JsonResponse({
+                'price': 0,
+                'minutes': 0
+                }, status=200)
 
 class GetBasePrice(RetrieveAPIView):
     lookup_field = 'id'
