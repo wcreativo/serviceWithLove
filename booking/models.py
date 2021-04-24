@@ -47,7 +47,6 @@ class CleaningType(CommonData):
     minutes: int = IntegerField(
         verbose_name='estimated service time (in minutes)', default=0)
     service_area = ManyToManyField(ServiceArea, through=CleaningTypePrice)
-    price: int = IntegerField(verbose_name='cleaning price')
 
     def __str__(self) -> str:
         return f'{self.description}'
