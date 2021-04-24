@@ -296,9 +296,15 @@
             });
 
         } else {
-            var url = `ajax/get-cleaningtype-price/${cleaningTypeId}`;
+
+            var url = `ajax/get-cleaningtype-price/`;
             var cleaningTypeResponse = $.ajax({
-                url
+                url,
+                data: {
+                    'service_id': areaId,
+                    'cleaning_type_id': cleaningTypeId
+                },
+                type: 'POST'
             });
 
             var roomResponse = false;
@@ -318,17 +324,21 @@
                 });
             }
 
-            $.when(cleaningTypeResponse, roomResponse, bathroomResponse, extraOptsResponse).then(function(cleaningTypePrice, roomPrice, bathroomPrice, extraOptsPrice) {
+            var serviceTypeResponse = $.ajax({
+                url: `ajax/get-area-price/${areaId}`
+            });
+
+            $.when(cleaningTypeResponse, roomResponse, bathroomResponse, extraOptsResponse, serviceTypeResponse).then(function(cleaningTypePrice, roomPrice, bathroomPrice, extraOptsPrice, serviceTypePrice) {
                     extraOptsTotal = calculateExtraOptsPrice(extraOptsPrice);
                     var finalRoomPrice = roomResponse ? roomPrice[0].price : 0;
                     var finalBathRoomPrice = bathroomResponse ? bathroomPrice[0].price : 0;
                     var finalRoomMinutes = roomResponse ? roomPrice[0].minutes : 0;
                     var finalBathRoomMinutes = bathroomResponse ? bathroomPrice[0].minutes : 0;
 
-                    subtotal = startingPrice + cleaningTypePrice[0].price + finalRoomPrice + finalBathRoomPrice + extraOptsTotal.total;
+                    subtotal = cleaningTypePrice[0].price + serviceTypePrice[0].price + finalRoomPrice + finalBathRoomPrice + extraOptsTotal.total;
                     startingTime = cleaningTypePrice[0].minutes;
                     publishValues(subtotal);
-                    publishTime(startingTime + extraOptsTotal.minutes + finalRoomMinutes + finalBathRoomMinutes);
+                    publishTime(startingTime + extraOptsTotal.minutes + finalRoomMinutes + finalBathRoomMinutes + serviceTypePrice[0].minutes);
                 },
                 function() {
                     console.log('something fails');
@@ -447,7 +457,7 @@
 
             $("#id_maid_qty").val(1);
             $('#id_hours_qty').val('2.0');
-            getBasePrice();
+            calculateValues();
         }
         setSummaryDetails();
     });
@@ -482,7 +492,6 @@
         let now = new Date();
         return new Date(now.getFullYear(), now.getMonth(), now.getDate(), ...time);
     }
-
 
     $("#id_date").change(function() {
         getAllowedHours();
