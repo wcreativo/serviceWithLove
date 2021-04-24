@@ -1,13 +1,18 @@
-{%load cms_tags menu_tags sekizai_tags static%}
+{% load cms_tags menu_tags sekizai_tags static %}
 
-<ul id="id_extra_opts" class="grid grid-cols-4 grid-flow-row gap-5">
+<ul id="id_extra_opts" class="grid grid-cols-2 xl:grid-cols-3 gap-5">
     {% for option in object_list %}
-    <li id='iconboxservice' class="iconboxservice flex justify-center items-center">
-        <label for="id_extra_opts_{{option.id}}">
-            <input type="checkbox" name="extra_opts" value="{{ option.id }}" id="id_extra_opts_{{option.id}}" class="checkiconinput">
-        </label>
-        <img src="{% static "" %}{{option.icon}}" class="h-24 w-auto fas checkiconbox object-center py-5 text-2xl text-gray-500" alt="">
-    </li>
-    <p class="choice_label text-center">{{ option.description }}</p>
+        <div>
+            <li id='iconboxservice' onclick="toggle_color(this)"
+                class="iconboxservice flex justify-center items-center">
+                <label for="id_extra_opts_{{ option.id }}">
+                    <input type="checkbox" name="extra_opts" value="{{ option.id }}" id="id_extra_opts_{{ option.id }}"
+                           class="checkiconinput">
+                </label>
+                <img src="{% static "" %}{{ option.icon }}"
+                     class="h-24 w-auto fas checkiconbox object-center py-5 text-2xl text-gray-500" alt="">
+            </li>
+            <p class="choice_label text-center">{{ option.description }}</p>
+        </div>
     {% endfor %}
 </ul>

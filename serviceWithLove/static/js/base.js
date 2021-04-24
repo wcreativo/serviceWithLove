@@ -50,12 +50,7 @@ jQuery(document).ready(function($) {
    });
 });
 
-var list_items = document.querySelectorAll('#id_extra_opts>li');
 
-for (var i = 0; i < list_items.length; i++) {
-  list_items[i].addEventListener("click", toggle);
-}
-
-function toggle(){
-   this.classList.toggle('iconboxservice-togglecolor');
+function toggle_color(obj){
+   obj.classList.toggle('iconboxservice-togglecolor');
 }

@@ -1,101 +1,534 @@
-<html>
-    <body>
-        <p>
-            Hi, {{appointment.firstname}} {{appointment.lastname}}<br /> 
-            These are the details of your clean appointment settled for {{appointment.date}} at {{appointment.time}} with order # {{appointment.id}}:
-        </p>
-        <table>
-        <tr>
-            <td>City, State: </td>
-            <td>{{appointment.city}}, {{appointment.state.code}}</td>
-        </tr>
-        <tr>
-            <td>Address: </td>
-            <td>{{appointment.address}}, suite: {{appointment.suite}}, zipcode: {{appointment.zipcode}}</td>
-        </tr>
-        <tr>
-            <td>Phone:</td>
-            <td>{{appointment.phone}}</td>
-        </tr>
-        </table>
-        <br /> Service summary: <br />
-        <table>
-            <tr>
-                <td>Area:</td>
-                <td>{{appointment.area}}</td>
-            </tr>
+{% load cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
-            {%if appointment.area.id == 1%}
-            <tr>
-                <td>Cleaning Type:</td>
-                <td>{{appointment.cleaning_type}}</td>
-            </tr>
-            <tr>
-                <td>Rooms Description:</td>
-                <td>{{appointment.room_type}}, {{appointment.bathroom}}</td>
-            </tr>
-            {%else%}
-            <tr>
-                <td># of maids:</td>
-                <td>{{appointment.maid_qty}}</td>
-            </tr>
-            <tr>
-                <td># of hours:</td>
-                <td>{{appointment.hours_qty}}</td>
-            </tr>
-            {%endif%}
-            <tr>
-                <td>Estimated service time:</td>
-                <td>{{estimated_time}}</td>
-            </tr>
-            <tr>
-                <td>Frequency:</td>
-                <td>{{appointment.frequency}}</td>
-            </tr>
-        </table>
+<head>
+    <meta charset="utf-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <!--[if mso]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <style>
+        td, th, div, p, a, h1, h2, h3, h4, h5, h6 {
+            font-family: "Segoe UI", sans-serif;
+            mso-line-height-rule: exactly;
+        }
+    </style>
+    <![endif]-->
+    <title>Thank you for your order</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .hover-no-underline:hover {
+            text-decoration: none !important;
+        }
 
-        {% if appointment.area.id == 1 %}
-        <br /> Extras summary: <br />
-        <table>
-            {% for extra in appointment.extra_opts.all %}
-            <tr><td>{{extra}}</td></tr>
-            {%empty%}
-            <tr><td>No extras selected</td></tr>
-            {% endfor %}
-        </table>
-        {% endif %}
+        @media (max-width: 600px) {
+            .sm-block {
+                display: block !important;
+            }
 
-        <br /> Totals: <br />
-        <table>
-            <tr>
-                <td>Subtotal:</td>
-                <td>{{appointment.subtotal}}</td>
-            </tr>
-            <tr>
-                <td>Discount:</td>
-                <td>{{appointment.discount}}</td>
-            </tr>
-            <tr>
-                <td>Tax:</td>
-                <td>{{appointment.tax}}</td>
-            </tr>
-            <tr>
-                <td>Total:</td>
-                <td>{{appointment.total}}</td>
-            <tr>
-        </table>
-        <br />
-        Customer Notes: {{appointment.comments}} <br />
-        What is your flexibility for the cleaning?: 
-         {% for flexibility in appointment.flexibility.all %}
-            {{flexibility}}, 
-         {%empty%}
-            No flexibility options selected
-         {% endfor %}
-        
-        <br />
-        How will we gain entry? : {{appointment.entry.label}} <br />
-        Are there any pets? : {{appointment.pets.label}} <br />
-        Have you or anyone in your home been exposed to COVID-19 in the past 14 days? : {{appointment.covid.label}} <br />
-    </body>
+            .sm-text-xl {
+                font-size: 20px !important;
+            }
+
+            .sm-text-32px {
+                font-size: 32px !important;
+            }
+
+            .sm-text-40px {
+                font-size: 40px !important;
+            }
+
+            .sm-leading-16 {
+                line-height: 16px !important;
+            }
+
+            .sm-leading-24 {
+                line-height: 24px !important;
+            }
+
+            .sm-leading-28 {
+                line-height: 28px !important;
+            }
+
+            .sm-leading-32 {
+                line-height: 32px !important;
+            }
+
+            .sm-leading-36 {
+                line-height: 36px !important;
+            }
+
+            .sm-leading-40 {
+                line-height: 40px !important;
+            }
+
+            .sm-leading-44 {
+                line-height: 44px !important;
+            }
+
+            .sm-leading-64 {
+                line-height: 64px !important;
+            }
+
+            .sm-p-0 {
+                padding: 0 !important;
+            }
+
+            .sm-p-24 {
+                padding: 24px !important;
+            }
+
+            .sm-pb-16 {
+                padding-bottom: 16px !important;
+            }
+
+            .sm-pb-32 {
+                padding-bottom: 32px !important;
+            }
+
+            .sm-text-left {
+                text-align: left !important;
+            }
+
+            .sm-w-full {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased; background-color: #f2f2f7">
+<div style="display: none">Thank you for your order&#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &zwnj;
+    &#160;&#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
+    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &zwnj;
+    &#160;&#847; &#847; &#847; &#847; &#847;
+</div>
+<div role="article" aria-roledescription="email" aria-label="Thank you for your order" lang="en">
+    <table style="font-family: Arial, sans-serif; width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+            <td align="center" style="background-color: #f2f2f7" bgcolor="#f2f2f7">
+                <table class="sm-w-full" style="width: 600px" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr>
+                        <td class="sm-p-24" style="padding: 48px 20px">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+                                <tr>
+                                    <td>
+                                        <div class="flex justify-center">
+                                            <a href="https://servicewithlove.org" style="text-decoration: none">
+                                                <img src="https://i.ibb.co/ZgqS72k/logo-black-3.png" width="200"
+                                                     alt="Logo"
+                                                     style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle">
+                                            </a>
+                                        </div>
+                                        <div class="sm-leading-64" style="line-height: 80px">&zwnj;</div>
+                                        <table style="width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+                                            <tr>
+                                                <td class="sm-p-0" style="padding-left: 64px; padding-right: 64px">
+                                                    <h1 class="font-medium sm-text-40px sm-leading-44"
+                                                        style="font-size: 48px; line-height: 56px; margin: 0; text-align: center; color: #5744cb">
+                                                        Thank you for your order
+                                                    </h1>
+                                                    <p style="font-size: 16px; line-height: 24px; margin: 0; text-align: center; color: #a0a6b0">
+                                                        Hi, {{ appointment.firstname }} {{ appointment.lastname }}
+                                                    </p>
+                                                    <p style="font-size: 16px; line-height: 24px; margin: 0; text-align: center; color: #a0a6b0">
+                                                        These are the details of your appointment settled
+                                                        for {{ appointment.date }} at {{ appointment.time }} with
+                                                        order # {{ appointment.id }}:
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div class="sm-leading-16" style="line-height: 24px">&zwnj;</div>
+                                        <p style="font-size: 16px; line-height: 24px; margin: 0; text-align: center; color: #a0a6b0">
+                                            Order #{{ appointment.id }}
+                                        </p>
+                                        <div class="sm-leading-40" style="line-height: 48px">&zwnj;</div>
+                                        <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">&nbsp;
+                                        </div>
+                                        <div class="sm-leading-16" style="line-height: 24px">&zwnj;</div>
+                                        <table style="width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+                                            <tr>
+                                                <th class="sm-w-full sm-block sm-pb-16"
+                                                    style="font-weight: 400; text-align: left; width: 50%" align="left">
+                                                    <p class="sm-text-32px sm-leading-36"
+                                                       style="font-weight: 700; font-size: 40px; line-height: 44px; margin: 0 0 8px; color: #4f5a68">
+                                                        ${{ appointment.total }}</p>
+                                                    <p style="font-size: 16px; line-height: 24px; margin: 0; color: #a0a6b0">
+                                                        Card was charged</p>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <div class="sm-leading-40" style="line-height: 48px">&zwnj;</div>
+                                        <table style="width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+                                            <tr>
+                                                <td style="background-color: #ffffff; border-radius: 4px; padding: 32px 24px"
+                                                    bgcolor="#ffffff">
+                                                    <h3 style="font-weight: 400; font-size: 16px; line-height: 24px; margin: 0; color: #4f5a68">
+                                                        Order details</h3>
+                                                    <div style="line-height: 24px">&zwnj;</div>
+                                                    <table style="color: #4f5a68; width: 100%" cellpadding="0"
+                                                           cellspacing="0" role="presentation">
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">City, State:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right"
+                                                                valign="top">{{ appointment.city }}, {{ appointment.state.code }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">Address:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.address }},
+                                                                suite: {{ appointment.suite }},
+                                                                zipcode: {{ appointment.zipcode }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">Phone:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.phone }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; vertical-align: top; width: 50%"
+                                                                valign="top">Service summary:
+                                                            </td>
+                                                        </tr>
+                                                        <div style="line-height: 24px">&zwnj;</div>
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">Service Type:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.area }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        {% if appointment.area.id == 1 %}
+                                                            <tr>
+                                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                    valign="top">Cleaning Type:
+                                                                </td>
+                                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                    align="right"
+                                                                    valign="top">{{ appointment.cleaning_type }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"
+                                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                                    <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                        &nbsp;
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                    valign="top">Additionals:
+                                                                </td>
+                                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                    align="right"
+                                                                    valign="top">{{ appointment.room_type }}, {{ appointment.bathroom }}
+                                                                </td>
+                                                            </tr>
+                                                        {% else %}
+                                                            <tr>
+                                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                    valign="top"># of maids:
+                                                                </td>
+                                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                    align="right"
+                                                                    valign="top">{{ appointment.maid_qty }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"
+                                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                                    <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                        &nbsp;
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                    valign="top"># of hours:
+                                                                </td>
+                                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                    align="right"
+                                                                    valign="top">{{ appointment.hours_qty }}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">Estimated service time:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right"
+                                                                valign="top">{{ estimated_time }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                valign="top">Frequency:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right"
+                                                                valign="top">{{ appointment.frequency }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        {% if appointment.area.id == 1 %}
+                                                            {% for extra in appointment.extra_opts.all %}
+                                                                <tr>
+                                                                    <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                        valign="top">{{ extra }}
+                                                                    </td>
+                                                                </tr>
+                                                            {% empty %}
+                                                                <tr>
+                                                                    <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                                        valign="top">No extras selected
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-top: 16px; padding-bottom: 16px">
+                                                                <div style="background-color: #4f5a68; height: 1px; line-height: 1px">
+                                                                    &nbsp;
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; vertical-align: top; width: 50%"
+                                                                valign="top">Subtotal:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.subtotal }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; vertical-align: top; width: 50%"
+                                                                valign="top">Tax:
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.tax }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; vertical-align: top; width: 50%"
+                                                                valign="top">Total
+                                                            </td>
+                                                            <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                                align="right" valign="top">{{ appointment.total }}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div class="sm-leading-40" style="line-height: 64px">&zwnj;</div>
+                                        <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">&nbsp;
+                                        </div>
+                                        <div class="sm-leading-40" style="line-height: 48px">&zwnj;</div>
+                                        <h2 class="sm-text-xl sm-leading-28"
+                                            style="font-weight: 400; font-size: 28px; line-height: 36px; margin: 0; color: #4f5a68">
+                                            Customer information</h2>
+                                        <div class="sm-leading-24" style="line-height: 48px">&zwnj;</div>
+                                        <table style="width: 100%" cellpadding="0" cellspacing="0" role="presentation">
+                                            <tr>
+                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                    valign="top">Comments:
+                                                </td>
+                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                    align="right"
+                                                    valign="top">
+                                                    {% if appoinment.comments %}
+                                                        {{ appointment.comments }}
+                                                    {% else %}
+                                                        No comments
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"
+                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                    <div style="background-color: #4f5a68; height: 1px; line-height: 1px">
+                                                        &nbsp;
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                    valign="top">What is your flexibility for the cleaning?:
+                                                </td>
+                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                    align="right"
+                                                    valign="top">
+                                                    {% for flexibility in appointment.flexibility.all %}
+                                                        {{ flexibility }},
+                                                    {% empty %}
+                                                        No flexibility options selected
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"
+                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                    <div style="background-color: #4f5a68; height: 1px; line-height: 1px">
+                                                        &nbsp;
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                    valign="top">How will we gain entry?:
+                                                </td>
+                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                    align="right"
+                                                    valign="top">
+                                                    {{ appointment.entry.label }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"
+                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                    <div style="background-color: #4f5a68; height: 1px; line-height: 1px">
+                                                        &nbsp;
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                    valign="top">Are there any pets?:
+                                                </td>
+                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                    align="right"
+                                                    valign="top">
+                                                    {{ appointment.pets.label }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"
+                                                    style="padding-top: 16px; padding-bottom: 16px">
+                                                    <div style="background-color: #4f5a68; height: 1px; line-height: 1px">
+                                                        &nbsp;
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 16px; line-height: 24px; color: #a0a6b0; vertical-align: top; width: 50%"
+                                                    valign="top">Have you or anyone in your home been exposed to
+                                                    COVID-19 in the past 14 days?:
+                                                </td>
+                                                <td style="font-weight: 700; font-size: 16px; line-height: 24px; text-align: right; vertical-align: top; width: 50%"
+                                                    align="right"
+                                                    valign="top">
+                                                    {{ appointment.covid.label }}
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                        <div style="line-height: 64px">&zwnj;</div>
+                                        <div style="background-color: #d4d5d6; height: 1px; line-height: 1px">&nbsp;
+                                        </div>
+                                        <div class="sm-leading-16" style="line-height: 32px">&zwnj;</div>
+
+                                        <div class="sm-leading-16" style="line-height: 32px">&zwnj;</div>
+                                        <p style="font-size: 14px; line-height: 20px; margin: 0; color: #a0a6b0">
+                                            &copy; 2021 Service With Love. All rights reserved.
+                                            You received this email because you booking cleaning service.
+                                            To update your booking preferences <a href="https://example.com"
+                                                                                  class="hover-no-underline"
+                                                                                  style="color: #986dff; text-decoration: underline">click
+                                            here</a>.
+                                        </p>
+                                        <div class="sm-leading-32" style="line-height: 48px">&zwnj;</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+
 </html>
