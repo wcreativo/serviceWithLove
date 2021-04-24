@@ -14,7 +14,7 @@ from rest_framework.views import APIView
 
 from . import stripe
 from .forms import AppointmentForm
-from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge, DateTimeDisabler
+from .models import Appointment, Frequency, ServiceArea, CleaningType, BasePrice, Room, Bathroom, ExtraOption, ChargeHistory, Charge, DateTimeDisabler, CleaningTypePrice
 from .serializers import AreaSerializer, CleaningTypeSerializer, BasePriceSerializer, RoomSerializer, BathroomSerializer, ExtraOptsSerializer, DateTimeDisablerSerializer
 from common.mailman import send_html_mail
 from geoinfo.models import Country, State, City
@@ -128,12 +128,23 @@ class GetAreaPrice(RetrieveAPIView):
     queryset = ServiceArea.objects.all()
     serializer_class = AreaSerializer
 
+class GetCleaningTypePrice(APIView):
+   
+    def post(self, request, format=None):
+        service_id = request.POST.get('service_id')
+        cleaning_type_id = request.POST.get('cleaning_type_id')
+        try:
+            result = CleaningTypePrice.objects.get(service=service_id, cleaning_type=cleaning_type_id)
 
-class GetCleaningTypePrice(RetrieveAPIView):
-    lookup_field = 'id'
-    queryset = CleaningType.objects.all()
-    serializer_class = CleaningTypeSerializer
-
+            return JsonResponse({
+                'price':result.price,
+                'minutes': result.cleaning_type.minutes
+                }, status=200)
+        except CleaningTypePrice.DoesNotExist:
+            return JsonResponse({
+                'price': 0,
+                'minutes': 0
+                }, status=200)
 
 class GetBasePrice(RetrieveAPIView):
     lookup_field = 'id'
