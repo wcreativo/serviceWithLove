@@ -5,6 +5,7 @@ ADD . /app
 WORKDIR /app
 
 RUN apt-get update \
+    && apt install -y gdal-bin \
     && apt-get clean
 
 RUN pip install --upgrade pip
