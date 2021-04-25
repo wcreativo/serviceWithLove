@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load cms_tags %} {% block title %}{% page_attribute "page_title" %}{% endblock title %} {% load static %} {% block extra_head %}
+{% extends "base.html" %} {% load cms_tags %} {% block title %}{% page_attribute "page_title" %}{% endblock title %} {% load static env_stripe %} {% block extra_head %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'js/datetimepicker/jquery.datetimepicker.css' %} " />
 <script src="{% static 'js/jquery.mousewheel.js' %}"></script>
@@ -103,7 +103,7 @@
 
 {% endblock content %} {% block js_scripts %}
 <script>
-    var stripe = Stripe('pk_test_51IdeVKJbMdRS1I8IsuHRhXb0q0adhLHC4e1CcaxiWeXeX6rD2LuZtsHe29TFTg9Zah1HrFOZQ0FAjbEW0UWwbTOH00MlOOgPOd');
+    var stripe = Stripe("{% get_public_key 'STRIPE_PUB_KEY' %}");
     var elements = stripe.elements();
     var form = $('#bookingForm');
     var submitSuccessResult = $('#submitSuccessResult');
@@ -118,6 +118,7 @@
     var startingTime = 90;
     var blockedDates = [];
     var blockedDateHours = [];
+
 
     // Custom styling can be passed to options when creating an Element.
     var cardInputStyle = {
