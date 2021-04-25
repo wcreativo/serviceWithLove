@@ -1,6 +1,6 @@
 from django import forms
 from .models import Appointment, ExtraOption
-from geoinfo.models import City, State, Country
+from geoinfo.models import State, Country
 
 input_styles = 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white' \
                ' text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2' \
@@ -25,7 +25,6 @@ class AppointmentForm(forms.ModelForm):
             'phone',
             'address',
             'suite',
-            'country',
             'state',
             'city',
             'zipcode',
@@ -55,9 +54,8 @@ class AppointmentForm(forms.ModelForm):
         MAID_CHOICES = [(x, f'{x} maids ' if x > 1 else f'{x} maid') for x in range(1, 6)]
 
         widgets = {
-            'country': forms.Select(attrs={'class': select_styles}),
             'state': forms.Select(attrs={'class': select_styles}),
-            'city': forms.Select(attrs={'class': select_styles}),
+            'city': forms.TextInput(attrs={'placeholder': 'City', 'class': input_styles}),
             'address': forms.TextInput(
                 attrs={'placeholder': 'Address where the service is needed', 'class': input_styles}),
             'email': forms.EmailInput(attrs={'placeholder': 'Contact Email',
@@ -101,8 +99,6 @@ class AppointmentForm(forms.ModelForm):
         self.fields['area'].empty_label = None
         self.fields['cleaning_type'].empty_label = None
         self.fields['frequency'].empty_label = None
-        self.fields['country'].empty_label = None
         self.fields['state'].empty_label = None
-        self.fields['city'].empty_label = None
-        self.fields['country'].queryset = Country.objects.filter(is_active=True)
         self.fields['extra_opts'].queryset = ExtraOption.objects.filter(is_active=True)
+        self.fields['state'].queryset = State.objects.filter(is_active=True)

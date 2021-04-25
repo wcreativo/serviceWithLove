@@ -31,8 +31,7 @@ def update_charge(order_data: Appointment, charge_id):
             charge_id,
             metadata = {
                 'order_id': order_data.id,
-                'city': order_data.city.name,
-                'country': order_data.country.name,
+                'city': order_data.city,
                 'line1': order_data.address,
                 'line2': order_data.suite,
                 'state': order_data.state.name,
