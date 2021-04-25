@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6a+1(i=ip7$+wydqrd#*^wu8zm3n+v%6na6ez1y!7kx_h7bv0&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ.get('ENVIRONMENT') == 'dev' else False
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,8 +83,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') if DEBUG == 'production' else os.path.join(
-    BASE_DIR, 'serviceWithLove/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') if DEBUG == 'production' else os.path.join(BASE_DIR, 'serviceWithLove/media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
@@ -245,6 +244,7 @@ DATABASES = {
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': os.environ.get('POSTGRES_HOST'),
         'PORT': os.environ.get('POSTGRES_PORT'),
+
     }
 }
 
