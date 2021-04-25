@@ -1,7 +1,7 @@
 from .enums import GainEntry, Pets, CovidExposure
 from .validators import validate_date_greater
 from common.models import CommonData
-from geoinfo.models import City, State, Country
+from geoinfo.models import State
 from datetime import date
 from datetime import time
 
@@ -106,9 +106,8 @@ class Flexibility(CommonData):
 
 
 class Appointment(CommonData):
-    city: City = ForeignKey(City, on_delete=DO_NOTHING)
+    city: str = CharField(verbose_name='City', max_length=100)
     state: State = ForeignKey(State, on_delete=DO_NOTHING)
-    country: Country = ForeignKey(Country, on_delete=DO_NOTHING)
     firstname: str = CharField(verbose_name='First Name', max_length=100)
     lastname: str = CharField(verbose_name='Last Name', max_length=100)
     phone: str = CharField(verbose_name='Phone Number', max_length=50)
