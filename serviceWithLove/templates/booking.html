@@ -19,7 +19,7 @@
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Contact Info</h2>
             {{ form.firstname }} {{ form.lastname }} {{ form.email }} {{ form.phone }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Address</h2>
-            {{ form.address }} {{ form.suite }} {{ form.country }} {{ form.state }} {{ form.city }} {{ form.zipcode }}
+            {{ form.address }} {{ form.suite }} {{ form.state }} {{ form.city }} {{ form.zipcode }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Service Date</h2>
             {{ form.date }} {{ form.time }}
             <h2 class="my-5 text-lg md:text-2xl lg:text-2xl font-semibold text-gray-900">Choose your service</h2>
@@ -362,34 +362,6 @@
 
     }
 
-    function getStates() {
-        var countryId = $("#id_country").val();
-        var url = $("#bookingForm").attr("data-states-url");
-        $.ajax({
-            url,
-            data: {
-                'country': countryId
-            },
-            success: function(data) {
-                $("#id_state").html(data);
-                getCitiesList()
-            }
-        });
-    }
-
-    function getCitiesList() {
-        var stateId = $("#id_state").val();
-        var url = $("#bookingForm").attr("data-cities-url");
-        $.ajax({
-            url,
-            data: {
-                'state': stateId
-            },
-            success: function(data) {
-                $("#id_city").html(data);
-            }
-        });
-    }
 
     function getExtraOptions() {
         var url = 'ajax/load-options';
@@ -405,7 +377,6 @@
 
     function setStartingValues() {
         getExtraOptions();
-        getStates();
         getBasePrice();
         setSummaryDetails();
         publishTime(startingTime);
@@ -416,13 +387,6 @@
         setStartingValues();
     });
 
-    $("#id_country").change(function() {
-        getStates();
-    });
-
-    $("#id_state").change(function() {
-        getCitiesList();
-    });
 
     $("#id_frequency").change(function() {
         calculateValues();
@@ -548,6 +512,7 @@
                 $('#orderEmail').html(`${resp.serviceemail}`);
                 submitSuccessResult.show();
                 submitFailResult.hide();
+                //TODO: spiner stop
             },
 
             error: function(xhr, errmsg, err) {
@@ -561,15 +526,15 @@
                 submitSuccessResult.hide();
                 submitFailResult.html(htmlText);
                 submitFailResult.show();
+                //TODO: spiner stop
             }
         });
-
 
     }
 
     form.submit(function(e) {
         e.preventDefault();
-
+        //TODO: spinner start
         stripe.createToken(card).then(function(result) {
             if (result.error) {
                 // Inform the customer that there was an error.
