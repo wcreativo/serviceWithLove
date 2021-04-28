@@ -28,8 +28,8 @@
 
 .slider-clients .slider-clients-track{
     display: flex;
-    width: calc(250px * 14);
-    animation: scroll 40s infinite linear;
+    width: calc(250px * 16);
+    animation: scroll 45s infinite linear;
 }
 
 .slider-clients .slide img{
@@ -41,6 +41,6 @@
         transform: translateX(0%);
     }
     100%{
-        transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 9));
     }
 }

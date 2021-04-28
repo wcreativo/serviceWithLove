@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6a+1(i=ip7$+wydqrd#*^wu8zm3n+v%6na6ez1y!7kx_h7bv0&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True if os.environ.get('ENVIRONMENT') == 'dev' else False
 
 ALLOWED_HOSTS = ['*']
 
