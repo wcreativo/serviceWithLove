@@ -51,6 +51,8 @@ class CleaningType(CommonData):
     def __str__(self) -> str:
         return f'{self.description}'
 
+    class  Meta:
+        ordering = ['id']
 
 class Room(CommonData):
     description: str = CharField(verbose_name='room types', max_length=30)
