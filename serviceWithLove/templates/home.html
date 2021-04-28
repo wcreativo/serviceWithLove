@@ -9,13 +9,51 @@
     {% include 'snippets/our_services.html' %}
     {% include 'snippets/organizing_our_services.html' %}
     {% placeholder card_decorating %}
+    <section>
+        <div class="container mx-auto xl:py-40 xl:px-10">
+            <div class="grid gap-4 p-5 xl:px-48 xl:grid-cols-2 lg:px-16 lg:grid-cols-2 md:grid-cols-2 md:px-10">
+                <div class="z-10 xl:-mr-20 xl:ml-10 lg:-mr-20 md:-mr-20">
+                    <div>
+                        <img class="h-40" src="/media/logos/decoration_logo_2.png" alt="Image">
+                    </div>
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl p-3 my-3 font-semibold"
+                        style="color: #E9A5A2">Decorating <br/>& Styling<br/> With Love</h2>
+                    <p class="p-5 mb-10 lg:p-10 md:p-10 text-justify bg-gray-100 rounded">Are you in love with your
+                        home? Do
+                        you feel that your home reflects who you are and what you want to project? Does your home feel
+                        like your sanctuary? Does it recharge your energy and inspire you to do everything that you have
+                        in your mind? Your life, your job, your dreams, and your needs change. Why should your house not
+                        change to meet them?
+
+                        We are a team of professionals who can magically bring harmony to your home. Knowing that no one
+                        style fits every space, we use design trends and the flow of your space as inspiration to come
+                        up with design combinations to find the best one for your home. The feel of your space is as
+                        essential as its look, which is why we incorporate feng shui into our designs, bringing positive
+                        energy and harmony to your home. Let us bring you on this journey of reimagining your space with
+                        our love for decoration and creating comfortable environments.</p>
+                    <a href="/en/decoration/"
+                       class="px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500 undefined"
+                       style="color: #E9A5A2; border-color: #E9A5A2">Know more</a>
+                </div>
+                <div class="relative">
+                    <img class="h-3/4 object-cover w-full rounded" src="/media/images/Foto_Klink_16_Decorating.jpeg"
+                         alt="Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="container mx-auto flex flex-wrap items-center justify-center md:px-16 px-10 mt-5 lg:mt-0">
         {% placeholder get_started %}
     </section>
     <section class="container mx-auto flex flex-wrap items-center justify-center md:px-16 px-10 mb-36 lg:mt-0">
         {% include 'snippets/get_started_items.html' %}
     </section>
-
+    <div class="w-auto text-center">
+        <a href="/en/booking/"
+           class="px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500 undefined"
+           style="color: #E4C059; border-color: #E4C059">Book Now</a>
+    </div>
     {% include 'snippets/clients.html' %}
 
     <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-rows-1 items-center
