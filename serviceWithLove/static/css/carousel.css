@@ -1,11 +1,9 @@
 .slider-clients{
     background-color: beige;
-    width: 400px;
+    width: 350px;
     height: 500px;
     overflow: hidden;
     position: relative;
-    margin: auto;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
 }
 
 .slider-clients::before,.slider-clients::after{
